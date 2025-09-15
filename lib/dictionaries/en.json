@@ -1,0 +1,186 @@
+{
+  "nav": {
+    "home": "Home",
+    "apartments": "Apartments",
+    "about": "About",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "to_visit": "To visit"
+  },
+  "hero": {
+    "title": "Perfect holidays on the Costa del Sol",
+    "subtitle": "Discover our exclusive apartments in Torrox, Málaga. Book directly and save on commissions.",
+    "cta": "Book now",
+    "viewApartments": "View apartments"
+  },
+  "benefits": {
+    "title": "Why choose Holidays Beach Torrox?",
+    "direct": {
+      "title": "Direct booking",
+      "description": "No intermediary commissions. Best price guaranteed."
+    },
+    "location": {
+      "title": "Prime location",
+      "description": "Just meters from the best beaches on the Costa del Sol."
+    },
+    "support": {
+      "title": "Personal attention",
+      "description": "24/7 support during your stay. We speak your language."
+    }
+  },
+  "amenities": {
+    "wifi": "Wi-Fi",
+    "parking": "Parking",
+    "seaView": "Sea view",
+    "airConditioning": "Air conditioning",
+    "kitchen": "Kitchen",
+    "terrace": "Terrace"
+  },
+  "apartments": {
+    "title": "Our apartments",
+    "subtitle": "Unique spaces for unforgettable holidays",
+    "viewAll": "View all",
+    "from": "From",
+    "night": "night",
+    "book": "Book",
+    "capacity": "guests",
+    "bedrooms": "bedrooms",
+    "bathrooms": "bathrooms"
+  },
+  "about": {
+    "badge": "Our story",
+    "title": "Over 10 years creating unique experiences in Torrox",
+    "subtitle": "We are a family business passionate about tourism and hospitality, committed to offering the best holidays on the Costa del Sol.",
+    "story": {
+      "title": "Our story",
+      "paragraph1": "Holidays Beach Torrox was born in 2014 from the dream of a Malaga family to share the beauty of Torrox with travelers from around the world. What started as a small collection of family apartments has become one of the most respected vacation rental companies on the Costa del Sol.",
+      "paragraph2": "Our passion for hospitality and deep knowledge of the area allows us to offer authentic and personalized experiences. Each apartment has been carefully selected and equipped to guarantee maximum comfort and satisfaction for our guests.",
+      "paragraph3": "We believe in responsible and sustainable tourism, working closely with the local community to preserve the natural and cultural beauty of Torrox while offering unforgettable experiences to our visitors."
+    },
+    "values": {
+      "title": "Our values",
+      "subtitle": "The principles that guide every decision we make",
+      "passion": {
+        "title": "Passion for service",
+        "description": "Every detail matters. We strive to exceed expectations and create special moments for our guests."
+      },
+      "trust": {
+        "title": "Trust and transparency",
+        "description": "We build lasting relationships based on honesty, clear communication and keeping our promises."
+      },
+      "excellence": {
+        "title": "Excellence in everything",
+        "description": "From cleanliness to customer service, we maintain the highest quality standards in every aspect of our business."
+      }
+    },
+    "stats": {
+      "apartments": "Apartments",
+      "guests": "Happy guests",
+      "rating": "Average rating",
+      "support": "Support"
+    }
+  },
+  "faq": {
+    "badge": "Frequently asked questions",
+    "title": "We answer all your questions",
+    "subtitle": "Find quick answers to the most common questions about our apartments and services.",
+    "questions": {
+      "booking": {
+        "question": "How can I make a reservation?",
+        "answer": "You can book directly through our website or contact us via WhatsApp. We'll send you a secure link to complete payment and you'll receive confirmation immediately."
+      },
+      "checkin": {
+        "question": "What are the check-in and check-out times?",
+        "answer": "Check-in is from 4:00 PM and check-out until 11:00 AM. If you need special times, contact us in advance and we'll do our best to accommodate you."
+      },
+      "cancellation": {
+        "question": "What is the cancellation policy?",
+        "answer": "We offer free cancellation up to 48 hours before arrival. For later cancellations, the first night's charge will apply. In exceptional cases, we study each situation individually."
+      },
+      "amenities": {
+        "question": "What services do the apartments include?",
+        "answer": "All our apartments include free WiFi, air conditioning, fully equipped kitchen, bed linen and towels. Many also have a terrace or balcony with sea views."
+      },
+      "pets": {
+        "question": "Do you allow pets?",
+        "answer": "Some of our apartments allow pets with a supplement of €15/night. It's necessary to inform us at the time of booking and follow our coexistence rules."
+      },
+      "payment": {
+        "question": "What payment methods do you accept?",
+        "answer": "We accept credit/debit cards, bank transfer and PayPal. Payment is made securely through our platform integrated with AvaiBook."
+      }
+    },
+    "contact": {
+      "title": "Can't find what you're looking for?",
+      "subtitle": "Our team is here to help you with any specific questions.",
+      "chat": "Live chat",
+      "call": "Call now",
+      "email": "Send email"
+    }
+  },
+  "contact": {
+    "badge": "Contact",
+    "title": "We're here to help you",
+    "subtitle": "Do you have any questions or need assistance? Contact us and we'll get back to you as soon as possible.",
+    "form": {
+      "title": "Send us a message",
+      "name": "Full name",
+      "namePlaceholder": "Your name",
+      "email": "Email address",
+      "emailPlaceholder": "your@email.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "How can we help you?",
+      "message": "Message",
+      "messagePlaceholder": "Tell us more details about your inquiry...",
+      "send": "Send message"
+    },
+    "info": {
+      "address": {
+        "title": "Address",
+        "line1": "Calle Ejemplo 123",
+        "line2": "29770 Torrox, Málaga, Spain"
+      },
+      "phone": {
+        "title": "Phone",
+        "number": "+34 952 123 456"
+      },
+      "email": {
+        "title": "Email",
+        "address": "info@holidaysbeachtorrox.com"
+      },
+      "hours": {
+        "title": "Business hours",
+        "weekdays": "Monday to Friday: 9:00 AM - 8:00 PM",
+        "weekends": "Saturday and Sunday: 10:00 AM - 6:00 PM"
+      }
+    },
+    "whatsapp": {
+      "title": "Prefer WhatsApp?",
+      "subtitle": "Chat with us directly for a faster and more personalized response.",
+      "button": "Open WhatsApp"
+    }
+  },
+  "footer": {
+    "company": "Holidays Beach Torrox",
+    "description": "Your home on the Costa del Sol",
+    "links": "Links",
+    "legal": "Legal",
+    "privacy": "Privacy policy",
+    "terms": "Terms and conditions",
+    "cookies": "Cookie policy",
+    "contact": "Contact",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "followUs": "Follow us"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "tryAgain": "Try again",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous"
+  }
+}
