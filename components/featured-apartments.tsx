@@ -95,7 +95,7 @@ export function FeaturedApartments({ dict, locale }: FeaturedApartmentsProps) {
                 </div>
 
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {apartment.amenities.slice(0, 3).map((amenity, idx) => (
+                  {(Array.isArray(apartment.amenities) ? apartment.amenities.slice(0, 3) : []).map((amenity, idx) => (
                     <span
                       key={idx}
                       className="text-xs bg-muted text-muted-foreground px-3 py-1 rounded-full font-medium"

@@ -43,7 +43,6 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
 
   return (
     <div className="pt-20">
-      {/* Breadcrumb */}
       <div className="bg-gradient-to-r from-muted/30 to-muted/10 py-6 border-b border-border">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center space-x-3 text-sm">
@@ -68,9 +67,7 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Columna izquierda */}
           <div className="lg:col-span-2 space-y-12">
-            {/* Galería */}
             <div className="relative">
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
                 <Image
@@ -132,7 +129,6 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
               )}
             </div>
 
-            {/* Info general */}
             <div className="space-y-8">
               <div className="flex items-start justify-between">
                 <div className="flex-1">
@@ -145,7 +141,7 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
                     </div>
                   </div>
 
-                  <h1 className="font-heading font-bold text-4xl lg:text-5xl text-foreground mb-4">
+                  <h1 className="font-heading font-bold text-4xl lg:text-5xl text-foreground mb-4 text-balance">
                     {apartment.name}
                   </h1>
 
@@ -161,7 +157,6 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
                 </div>
               </div>
 
-              {/* Stats */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <div className="flex items-center gap-3 bg-muted/30 p-4 rounded-xl">
                   <Users className="w-6 h-6 text-primary" />
@@ -195,38 +190,27 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
                 </div>
               </div>
 
-              {/* Descripción */}
               <div className="prose prose-lg max-w-none">
                 <p className="text-muted-foreground leading-relaxed text-lg">{apartment.description}</p>
               </div>
 
-              {/* Amenities */}
               <div>
                 <h3 className="font-heading font-bold text-2xl mb-6 flex items-center gap-2">
                   <Award className="w-6 h-6 text-primary" />
                   Servicios incluidos
                 </h3>
-                {Object.entries(apartment.amenities).map(([category, list]) => (
-                  <div key={category} className="mb-6">
-                    <h4 className="font-semibold text-lg mb-3 capitalize">{category}</h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {list.map((amenity: string, index: number) => (
-                        <div
-                          key={index}
-                          className="flex items-center gap-3 p-3 bg-muted/30 rounded-lg"
-                        >
-                          <div className="w-2 h-2 bg-primary rounded-full"></div>
-                          <span className="font-medium">{amenity}</span>
-                        </div>
-                      ))}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {apartment.amenities.map((amenity: string, index: number) => (
+                    <div key={index} className="flex items-center gap-3 p-3 bg-muted/30 rounded-lg">
+                      <div className="w-2 h-2 bg-primary rounded-full"></div>
+                      <span className="font-medium">{amenity}</span>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Columna derecha */}
           <div className="lg:col-span-1">
             <Card className="sticky top-24 shadow-2xl border-0 bg-gradient-to-br from-card to-muted/20">
               <CardContent className="p-8">
@@ -250,7 +234,6 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
                   </Button>
                 </div>
 
-                {/* Contacto */}
                 <div className="space-y-6">
                   <h4 className="font-heading font-semibold text-lg flex items-center gap-2">
                     <Phone className="w-5 h-5 text-primary" />

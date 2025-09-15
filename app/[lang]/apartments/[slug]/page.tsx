@@ -98,10 +98,12 @@ export default async function ApartmentDetailPage({
               latitude: apartment.location.coordinates.lat,
               longitude: apartment.location.coordinates.lng,
             },
-            amenityFeature: apartment.amenities.map((amenity: string) => ({
-              "@type": "LocationFeatureSpecification",
-              name: amenity,
-            })),
+            amenityFeature: Array.isArray(apartment.amenities)
+              ? apartment.amenities.map((amenity: string) => ({
+                  "@type": "LocationFeatureSpecification",
+                  name: amenity,
+                }))
+              : [],
             occupancy: {
               "@type": "QuantitativeValue",
               maxValue: apartment.capacity,

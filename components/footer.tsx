@@ -133,7 +133,7 @@ export function Footer({ dict, locale }: FooterProps) {
             <div className="flex flex-col sm:flex-row items-center gap-4">
               <p className="text-muted-foreground text-sm">© 2025 Holidays Beach Torrox.</p>
               <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
-                <span className="flex items-center gap-1"><Globe className="w-3 h-3" /> VFT/MA/12345</span>
+                <span className="flex items-center gap-1"><Globe className="w-3 h-3" /> VFT/MA/33679</span>
                 <span className="flex items-center gap-1"><Globe className="w-3 h-3" /> VFT/MA/67890</span>
                 <span className="flex items-center gap-1"><Globe className="w-3 h-3" /> VFT/MA/54321</span>
                 <span className="flex items-center gap-1"><Globe className="w-3 h-3" /> VFT/MA/98765</span>
