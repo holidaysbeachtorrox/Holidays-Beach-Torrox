@@ -6,23 +6,17 @@ import { Users, Bed, Bath, ArrowRight, Star } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { createLocalizedPath, type Locale } from "@/lib/utils"
-import { apartments } from "@/lib/data/apartments"  
+import { apartments } from "@/lib/data/apartments"
 
 interface FeaturedApartmentsProps {
   dict: any
   locale: Locale
 }
 
-const featuredApartments = apartments.filter(a => a.featured)
-
-const localeMap: Record<Locale, string> = {
-  es: "es-ES",
-  en: "en-GB",
-  de: "de-DE",
-}
-
-const formatPrice = (price: number, locale: Locale) =>
-  new Intl.NumberFormat(localeMap[locale], { style: "currency", currency: "EUR" }).format(price)
+// Filtrar solo destacados y ordenarlos por rating descendente
+const featuredApartments = apartments
+  .filter((a) => a.featured)
+  .sort((a, b) => b.rating - a.rating)
 
 export function FeaturedApartments({ dict, locale }: FeaturedApartmentsProps) {
   return (
@@ -36,11 +30,13 @@ export function FeaturedApartments({ dict, locale }: FeaturedApartmentsProps) {
           <h2 className="font-heading font-bold text-4xl lg:text-5xl text-foreground mb-6 text-balance">
             {dict.apartments.title}
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">{dict.apartments.subtitle}</p>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
+            {dict.apartments.subtitle}
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mb-16">
-          {featuredApartments.map((apartment, index) => (
+          {featuredApartments.map((apartment) => (
             <Card
               key={apartment.id}
               className="group overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-500 bg-card hover:scale-[1.02]"
@@ -60,13 +56,6 @@ export function FeaturedApartments({ dict, locale }: FeaturedApartmentsProps) {
                   </Badge>
                 )}
 
-                <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-2 shadow-lg">
-                  <span className="text-lg font-bold text-foreground">
-                    {formatPrice(apartment.price, locale)}
-                  </span>
-                  <span className="text-sm text-muted-foreground">/{dict.apartments.night}</span>
-                </div>
-
                 <div className="absolute bottom-4 left-4 flex items-center gap-1 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-1 shadow-lg">
                   <Star className="w-4 h-4 fill-secondary text-secondary" />
                   <span className="font-semibold text-sm">{apartment.rating}</span>
@@ -75,34 +64,41 @@ export function FeaturedApartments({ dict, locale }: FeaturedApartmentsProps) {
               </div>
 
               <CardContent className="p-6 lg:p-8">
-                <h3 className="font-heading font-bold text-2xl text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
+                <h3 className="font-heading font-bold text-2xl text-foreground mb-6 text-center group-hover:text-primary transition-colors duration-300">
                   {apartment.name}
                 </h3>
 
-                <div className="flex items-center gap-6 text-muted-foreground mb-6">
-                  <div className="flex items-center gap-2">
-                    <Users className="w-5 h-5 text-primary" />
+                {/* Info centrada */}
+                <div className="flex justify-center gap-8 text-muted-foreground mb-6">
+                  <div className="flex flex-col items-center">
+                    <Users className="w-5 h-5 text-primary mb-1" />
                     <span className="font-medium">{apartment.capacity}</span>
+                    <span className="text-xs">{dict.apartments.capacity}</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Bed className="w-5 h-5 text-primary" />
+                  <div className="flex flex-col items-center">
+                    <Bed className="w-5 h-5 text-primary mb-1" />
                     <span className="font-medium">{apartment.bedrooms}</span>
+                    <span className="text-xs">{dict.apartments.bedrooms}</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Bath className="w-5 h-5 text-primary" />
+                  <div className="flex flex-col items-center">
+                    <Bath className="w-5 h-5 text-primary mb-1" />
                     <span className="font-medium">{apartment.bathrooms}</span>
+                    <span className="text-xs">{dict.apartments.bathrooms}</span>
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {(Array.isArray(apartment.amenities) ? apartment.amenities.slice(0, 3) : []).map((amenity, idx) => (
-                    <span
-                      key={idx}
-                      className="text-xs bg-muted text-muted-foreground px-3 py-1 rounded-full font-medium"
-                    >
-                      {dict.amenities[amenity] || amenity}
-                    </span>
-                  ))}
+                {/* Amenities (primeros 3 de la categoría general si existen) */}
+                <div className="flex flex-wrap gap-2 mb-6 justify-center">
+                  {(apartment.amenities?.general || [])
+                    .slice(0, 3)
+                    .map((amenity, idx) => (
+                      <span
+                        key={idx}
+                        className="text-xs bg-muted text-muted-foreground px-3 py-1 rounded-full font-medium"
+                      >
+                        {dict.amenities[amenity] || amenity}
+                      </span>
+                    ))}
                 </div>
 
                 <Button

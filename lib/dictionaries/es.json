@@ -1,10 +1,11 @@
+
 {
   "nav": {
     "home": "Inicio",
     "apartments": "Apartamentos",
-    "about": "Nosotros",
+    "about": "Quiénes somos",
     "contact": "Contacto",
-    "to_visit": "Para visitar"
+    "visit": "Para visitar"
   },
   "hero": {
     "title": "Vacaciones perfectas en la Costa del Sol",
@@ -85,15 +86,16 @@
     "terrace": "Terraza"
   },
   "about": {
-    "badge": "Nuestra historia",
-    "title": "Más de 10 años creando experiencias únicas en Torrox",
-    "subtitle": "Somos una empresa familiar apasionada por el turismo y la hospitalidad, comprometida con ofrecer las mejores vacaciones en la Costa del Sol.",
-    "story": {
-      "title": "Nuestra historia",
-      "paragraph1": "Holidays Beach Torrox nació en 2014 del sueño de una familia malagueña de compartir la belleza de Torrox con viajeros de todo el mundo. Lo que comenzó como una pequeña colección de apartamentos familiares se ha convertido en una de las empresas de alquiler vacacional más respetadas de la Costa del Sol.",
-      "paragraph2": "Nuestra pasión por la hospitalidad y el conocimiento profundo de la zona nos permite ofrecer experiencias auténticas y personalizadas. Cada apartamento ha sido cuidadosamente seleccionado y equipado para garantizar el máximo confort y satisfacción de nuestros huéspedes.",
-      "paragraph3": "Creemos en el turismo responsable y sostenible, trabajando estrechamente con la comunidad local para preservar la belleza natural y cultural de Torrox mientras ofrecemos experiencias inolvidables a nuestros visitantes."
-    },
+    "metaTitle": "Quiénes Somos - Holidays Beach Torrox",
+    "metaDescription": "Conoce a Holidays Beach Torrox: más de 10 años de experiencia ofreciendo alojamientos vacacionales únicos en la Costa del Sol.",
+    "title": "Quiénes somos",
+    "subtitle": "Somos una familia malagueña apasionada por la hospitalidad. Desde 2014 gestionamos personalmente nuestros alojamientos en Torrox, ofreciendo cercanía, confianza y experiencias auténticas.",
+    "paragraph1": "Holidays Beach Torrox nació en 2014 con la ilusión de compartir la belleza de nuestra tierra con viajeros de todo el mundo. Lo que empezó con dos apartamentos familiares ha crecido hasta convertirse en un referente en la zona.",
+    "paragraph2": "Nuestro objetivo es sencillo: que te sientas como en casa. Nos ocupamos de cada detalle, desde la limpieza hasta las recomendaciones locales, para que disfrutes de unas vacaciones tranquilas y sin preocupaciones.",
+    "paragraph3": "Hablamos Español 🇪🇸, Inglés 🇬🇧 y Alemán 🇩🇪. Siempre estamos cerca para ayudarte y hacer tu estancia más cómoda.",
+    "reviewScore": "Puntuación 9,6",
+    "reviewSubtitle": "122 reseñas en Booking"
+  },
     "values": {
       "title": "Nuestros valores",
       "subtitle": "Los principios que guían cada decisión que tomamos",
@@ -115,8 +117,7 @@
       "guests": "Huéspedes felices",
       "rating": "Valoración media",
       "support": "Soporte"
-    }
-  },
+    },
   "faq": {
     "badge": "Preguntas frecuentes",
     "title": "Resolvemos todas tus dudas",
@@ -219,5 +220,78 @@
     "back": "Volver",
     "next": "Siguiente",
     "previous": "Anterior"
+  },
+
+  "visit": {
+    "metaTitle": "Para visitar en Torrox y Costa del Sol | Guía local",
+    "metaDescription": "Restaurantes recomendados, playas, cultura y actividades en Torrox y alrededores. Descubre qué hacer durante tu estancia.",
+    "badge": "Para visitar",
+    "title": "Descubre lo mejor de Torrox y la Costa del Sol",
+    "subtitle": "Queremos que vivas experiencias especiales: gastronomía local, playas, cultura y actividades que recordarán tus vacaciones.",
+    "view": "ver",
+    "categories": {
+      "restaurants": {
+        "title": "Restaurantes",
+        "items": [
+          { "name": "Chiringuito El Arenal", "url": "https://goo.gl/maps/..." },
+          { "name": "La Mar Salá", "url": "https://goo.gl/maps/..." }
+        ]
+      },
+      "beaches": {
+        "title": "Playas & chiringuitos",
+        "items": [
+          { "name": "Playa Ferrara" },
+          { "name": "El Morche" }
+        ]
+      },
+      "culture": {
+        "title": "Cultura y visitas",
+        "items": [
+          { "name": "Torrox Pueblo" },
+          { "name": "Caminito del Rey", "url": "https://www.caminitodelrey.info/" },
+          { "name": "La Alhambra (Granada)", "url": "https://www.alhambra-patronato.es/" }
+        ]
+      },
+      "useful": {
+        "title": "Teléfonos de urgencia",
+        "items": [
+          { "name": "Emergencias", "phone": "112" },
+          { "name": "Policía Local Torrox", "phone": "092" },
+          { "name": "Centro de Salud Torrox", "phone": "+34 952 53 00 24" }
+        ]
+      }
+    },
+    "activities": {
+      "title": "Actividades recomendadas",
+      "subtitle": "Excursiones, aventura y planes para todos",
+      "items": [
+        {
+          "title": "Caminito del Rey",
+          "location": "Árdales",
+          "image": "/images/visit/caminito.jpg",
+          "url": "https://civitatis.com/?aid=TU_AFF_ID&actividad=caminito"
+        },
+        {
+          "title": "Buceo en Nerja",
+          "location": "Maro",
+          "image": "/images/visit/diving.jpg",
+          "url": "https://civitatis.com/?aid=TU_AFF_ID&actividad=buceo-nerja"
+        },
+        {
+          "title": "Paddle surf al atardecer",
+          "location": "Torrox Costa",
+          "image": "/images/visit/paddle.jpg",
+          "url": "https://civitatis.com/?aid=TU_AFF_ID&actividad=paddle"
+        }
+      ]
+    },
+    "civitatis": {
+      "title": "Más experiencias con nuestros colaboradores",
+      "subtitle": "Reserva excursiones y actividades en Málaga y la Costa del Sol con Civitatis.",
+      "cta": "Ver actividades en Civitatis",
+      "affiliateUrl": "https://www.civitatis.com/es/malaga/?aid=TU_AFF_ID",
+      "iframeSrc": "https://widgets.civitatis.com/es/malaga/?aid=TU_AFF_ID"
+    }
   }
 }
+

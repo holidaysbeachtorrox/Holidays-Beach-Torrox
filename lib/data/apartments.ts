@@ -1,11 +1,12 @@
 // lib/data/apartments.ts
+import { tr } from "date-fns/locale"
+
 export type Apartment = {
   id: string
   name: string
   slug: string
   image: string 
   images: string[] 
-  price: number
   capacity: number
   bedrooms: number
   bathrooms: number
@@ -15,7 +16,7 @@ export type Apartment = {
   rating: number
   reviews: number
   location: {
-    short: string // "Torrox Costa"
+    short: string 
     address: string
     coordinates: {
       lat: number
@@ -55,14 +56,13 @@ export const apartments: Apartment[] = [
       "/apartments/Apartamento 6/Salon 2.jpg",
       "/apartments/Apartamento 6/Cocina 2.jpg",
     ],
-    price: 85,
     capacity: 4,
     bedrooms: 2,
     bathrooms: 1,
     area: 64,
     description:
       "Disfruta de unas vacaciones inolvidables en El Morche alquilando este hermoso apartamento de playa. Con vistas espectaculares al mar Mediterráneo y acceso directo a la arena dorada. Equipado con todas las comodidades para una estancia relajante. Ideal para familias o parejas que buscan sol, mar y tranquilidad en la Costa del Sol.",
-    featured: true,
+    featured: false,
     rating: 8.8,
     reviews: 30,
     location: {
@@ -154,7 +154,6 @@ export const apartments: Apartment[] = [
       "/apartments/Apartamento centro internacional/Exterior 2.jpg",
       //"/apartments/Apartamento centro internacional/Exterior 1.jpg",
     ],
-    price: 66,
     capacity: 3,
     bedrooms: 1,
     bathrooms: 1,
@@ -222,24 +221,53 @@ export const apartments: Apartment[] = [
       coordinates: { lat: 36.7203, lng: -3.9566 }, // poner reales 
     },
   },
+  // Apartamento 3
   {
     id: "apartment-3",
-    name: "Ático Terraza Premium",
-    slug: "atico-terraza-premium",
-    image: "/luxury-penthouse-with-large-terrace-and-sea-views.jpg",
+    name: "Brisa Mediterránea",
+    slug: "la-brisa-mediterranea",
+    image: "/apartments/Piso El Morche/Dormitorio A 8.jpg",
     images: [
-      "/luxury-penthouse-with-large-terrace-and-sea-views.jpg",
-      "/penthouse-living-room-luxury-design-with-sea-view.jpg",
-      "/penthouse-terrace-with-outdoor-furniture-and-sea-.jpg",
-      "/penthouse-master-bedroom-luxury-design.jpg",
+      "/apartments/Piso El Morche/Dormitorio A 8.jpg",
+      "/apartments/Piso El Morche/Entrada 3.jpg",
+      "/apartments/Piso El Morche/Entrada 2.jpg",
+      "/apartments/Piso El Morche/Entrada 5.jpg",
+      "/apartments/Piso El Morche/Entrada 1.jpg",
+      "/apartments/Piso El Morche/Salon 4.jpg",
+      "/apartments/Piso El Morche/Salon 5.jpg",
+      "/apartments/Piso El Morche/Salon 6.jpg",
+      "/apartments/Piso El Morche/Salon 1.jpg",
+      "/apartments/Piso El Morche/Terraza 2.jpg",
+      "/apartments/Piso El Morche/Terraza 5.jpg",
+      "/apartments/Piso El Morche/Cocina 1.jpg",
+      "/apartments/Piso El Morche/Cocina 2.jpg",
+      "/apartments/Piso El Morche/Cocina 5.jpg",
+      "/apartments/Piso El Morche/Cocina 7.jpg",
+      "/apartments/Piso El Morche/Baño A 1.jpg",
+      "/apartments/Piso El Morche/Baño A 3.jpg",
+      "/apartments/Piso El Morche/Dormitorio A 1.jpg",
+      "/apartments/Piso El Morche/Dormitorio A 2.jpg",
+      "/apartments/Piso El Morche/Dormitorio A 6.jpg",
+      "/apartments/Piso El Morche/Dormitorio A 7.jpg",
+      "/apartments/Piso El Morche/Dormitorio B 1.jpg",
+      "/apartments/Piso El Morche/Dormitorio B 4.jpg",
+      "/apartments/Piso El Morche/Dormitorio B 2.jpg",
+      "/apartments/Piso El Morche/Baño B 3.jpg",
+      "/apartments/Piso El Morche/Baño B 1.jpg",
+      "/apartments/Piso El Morche/Dormitorio C3.jpg",
+      "/apartments/Piso El Morche/Dormitorio C4.jpg",
+      "/apartments/Piso El Morche/Exterior.jpg",
+      "/apartments/Piso El Morche/Fotos nuevas cochera y exterior/Cochera1.jpg",
+      "/apartments/Piso El Morche/Fotos nuevas cochera y exterior/Cochera3.jpg",
+      "/apartments/Piso El Morche/Fotos nuevas cochera y exterior/Cochera2.jpg",
+
     ],
-    price: 120,
-    capacity: 6,
+    capacity: 8,
     bedrooms: 3,
     bathrooms: 2,
-    area: 120,
+    area: 187,
     description:
-      "Espectacular ático con gran terraza y vistas panorámicas al mar. Lujo y comodidad en el corazón de la Costa del Sol.",
+      "Descubre la serenidad en este exquisito apartamento vacacional cerca de las azules costas de El Morche. Disfruta de la impresionantes cercanías del mar y de la playa, donde los atardeceres dorados pintan el cielo. Interiores elegantemente amueblados ofrecen confort y relajación. Con fácil acceso a la playa y encantadoras comodidades locales, disfruta de la escapada perfecta junto al mar.",
     amenities: {
       general: [
         "WiFi gratis",
@@ -294,32 +322,46 @@ export const apartments: Apartment[] = [
       ],
     },
     featured: true,
-    rating: 4.9,
-    reviews: 55,
+    rating: 9.2,
+    reviews: 23,
     location: {
-        short: "Torrox Costa",
-      address: "Avenida del Mar 25, Torrox Costa",
+        short: "El Morche, Torrox Costa",
+      address: "Calle Nuestra Señora del Carmen .n°9 2, 29793 El Morche, Torrox Costa",
       coordinates: { lat: 36.7223, lng: -3.9586 },
     },
   },
+  // Apartamento 4
   {
     id: "apartment-4",
-    name: "Apartamento Familiar",
-    slug: "apartamento-familiar",
-    image: "/family-apartment-with-multiple-bedrooms-and-sea-.jpg",
+    name: "Sol, Arena y Mar",
+    slug: "sol-arena-y-mar",
+    image: "/apartments/Apartamento 4/Dormitorio A 5.jpg",
     images: [
-      "/modern-apartment-with-sea-view-balcony-costa-del-s.jpg",
-      "/apartment-living-room-with-sea-view-modern-furnitu.jpg",
-      "/apartment-bedroom-with-sea-view-and-modern-decor.jpg",
-      "/apartment-kitchen-modern-design-with-sea-view.jpg",
+      "/apartments/Apartamento 4/Dormitorio A 5.jpg",
+      "/apartments/Apartamento 4/Exterior 1.jpg",
+      "/apartments/Apartamento 4/Salón 3.jpg",
+      "/apartments/Apartamento 4/Salón 2.jpg",
+      "/apartments/Apartamento 4/Salón 4.jpg",
+      "/apartments/Apartamento 4/Dormitorio A 4.jpg",
+      "/apartments/Apartamento 4/Dormitorio A 1.jpg",
+      "/apartments/Apartamento 4/Dormitorio A 2.jpg",
+      "/apartments/Apartamento 4/Exterior 2.jpg",
+      "/apartments/Apartamento 4/Exterior 3.jpg",
+      "/apartments/Apartamento 4/Exterior 4.jpg",
+      "/apartments/Apartamento 4/Dormitorio B  1.jpg",
+      "/apartments/Apartamento 4/Dormitorio B  2.jpg",
+      "/apartments/Apartamento 4/Dormitorio B  3.jpg",
+      "/apartments/Apartamento 4/Baño 1.jpg",
+      "/apartments/Apartamento 4/Baño 2.jpg",
+      "/apartments/Apartamento 4/Cocina 1.jpg",
+      "/apartments/Apartamento 4/Cocina 2.jpg",
     ],
-    price: 95,
-    capacity: 6,
-    bedrooms: 3,
-    bathrooms: 2,
-    area: 110,
+    capacity: 5,
+    bedrooms: 2,
+    bathrooms: 1,
+    area: 71,
     description:
-      "Amplio apartamento ideal para familias, con tres dormitorios y dos baños. A pocos pasos de la playa y todas las comodidades.",
+      "Encantador apartamento en Torrox Costa, perfecto para parejas o viajeros solos. Compacto y funcional, con todas las comodidades esenciales. Ubicado muy cerca de la playa y con vistas al mar. Ideal para relajarse y disfrutar del ambiente apacible y pintoresco de la hermosa Costa del Sol.",
     amenities: {
       general: [
         "WiFi gratis",
@@ -373,96 +415,13 @@ export const apartments: Apartment[] = [
         "Cámaras de seguridad"
       ],
     },
-    featured: false,
-    rating: 4.8,
-    reviews: 22,
+    featured: true,
+    rating: 9.1,
+    reviews: 25,
     location: {
-        short: "Torrox Costa",
-      address: "Calle Familia 12, Torrox Costa",
+        short: "El Morche, Torrox Costa",
+      address: "C. Santiago, 4, 29793 El Morche, Torrox Costa",
       coordinates: { lat: 36.7233, lng: -3.9596 },
     },
   },
-  {
-    id: "apartment-5",
-    name: "Apartamento Romántico",
-    slug: "apartamento-romantico",
-    image: "/romantic-apartment-with-balcony-and-sea-view.jpg",
-    images: [
-      "/modern-apartment-with-sea-view-balcony-costa-del-s.jpg",
-      "/apartment-living-room-with-sea-view-modern-furnitu.jpg",
-      "/apartment-bedroom-with-sea-view-and-modern-decor.jpg",
-      "/apartment-kitchen-modern-design-with-sea-view.jpg",
-    ],
-    price: 75,
-    capacity: 2,
-    bedrooms: 1,
-    bathrooms: 1,
-    area: 50,
-    description:
-      "Encantador apartamento para parejas, con balcón privado y vistas al mar. Perfecto para una escapada romántica en la Costa del Sol.",
-    rating: 4.7,
-    reviews: 18,
-    location: {
-      short: "Torrox Costa",
-      address: "Dirección no especificada",
-      coordinates: { lat: 36.7200, lng: -3.9550 },
-    },
-    amenities: {
-      general: [
-        "WiFi gratis",
-        "Aire acondicionado",
-        "Habitaciones sin humo",
-        "Calefacción",
-        "Sofá cama",
-        "Escritorio",
-        "Lavadora",
-      ],
-      cocina: [
-        "Cocina completa",
-        "Mesa de comedor",
-        "Cafetera",
-        "Tostadora",
-        "Fogones",
-        "Microondas",
-        "Nevera",
-        "Utensilios de cocina"
-      ],
-      baño: [
-        "Baño privado",
-        "Toallas",
-        "Secador de pelo",
-        "Bañera o ducha",
-        "Bidet",
-        "Papel higiénico",
-      ],
-      dormitorio: [
-        "Ropa de cama",
-        "Armario o ropero",
-        "Perchero",
-        "Cuna",
-        "Despertador",
-      ],
-      entretenimiento: [
-        "TV de pantalla plana",
-        "Servicio de streaming (Netflix)",
-        "Canales por cable",
-        "Canales vía satélite",
-        "Radio"
-      ],
-      exterior: [
-        "Situado frente a la playa",
-        "Terraza / Solárium",
-        "Balcón",
-        "Mobiliario exterior",
-        "Zona de comedor exterior"
-      ],
-      seguridad: [
-        "Extintores",
-        "Detector de humo",
-        "Caja fuerte",
-        "Cámaras de seguridad"
-      ],
-    },
-    featured: false,
-  }
 ]

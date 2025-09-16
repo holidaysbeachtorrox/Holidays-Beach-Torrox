@@ -133,28 +133,10 @@ export function Footer({ dict, locale }: FooterProps) {
             <div className="flex flex-col sm:flex-row items-center gap-4">
               <p className="text-muted-foreground text-sm">© 2025 Holidays Beach Torrox.</p>
               <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
-                <span className="flex items-center gap-1"><Globe className="w-3 h-3" /> VFT/MA/33679</span>
-                <span className="flex items-center gap-1"><Globe className="w-3 h-3" /> VFT/MA/67890</span>
-                <span className="flex items-center gap-1"><Globe className="w-3 h-3" /> VFT/MA/54321</span>
-                <span className="flex items-center gap-1"><Globe className="w-3 h-3" /> VFT/MA/98765</span>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-6">
-              <span className="text-muted-foreground text-sm font-medium">{dict.footer.followUs}:</span>
-              <div className="flex items-center gap-3">
-                <a href="https://www.facebook.com/holidaysbeachtorrox" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2 hover:bg-muted rounded-lg" aria-label="Facebook">
-                  <Facebook className="w-5 h-5" />
-                </a>
-                <a href="https://www.instagram.com/holidaysbeachtorrox" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2 hover:bg-muted rounded-lg" aria-label="Instagram">
-                  <Instagram className="w-5 h-5" />
-                </a>
-                <a href="https://www.youtube.com/@holidaysbeachtorrox" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2 hover:bg-muted rounded-lg" aria-label="YouTube">
-                  <Youtube className="w-5 h-5" />
-                </a>
-                <a href="https://www.linkedin.com/company/holidaysbeachtorrox" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors p-2 hover:bg-muted rounded-lg" aria-label="LinkedIn">
-                  <Linkedin className="w-5 h-5" />
-                </a>
+                <span className="flex items-center gap-1"><Globe className="w-3 h-3" /> VFT/MA/336795</span>
+                <span className="flex items-center gap-1"><Globe className="w-3 h-3" /> VFT/MA/508271</span>
+                <span className="flex items-center gap-1"><Globe className="w-3 h-3" /> VFT/MA/266960</span>
+                <span className="flex items-center gap-1"><Globe className="w-3 h-3" /> VFT/MA/267006</span>
               </div>
             </div>
           </div>

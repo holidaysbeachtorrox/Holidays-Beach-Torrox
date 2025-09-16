@@ -1,13 +1,10 @@
 // app/[lang]/apartments/[slug]/page.tsx
 import { getDictionary, type Locale } from "@/lib/dictionaries"
 import { Navigation } from "@/components/navigation"
-import { FloatingCTA } from "@/components/floating-cta"
 import { ApartmentDetail } from "@/components/apartment-detail"
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
 import { apartments } from "@/lib/data/apartments"
-
-
 
 export async function generateMetadata({
   params,
@@ -29,15 +26,15 @@ export async function generateMetadata({
   }
 
   const descriptions = {
-    es: `${apartment.description} Capacidad para ${apartment.capacity} personas, ${apartment.bedrooms} dormitorios. Desde €${apartment.price}/noche. Reserva directa sin comisiones.`,
-    en: `${apartment.description} Capacity for ${apartment.capacity} people, ${apartment.bedrooms} bedrooms. From €${apartment.price}/night. Direct booking without commissions.`,
-    de: `${apartment.description} Kapazität für ${apartment.capacity} Personen, ${apartment.bedrooms} Schlafzimmer. Ab €${apartment.price}/Nacht. Direktbuchung ohne Provisionen.`,
+    es: `${apartment.description} Capacidad para ${apartment.capacity} personas, ${apartment.bedrooms} dormitorios. Reserva directa sin comisiones.`,
+    en: `${apartment.description} Capacity for ${apartment.capacity} people, ${apartment.bedrooms} bedrooms. Direct booking without fees.`,
+    de: `${apartment.description} Kapazität für ${apartment.capacity} Personen, ${apartment.bedrooms} Schlafzimmer. Direktbuchung ohne Provisionen.`,
   }
 
   return {
     title: titles[params.lang],
     description: descriptions[params.lang],
-    keywords: `${apartment.name}, apartamento Torrox, alquiler vacacional, Costa del Sol, ${apartment.capacity} personas, ${apartment.bedrooms} dormitorios, €${apartment.price}`,
+    keywords: `${apartment.name}, apartamento Torrox, alquiler vacacional, Costa del Sol, ${apartment.capacity} personas, ${apartment.bedrooms} dormitorios`,
     openGraph: {
       title: titles[params.lang],
       description: descriptions[params.lang],
@@ -73,6 +70,14 @@ export default async function ApartmentDetailPage({
     notFound()
   }
 
+  // Flatten amenities into one array for JSON-LD
+  const flatAmenities = Object.values(apartment.amenities || {})
+    .flat()
+    .map((amenity) => ({
+      "@type": "LocationFeatureSpecification",
+      name: amenity,
+    }))
+
   return (
     <>
       <script
@@ -98,12 +103,7 @@ export default async function ApartmentDetailPage({
               latitude: apartment.location.coordinates.lat,
               longitude: apartment.location.coordinates.lng,
             },
-            amenityFeature: Array.isArray(apartment.amenities)
-              ? apartment.amenities.map((amenity: string) => ({
-                  "@type": "LocationFeatureSpecification",
-                  name: amenity,
-                }))
-              : [],
+            amenityFeature: flatAmenities,
             occupancy: {
               "@type": "QuantitativeValue",
               maxValue: apartment.capacity,
@@ -114,11 +114,10 @@ export default async function ApartmentDetailPage({
               value: apartment.area,
               unitCode: "MTK",
             },
-            priceRange: `€${apartment.price}`,
             aggregateRating: {
               "@type": "AggregateRating",
-              ratingValue: "4.9",
-              reviewCount: "45",
+              ratingValue: apartment.rating,
+              reviewCount: apartment.reviews,
             },
           }),
         }}
@@ -126,19 +125,22 @@ export default async function ApartmentDetailPage({
 
       <main className="min-h-screen">
         <Navigation dict={dict} locale={params.lang} />
-        <ApartmentDetail apartment={apartment} dict={dict} locale={params.lang} />
-        <FloatingCTA dict={dict} />
+        <ApartmentDetail
+          apartment={apartment}
+          dict={dict}
+          locale={params.lang}
+        />
       </main>
     </>
   )
 }
 
 export async function generateStaticParams() {
-  const locales = ["es", "en", "de"] 
+  const locales: Locale[] = ["es", "en", "de"]
   return apartments.flatMap((apartment) =>
     locales.map((lang) => ({
-    slug: apartment.slug,
-    lang,
-  }))
+      slug: apartment.slug,
+      lang,
+    }))
   )
 }

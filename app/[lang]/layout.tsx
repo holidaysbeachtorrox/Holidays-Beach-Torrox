@@ -9,8 +9,9 @@ import { Analytics } from "@vercel/analytics/next"
 import { DM_Sans, Space_Grotesk, JetBrains_Mono } from "next/font/google"
 import "./../globals.css"
 import type { Metadata } from "next"
+import { apartments } from "@/lib/data/apartments"
 
-// Carga de fuentes
+// Fuentes
 const dmSans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-dm-sans",
@@ -36,8 +37,6 @@ interface LocaleLayoutProps {
 
 // Metadata dinámico basado en el idioma
 export async function generateMetadata({ params }: { params: { lang: Locale } }): Promise<Metadata> {
-  const dict = await getDictionary(params.lang)
-
   const titles = {
     es: "Holidays Beach Torrox - Apartamentos Vacacionales en Costa del Sol | Reserva Directa",
     en: "Holidays Beach Torrox - Vacation Apartments on Costa del Sol | Direct Booking",
@@ -45,9 +44,9 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
   }
 
   const descriptions = {
-    es: "Alquiler vacacional en Torrox, Málaga. Apartamentos exclusivos a metros de la playa con vistas al mar. Reserva directa sin comisiones. Desde €65/noche. ✓ WiFi ✓ Parking ✓ Piscina",
-    en: "Vacation rental in Torrox, Málaga. Exclusive apartments meters from the beach with sea views. Direct booking without commissions. From €65/night. ✓ WiFi ✓ Parking ✓ Pool",
-    de: "Ferienvermietung in Torrox, Málaga. Exklusive Apartments nur wenige Meter vom Strand mit Meerblick. Direktbuchung ohne Provisionen. Ab €65/Nacht. ✓ WiFi ✓ Parkplatz ✓ Pool",
+    es: "Alquiler vacacional en Torrox, Málaga. Apartamentos exclusivos junto a la playa con vistas al mar. Reserva directa sin comisiones. ✓ WiFi ✓ Parking ✓ Piscina",
+    en: "Vacation rental in Torrox, Málaga. Exclusive apartments by the beach with sea views. Direct booking without fees. ✓ WiFi ✓ Parking ✓ Pool",
+    de: "Ferienvermietung in Torrox, Málaga. Exklusive Apartments nur wenige Meter vom Strand mit Meerblick. Direktbuchung ohne Provisionen. ✓ WiFi ✓ Parkplatz ✓ Pool",
   }
 
   const keywords = {
@@ -92,16 +91,10 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
       description: descriptions[params.lang],
       images: [
         {
-          url: "https://holidaysbeachtorrox.com/modern-apartment-with-sea-view-balcony-costa-del-s.jpg",
+          url: apartments[0]?.images[0] || "https://holidaysbeachtorrox.com/placeholder.jpg",
           width: 1200,
           height: 630,
-          alt: "Apartamento con vista al mar en Torrox Costa del Sol",
-        },
-        {
-          url: "https://holidaysbeachtorrox.com/beautiful-beach-view-in-torrox-costa-del-sol-with-.jpg",
-          width: 1200,
-          height: 630,
-          alt: "Playa de Torrox Costa del Sol",
+          alt: apartments[0]?.name || "Apartamento en Torrox Costa del Sol",
         },
       ],
     },
@@ -111,7 +104,7 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
       creator: "@HolidaysBeachTorrox",
       title: titles[params.lang],
       description: descriptions[params.lang],
-      images: ["https://holidaysbeachtorrox.com/modern-apartment-with-sea-view-balcony-costa-del-s.jpg"],
+      images: [apartments[0]?.images[0] || "https://holidaysbeachtorrox.com/placeholder.jpg"],
     },
     verification: {
       google: "google-site-verification-code-here",
@@ -122,6 +115,15 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
 
 export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
   const dict = await getDictionary(params.lang)
+
+  // Calcular rating/reviews agregados
+  const totalReviews = apartments.reduce((acc, a) => acc + a.reviews, 0)
+  const avgRating = (apartments.reduce((acc, a) => acc + a.rating, 0) / apartments.length).toFixed(1)
+
+  // Sacar amenities únicos de todos los apartamentos
+  const allAmenities = Array.from(
+    new Set(apartments.flatMap((a) => Object.values(a.amenities).flat()))
+  )
 
   return (
     <html lang={params.lang}>
@@ -139,10 +141,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
                 "Apartamentos vacacionales exclusivos en Torrox, Costa del Sol. Alquiler directo sin comisiones.",
               url: `https://holidaysbeachtorrox.com/${params.lang}`,
               logo: "https://holidaysbeachtorrox.com/logo.png",
-              image: [
-                "https://holidaysbeachtorrox.com/modern-apartment-with-sea-view-balcony-costa-del-s.jpg",
-                "https://holidaysbeachtorrox.com/beautiful-beach-view-in-torrox-costa-del-sol-with-.jpg",
-              ],
+              image: apartments.flatMap((a) => a.images).slice(0, 5),
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "Paseo Marítimo",
@@ -158,27 +157,15 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
               },
               telephone: "+34 952 123 456",
               email: "info@holidaysbeachtorrox.com",
-              priceRange: "€65-€120",
-              starRating: {
-                "@type": "Rating",
-                ratingValue: "4.9",
-                bestRating: "5",
-                worstRating: "1",
-              },
               aggregateRating: {
                 "@type": "AggregateRating",
-                ratingValue: "4.9",
-                reviewCount: "150",
-                bestRating: "5",
-                worstRating: "1",
+                ratingValue: avgRating,
+                reviewCount: totalReviews,
               },
-              amenityFeature: [
-                { "@type": "LocationFeatureSpecification", name: "WiFi gratuito" },
-                { "@type": "LocationFeatureSpecification", name: "Parking privado" },
-                { "@type": "LocationFeatureSpecification", name: "Piscina comunitaria" },
-                { "@type": "LocationFeatureSpecification", name: "Aire acondicionado" },
-                { "@type": "LocationFeatureSpecification", name: "Vista al mar" },
-              ],
+              amenityFeature: allAmenities.map((amenity) => ({
+                "@type": "LocationFeatureSpecification",
+                name: amenity,
+              })),
               checkinTime: "15:00",
               checkoutTime: "11:00",
               petsAllowed: false,
@@ -186,7 +173,6 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
               sameAs: [
                 "https://www.facebook.com/HolidaysBeachTorrox",
                 "https://www.instagram.com/holidaysbeachtorrox",
-                "https://www.tripadvisor.com/holidaysbeachtorrox",
               ],
             }),
           }}

@@ -67,8 +67,8 @@ export function Navigation({ dict, locale }: NavigationProps) {
             <Link href={createLocalizedPath("/apartments", locale)} className="nav-link">
               {dict.nav.apartments}
             </Link>
-            <Link href={createLocalizedPath("/to-visit", locale)} className="nav-link">
-              {dict.nav.to_visit}
+            <Link href={createLocalizedPath("/visit", locale)} className="nav-link">
+              {dict.nav.visit}
             </Link>
             <Link href={createLocalizedPath("/about", locale)} className="nav-link">
               {dict.nav.about}
@@ -159,7 +159,7 @@ export function Navigation({ dict, locale }: NavigationProps) {
               {[
                 { href: "/", label: dict.nav.home },
                 { href: "/apartments", label: dict.nav.apartments },
-                { href: "/to-visit", label: dict.nav.to_visit },
+                { href: "/to-visit", label: dict.nav.visit },
                 { href: "/about", label: dict.nav.about },
                 { href: "/contact", label: dict.nav.contact },
                 { href: "/faq", label: dict.nav.faq },

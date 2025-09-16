@@ -35,8 +35,8 @@ export function Hero({ dict, locale }: HeroProps) {
             <div className="w-px h-4 bg-white/30" />
             <div className="flex items-center gap-1">
               <Star className="w-4 h-4 fill-secondary text-secondary" />
-              <span className="font-semibold">4.9</span>
-              <span className="text-sm text-white/80">(150+ {locale === "es" ? "reseñas" : locale === "en" ? "reviews" : "Bewertungen"})</span>
+              <span className="font-semibold">9.6</span>
+              <span className="text-sm text-white/80">(120+ {locale === "es" ? "reseñas" : locale === "en" ? "reviews" : "Bewertungen"})</span>
             </div>
           </div>
 

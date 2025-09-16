@@ -1,7 +1,8 @@
 // components/apartment-detail.tsx
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useCallback, useRef } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -19,26 +20,80 @@ import {
   Shield,
   Clock,
   Award,
+  Maximize,
+  X,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { createLocalizedPath, type Locale } from "@/lib/utils"
+import { Dialog, DialogContent } from "@/components/ui/dialog"
+
+interface Apartment {
+  name: string
+  images: string[]
+  rating: number
+  reviews: number
+  location: {
+    address: string
+  }
+  capacity: number
+  bedrooms: number
+  bathrooms: number
+  area: number
+  description: string
+  amenities: Record<string, string[]>
+}
+
+interface Dict {
+  nav: {
+    home: string
+    apartments: string
+  }
+  hero: {
+    cta: string
+  }
+}
 
 interface ApartmentDetailProps {
-  apartment: any
-  dict: any
+  apartment: Apartment
+  dict: Dict
   locale: Locale
 }
 
 export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [isOpen, setIsOpen] = useState(false)
 
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % apartment.images.length)
+  const nextImage = useCallback(
+    () => setCurrentImageIndex((prev) => (prev + 1) % apartment.images.length),
+    [apartment.images.length]
+  )
+  const prevImage = useCallback(
+    () => setCurrentImageIndex((prev) => (prev - 1 + apartment.images.length) % apartment.images.length),
+    [apartment.images.length]
+  )
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsOpen(false)
+      if (e.key === "ArrowRight") nextImage()
+      if (e.key === "ArrowLeft") prevImage()
+    }
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [nextImage, prevImage])
+
+  const touchStartX = useRef(0)
+  const touchEndX = useRef(0)
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.changedTouches[0].clientX
   }
 
-  const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + apartment.images.length) % apartment.images.length)
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    touchEndX.current = e.changedTouches[0].clientX
+    if (touchStartX.current - touchEndX.current > 75) nextImage()
+    if (touchEndX.current - touchStartX.current > 75) prevImage()
   }
 
   return (
@@ -72,53 +127,37 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
           <div className="lg:col-span-2 space-y-12">
             {/* Galería */}
             <div className="relative">
-              <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl">
+              <div
+                className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl cursor-pointer"
+                onClick={() => setIsOpen(true)}
+              >
                 <Image
                   src={apartment.images[currentImageIndex] || "/placeholder.svg"}
                   alt={apartment.name}
                   fill
                   className="object-cover"
                 />
-
-                {apartment.images.length > 1 && (
-                  <>
-                    <Button
-                      variant="secondary"
-                      size="sm"
-                      className="absolute left-6 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg backdrop-blur-sm"
-                      onClick={prevImage}
-                    >
-                      <ChevronLeft className="w-5 h-5" />
-                    </Button>
-                    <Button
-                      variant="secondary"
-                      size="sm"
-                      className="absolute right-6 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg backdrop-blur-sm"
-                      onClick={nextImage}
-                    >
-                      <ChevronRight className="w-5 h-5" />
-                    </Button>
-                  </>
-                )}
-
-                <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2">
+                <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 flex items-center gap-2">
                   <span className="text-sm font-medium text-foreground">
                     {currentImageIndex + 1} / {apartment.images.length}
                   </span>
+                  <Maximize className="w-4 h-4 text-muted-foreground" />
                 </div>
               </div>
 
+              {/* Miniaturas debajo de la foto principal */}
               {apartment.images.length > 1 && (
                 <div className="flex gap-3 mt-6 overflow-x-auto pb-2">
-                  {apartment.images.map((image: string, index: number) => (
+                  {apartment.images.map((image, index) => (
                     <button
                       key={index}
                       onClick={() => setCurrentImageIndex(index)}
                       className={`relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0 transition-all duration-300 ${
                         index === currentImageIndex
-                          ? "ring-3 ring-primary shadow-lg scale-105"
+                          ? "ring-2 ring-primary shadow-lg scale-105"
                           : "hover:scale-105 hover:shadow-md"
                       }`}
+                      aria-label={`Seleccionar imagen ${index + 1}`}
                     >
                       <Image
                         src={image || "/placeholder.svg"}
@@ -132,75 +171,172 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
               )}
             </div>
 
+            {/* Lightbox con animaciones */}
+            <Dialog open={isOpen} onOpenChange={setIsOpen}>
+              <DialogContent className="p-0 bg-black border-0 !max-w-none w-screen h-screen sm:rounded-none fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                {/* Botón cerrar */}
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="absolute top-4 right-4 z-50 bg-black/60 text-white rounded-full p-2"
+                  aria-label="Cerrar"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+
+                {/* Navegación */}
+                <button
+                  onClick={prevImage}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 z-50 bg-black/50 text-white rounded-full p-3"
+                  aria-label="Anterior"
+                >
+                  <ChevronLeft className="w-6 h-6" />
+                </button>
+                <button
+                  onClick={nextImage}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 z-50 bg-black/50 text-white rounded-full p-3"
+                  aria-label="Siguiente"
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </button>
+
+                {/* Imagen con transición */}
+                <div
+                  className="relative w-full h-full overflow-hidden"
+                  onTouchStart={handleTouchStart}
+                  onTouchEnd={handleTouchEnd}
+                >
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={currentImageIndex}
+                      initial={{ opacity: 0, x: 50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -50 }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute inset-0 flex items-center justify-center"
+                    >
+                      <Image
+                        src={apartment.images[currentImageIndex]}
+                        alt={`${apartment.name} - ${currentImageIndex + 1}`}
+                        fill
+                        className="object-contain"
+                        sizes="100vw"
+                        priority
+                      />
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+
+                {/* Miniaturas */}
+                {apartment.images.length > 1 && (
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-50 flex gap-3 px-4 overflow-x-auto max-w-[90vw]">
+                    {apartment.images.map((image, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentImageIndex(index)}
+                        className={`relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 transition-all ${
+                          index === currentImageIndex
+                            ? "ring-2 ring-primary scale-105"
+                            : "hover:scale-105"
+                        }`}
+                        aria-label={`Ir a imagen ${index + 1}`}
+                      >
+                        <Image
+                          src={image || "/placeholder.svg"}
+                          alt={`${apartment.name} - ${index + 1}`}
+                          fill
+                          className="object-cover"
+                        />
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </DialogContent>
+            </Dialog>
+
             {/* Info general */}
-            <div className="space-y-8">
-              <div className="flex items-start justify-between">
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Badge className="bg-secondary/10 text-secondary hover:bg-secondary/20">Verificado</Badge>
-                    <div className="flex items-center gap-1">
-                      <Star className="w-4 h-4 fill-secondary text-secondary" />
-                      <span className="font-semibold">4.9</span>
-                      <span className="text-muted-foreground">(45 reseñas)</span>
-                    </div>
-                  </div>
-
-                  <h1 className="font-heading font-bold text-4xl lg:text-5xl text-foreground mb-4">
-                    {apartment.name}
-                  </h1>
-
-                  <div className="flex items-center gap-2 text-muted-foreground mb-6">
-                    <MapPin className="w-5 h-5 text-primary" />
-                    <span className="font-medium">{apartment.location.address}</span>
+            <div className="space-y-10">
+              {/* Header con rating, verificado y título */}
+              <div>
+                <div className="flex items-center gap-3 mb-3">
+                  <Badge className="bg-secondary/10 text-secondary hover:bg-secondary/20">
+                    Verificado
+                  </Badge>
+                  <div className="flex items-center gap-1 text-sm">
+                    <Star className="w-4 h-4 fill-secondary text-secondary" />
+                    <span className="font-semibold">{apartment.rating}</span>
+                    <span className="text-muted-foreground">
+                      ({apartment.reviews} reseñas reales)
+                    </span>
                   </div>
                 </div>
 
-                <div className="text-right bg-gradient-to-br from-primary/5 to-secondary/5 p-6 rounded-2xl border border-border">
-                  <div className="text-3xl lg:text-4xl font-bold text-primary mb-1">€{apartment.price}</div>
-                  <div className="text-muted-foreground font-medium">por noche</div>
-                </div>
+                <h1 className="font-heading font-bold text-4xl lg:text-5xl mb-4 text-foreground">
+                  {apartment.name}
+                </h1>
+
+                <Link
+                  href={`https://www.google.com/maps?q=${encodeURIComponent(
+                    apartment.location.address
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <MapPin className="w-5 h-5 text-primary" />
+                  <span className="font-medium">{apartment.location.address}</span>
+                </Link>
               </div>
 
-              {/* Stats */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div className="flex items-center gap-3 bg-muted/30 p-4 rounded-xl">
-                  <Users className="w-6 h-6 text-primary" />
-                  <div>
-                    <div className="font-semibold">{apartment.capacity}</div>
-                    <div className="text-sm text-muted-foreground">Huéspedes</div>
+              {/* Características rápidas */}
+              <div>
+                <h3 className="font-heading font-semibold text-xl mb-4">
+                  Características principales
+                </h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div className="flex items-center gap-2 bg-muted/30 p-4 rounded-lg">
+                    <Users className="w-5 h-5 text-primary" />
+                    <div>
+                      <div className="font-semibold">{apartment.capacity}</div>
+                      <div className="text-xs text-muted-foreground">Huéspedes</div>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-center gap-3 bg-muted/30 p-4 rounded-xl">
-                  <Bed className="w-6 h-6 text-primary" />
-                  <div>
-                    <div className="font-semibold">{apartment.bedrooms}</div>
-                    <div className="text-sm text-muted-foreground">Dormitorios</div>
+                  <div className="flex items-center gap-2 bg-muted/30 p-4 rounded-lg">
+                    <Bed className="w-5 h-5 text-primary" />
+                    <div>
+                      <div className="font-semibold">{apartment.bedrooms}</div>
+                      <div className="text-xs text-muted-foreground">Dormitorios</div>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-center gap-3 bg-muted/30 p-4 rounded-xl">
-                  <Bath className="w-6 h-6 text-primary" />
-                  <div>
-                    <div className="font-semibold">{apartment.bathrooms}</div>
-                    <div className="text-sm text-muted-foreground">Baños</div>
+                  <div className="flex items-center gap-2 bg-muted/30 p-4 rounded-lg">
+                    <Bath className="w-5 h-5 text-primary" />
+                    <div>
+                      <div className="font-semibold">{apartment.bathrooms}</div>
+                      <div className="text-xs text-muted-foreground">Baños</div>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-center gap-3 bg-muted/30 p-4 rounded-xl">
-                  <div className="w-6 h-6 bg-primary/20 rounded-lg flex items-center justify-center">
-                    <span className="text-primary font-bold text-sm">m²</span>
-                  </div>
-                  <div>
-                    <div className="font-semibold">{apartment.area}</div>
-                    <div className="text-sm text-muted-foreground">Metros²</div>
+                  <div className="flex items-center gap-2 bg-muted/30 p-4 rounded-lg">
+                    <div className="w-6 h-6 bg-primary/20 rounded-md flex items-center justify-center">
+                      <span className="text-primary font-bold text-xs">m²</span>
+                    </div>
+                    <div>
+                      <div className="font-semibold">{apartment.area}</div>
+                      <div className="text-xs text-muted-foreground">Metros²</div>
+                    </div>
                   </div>
                 </div>
               </div>
 
               {/* Descripción */}
-              <div className="prose prose-lg max-w-none">
-                <p className="text-muted-foreground leading-relaxed text-lg">{apartment.description}</p>
+              <div>
+                <h3 className="font-heading font-semibold text-xl mb-4">
+                  Sobre este alojamiento
+                </h3>
+                <p className="text-muted-foreground leading-relaxed text-lg">
+                  {apartment.description}
+                </p>
               </div>
 
-              {/* Amenities */}
+              {/* Servicios incluidos */}
               <div>
                 <h3 className="font-heading font-bold text-2xl mb-6 flex items-center gap-2">
                   <Award className="w-6 h-6 text-primary" />
@@ -210,7 +346,7 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
                   <div key={category} className="mb-6">
                     <h4 className="font-semibold text-lg mb-3 capitalize">{category}</h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {list.map((amenity: string, index: number) => (
+                      {(list as string[]).map((amenity, index) => (
                         <div
                           key={index}
                           className="flex items-center gap-3 p-3 bg-muted/30 rounded-lg"
@@ -230,17 +366,15 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
           <div className="lg:col-span-1">
             <Card className="sticky top-24 shadow-2xl border-0 bg-gradient-to-br from-card to-muted/20">
               <CardContent className="p-8">
-                <div className="text-center mb-8">
-                  <div className="text-4xl font-bold text-primary mb-2">€{apartment.price}</div>
-                  <div className="text-muted-foreground font-medium">por noche</div>
-                  <div className="text-sm text-muted-foreground mt-1">Impuestos incluidos</div>
-                </div>
-
+                {/* Placeholder AvaiBook */}
                 <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-8 text-center mb-8 border border-border">
                   <Calendar className="w-16 h-16 text-primary mx-auto mb-4" />
-                  <h4 className="font-heading font-semibold text-lg mb-2">Sistema de Reservas</h4>
+                  <h4 className="font-heading font-semibold text-lg mb-2">
+                    Sistema de Reservas
+                  </h4>
                   <p className="text-muted-foreground mb-6 text-sm">
-                    El widget de AvaiBook se integrará aquí para gestionar disponibilidad y reservas en tiempo real
+                    Aquí se integrará el widget de AvaiBook para gestionar
+                    disponibilidad y reservas en tiempo real.
                   </p>
                   <Button
                     className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold py-3 rounded-xl shadow-lg"
@@ -250,7 +384,7 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
                   </Button>
                 </div>
 
-                {/* Contacto */}
+                {/* Contacto directo */}
                 <div className="space-y-6">
                   <h4 className="font-heading font-semibold text-lg flex items-center gap-2">
                     <Phone className="w-5 h-5 text-primary" />
@@ -279,7 +413,9 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
                         <Mail className="w-6 h-6 text-secondary" />
                       </div>
                       <div>
-                        <div className="font-semibold text-sm">info@holidaysbeachtorrox.com</div>
+                        <div className="font-semibold text-sm">
+                          info@holidaysbeachtorrox.com
+                        </div>
                         <div className="text-sm text-muted-foreground">Respuesta en 2h</div>
                       </div>
                     </a>
@@ -293,6 +429,7 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
                   </Button>
                 </div>
 
+                {/* Garantías */}
                 <div className="mt-8 pt-6 border-t border-border space-y-4">
                   <div className="flex items-center justify-center gap-2 text-center">
                     <Shield className="w-5 h-5 text-primary" />
@@ -302,11 +439,15 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
                   <div className="grid grid-cols-2 gap-4 text-center">
                     <div className="flex flex-col items-center gap-1">
                       <Clock className="w-4 h-4 text-secondary" />
-                      <span className="text-xs text-muted-foreground">Cancelación flexible</span>
+                      <span className="text-xs text-muted-foreground">
+                        Cancelación flexible
+                      </span>
                     </div>
                     <div className="flex flex-col items-center gap-1">
                       <Award className="w-4 h-4 text-primary" />
-                      <span className="text-xs text-muted-foreground">Mejor precio garantizado</span>
+                      <span className="text-xs text-muted-foreground">
+                        Mejor precio garantizado
+                      </span>
                     </div>
                   </div>
                 </div>
