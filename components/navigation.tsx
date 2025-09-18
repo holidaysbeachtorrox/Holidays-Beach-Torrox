@@ -18,7 +18,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { createLocalizedPath, type Locale } from "@/lib/utils"
 import { usePathname } from "next/navigation"
-import { LanguageSwitcher } from "./lenguage-switcher"
+import { LanguageSwitcherWrapper } from "./lenguage-switcher-wrapper"
 
 interface NavigationProps {
   dict: any
@@ -93,7 +93,7 @@ export function Navigation({ dict, locale }: NavigationProps) {
               </a>
 
               {/* Language Switcher */}
-              <LanguageSwitcher locale={locale} />
+              <LanguageSwitcherWrapper locale={locale} />
 
               {/* CTA Reserva */}
               <Button
@@ -138,7 +138,7 @@ export function Navigation({ dict, locale }: NavigationProps) {
 
               {/* Language Switcher en menú móvil */}
               <div className="pt-4 border-t border-border px-4">
-                <LanguageSwitcher locale={locale} />
+                <LanguageSwitcherWrapper locale={locale} />
               </div>
             </div>
           </div>
@@ -184,7 +184,8 @@ export function Navigation({ dict, locale }: NavigationProps) {
         </Link>
         {/* Switcher móvil minimalista */}
         <div className="flex flex-col items-center text-xs">
-          <LanguageSwitcher locale={locale} minimal />
+          <LanguageSwitcherWrapper locale={locale} minimal />
+          <span className="sr-only">Change language</span>
         </div>
       </div>
     </>
