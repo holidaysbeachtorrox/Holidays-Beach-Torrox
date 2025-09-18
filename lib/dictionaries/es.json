@@ -46,11 +46,11 @@
     "stats": {
       "guests": {
         "label": "Huéspedes satisfechos",
-        "value": "150+"
+        "value": "+250"
       },
       "rating": {
         "label": "Puntuación media",
-        "value": "4.9"
+        "value": "9.6"
       },
       "years": {
         "label": "Años de experiencia",
@@ -210,7 +210,8 @@
     "phone": "Teléfono",
     "email": "Email",
     "address": "Dirección",
-    "followUs": "Síguenos"
+    "followUs": "Síguenos",
+    "powered": "Powered by"
   },
   "common": {
     "loading": "Cargando...",
@@ -221,7 +222,6 @@
     "next": "Siguiente",
     "previous": "Anterior"
   },
-
   "visit": {
     "metaTitle": "Para visitar en Torrox y Costa del Sol | Guía local",
     "metaDescription": "Restaurantes recomendados, playas, cultura y actividades en Torrox y alrededores. Descubre qué hacer durante tu estancia.",
@@ -233,23 +233,47 @@
       "restaurants": {
         "title": "Restaurantes",
         "items": [
-          { "name": "Chiringuito El Arenal", "url": "https://goo.gl/maps/..." },
-          { "name": "La Mar Salá", "url": "https://goo.gl/maps/..." }
+          { "name": "Restaurante La Farola" },
+          { "name": "Bar El Mencey" },
+          { "name": "Chiringuito Paco" },
+          { "name": "El Rincón de Federico" },
+          { "name": "Chiringuito Cacola" },
+          { "name": "Restaurante Velero del Sur" },
+          { "name": "Restaurante Huerto Málaga" },
+          { "name": "Burger Güi" },
+          { "name": "Restaurante Magon" },
+          { "name": "Cafetería de Javier" },
+          { "name": "Cafetería la Playa" },
+          { "name": "Chiringuito Rincón de Pepe" },
+          { "name": "Media Caña Merendero" },
+          { "name": "Merendero Costa del Sol" },
+          { "name": "Restaurante el Picadero" },
+          { "name": "Restaurante Chino Hong Kong" },
+          { "name": "Chiringuito Mambo" },
+          { "name": "Entre Vientos" }
         ]
       },
       "beaches": {
-        "title": "Playas & chiringuitos",
+        "title": "Playas",
         "items": [
-          { "name": "Playa Ferrara" },
-          { "name": "El Morche" }
+          { "name": "Playa de El Morche" },
+          { "name": "Playa Las Dunas" },
+          { "name": "Playa de Torrox" },
+          { "name": "Playa de Maro" },
+          { "name": "Playa Cantarriján (nudista)" }
         ]
       },
       "culture": {
         "title": "Cultura y visitas",
         "items": [
-          { "name": "Torrox Pueblo" },
+          { "name": "Torrox Pueblo", "url": "https://www.torroxpueblo.es/" },
+          { "name": "Nerja y sus cuevas", "url": "https://cuevadenerja.es/" },
+          { "name": "Castillo Colomares (Benalmádena)", "url": "https://www.castillocolomares.es/" },
           { "name": "Caminito del Rey", "url": "https://www.caminitodelrey.info/" },
-          { "name": "La Alhambra (Granada)", "url": "https://www.alhambra-patronato.es/" }
+          { "name": "La Alhambra (Granada)", "url": "https://www.alhambra-patronato.es/" },
+          { "name": "Ronda", "url": "https://www.turismoderonda.es/" },
+          { "name": "Málaga capital", "url": "https://www.malagaturismo.com/" },
+          { "name": "Frigiliana", "url": "https://www.frigiliana.es/" }
         ]
       },
       "useful": {
@@ -257,40 +281,21 @@
         "items": [
           { "name": "Emergencias", "phone": "112" },
           { "name": "Policía Local Torrox", "phone": "092" },
-          { "name": "Centro de Salud Torrox", "phone": "+34 952 53 00 24" }
+          { "name": "Centro de Salud Torrox", "phone": "+34 952 53 00 24" },
+          { "name": "Guardia Civil", "phone": "+34 952 53 80 08" },
+          { "name": "Cerrajero 24h", "phone": "+34 683 11 77 11" },
+          { "name": "Cristalería y Aluminio Torrox Costa", "phone": "+34 683 11 77 11" },
+          { "name": "Farmacia Mediterráneo", "phone": "+34 952 53 00 55" }
         ]
       }
     },
     "activities": {
-      "title": "Actividades recomendadas",
-      "subtitle": "Excursiones, aventura y planes para todos",
-      "items": [
-        {
-          "title": "Caminito del Rey",
-          "location": "Árdales",
-          "image": "/images/visit/caminito.jpg",
-          "url": "https://civitatis.com/?aid=TU_AFF_ID&actividad=caminito"
-        },
-        {
-          "title": "Buceo en Nerja",
-          "location": "Maro",
-          "image": "/images/visit/diving.jpg",
-          "url": "https://civitatis.com/?aid=TU_AFF_ID&actividad=buceo-nerja"
-        },
-        {
-          "title": "Paddle surf al atardecer",
-          "location": "Torrox Costa",
-          "image": "/images/visit/paddle.jpg",
-          "url": "https://civitatis.com/?aid=TU_AFF_ID&actividad=paddle"
-        }
-      ]
+      "title": "Actividades recomendadas en Torrox",
+      "subtitle": "Excursiones, aventura y planes para todos"
     },
     "civitatis": {
       "title": "Más experiencias con nuestros colaboradores",
-      "subtitle": "Reserva excursiones y actividades en Málaga y la Costa del Sol con Civitatis.",
-      "cta": "Ver actividades en Civitatis",
-      "affiliateUrl": "https://www.civitatis.com/es/malaga/?aid=TU_AFF_ID",
-      "iframeSrc": "https://widgets.civitatis.com/es/malaga/?aid=TU_AFF_ID"
+      "subtitle": "Reserva excursiones y actividades en Málaga y la Costa del Sol con Civitatis."
     }
   }
 }

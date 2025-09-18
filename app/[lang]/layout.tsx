@@ -2,7 +2,6 @@
 import type React from "react"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
-import { FloatingCTA } from "@/components/floating-cta"
 import { getDictionary } from "@/lib/dictionaries"
 import type { Locale } from "@/lib/utils"
 import { Analytics } from "@vercel/analytics/next"
@@ -181,7 +180,6 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
           <Navigation dict={dict} locale={params.lang} />
           <main className="flex-1">{children}</main>
           <Footer dict={dict} locale={params.lang} />
-          <FloatingCTA dict={dict} />
         </div>
         <Analytics />
       </body>

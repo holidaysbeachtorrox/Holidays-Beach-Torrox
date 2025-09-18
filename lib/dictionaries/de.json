@@ -4,28 +4,77 @@
     "apartments": "Apartments",
     "about": "Über uns",
     "contact": "Kontakt",
-    "faq": "FAQ"
+    "visit": "Zu besichtigen"
   },
   "hero": {
     "title": "Perfekte Ferien an der Costa del Sol",
-    "subtitle": "Entdecken Sie unsere exklusiven Apartments in Torrox, Málaga. Buchen Sie direkt und sparen Sie Provisionen.",
+    "subtitle": "Entdecken Sie unsere exklusiven Apartments in Torrox-Costa, Málaga. Buchen Sie direkt und sparen Sie Vermittlungsgebühren.",
     "cta": "Jetzt buchen",
     "viewApartments": "Apartments ansehen"
+  },
+  "heroBenefits": {
+    "flexibility": {
+      "title": "Flexible Buchung",
+      "description": "Ändern Sie Ihre Daten einfach ohne Strafe."
+    },
+    "comfort": {
+      "title": "Garantierter Komfort",
+      "description": "Voll ausgestattete Apartments für Ihre Erholung."
+    },
+    "experience": {
+      "title": "Lokale Erfahrung",
+      "description": "Wir beraten Sie zu Restaurants, Stränden und einzigartigen Aktivitäten."
+    }
   },
   "benefits": {
     "title": "Warum Holidays Beach Torrox wählen?",
     "direct": {
       "title": "Direktbuchung",
-      "description": "Keine Vermittlungsprovisionen. Bester Preis garantiert."
+      "description": "Keine Vermittlungsgebühren. Bester Preis garantiert."
     },
     "location": {
-      "title": "Erstklassige Lage",
+      "title": "Bevorzugte Lage",
       "description": "Nur wenige Meter von den besten Stränden der Costa del Sol entfernt."
     },
     "support": {
       "title": "Persönliche Betreuung",
-      "description": "24/7 Support während Ihres Aufenthalts. Wir sprechen Ihre Sprache."
+      "description": "24/7 Unterstützung während Ihres Aufenthalts. Wir sprechen Ihre Sprache."
+    },
+    "badge": "Warum uns wählen?",
+    "summary": "Mehr als 10 Jahre einzigartige Erlebnisse an der Costa del Sol",
+    "stats": {
+      "guests": {
+        "label": "Zufriedene Gäste",
+        "value": "+250"
+      },
+      "rating": {
+        "label": "Durchschnittliche Bewertung",
+        "value": "9.6"
+      },
+      "years": {
+        "label": "Jahre Erfahrung",
+        "value": "10+"
+      },
+      "support": {
+        "label": "Kundendienst",
+        "value": "24/7"
+      }
     }
+  },
+  "featured": {
+    "badge": "Empfohlene Apartments",
+    "tag": "Empfohlen"
+  },
+  "apartments": {
+    "title": "Unsere Apartments",
+    "subtitle": "Einzigartige Räume für einen unvergesslichen Urlaub",
+    "viewAll": "Alle ansehen",
+    "from": "Ab",
+    "night": "Nacht",
+    "book": "Buchen",
+    "capacity": "Personen",
+    "bedrooms": "Schlafzimmer",
+    "bathrooms": "Badezimmer"
   },
   "amenities": {
     "wifi": "WLAN",
@@ -35,83 +84,72 @@
     "kitchen": "Küche",
     "terrace": "Terrasse"
   },
-  "apartments": {
-    "title": "Unsere Apartments",
-    "subtitle": "Einzigartige Räume für unvergessliche Ferien",
-    "viewAll": "Alle ansehen",
-    "from": "Ab",
-    "night": "Nacht",
-    "book": "Buchen",
-    "capacity": "Gäste",
-    "bedrooms": "Schlafzimmer",
-    "bathrooms": "Badezimmer"
-  },
   "about": {
-    "badge": "Unsere Geschichte",
-    "title": "Über 10 Jahre einzigartige Erfahrungen in Torrox",
-    "subtitle": "Wir sind ein Familienunternehmen mit Leidenschaft für Tourismus und Gastfreundschaft, das sich verpflichtet hat, die besten Ferien an der Costa del Sol zu bieten.",
-    "story": {
-      "title": "Unsere Geschichte",
-      "paragraph1": "Holidays Beach Torrox entstand 2014 aus dem Traum einer Familie aus Málaga, die Schönheit von Torrox mit Reisenden aus aller Welt zu teilen. Was als kleine Sammlung von Familienapartments begann, ist zu einem der angesehensten Ferienvermietungsunternehmen an der Costa del Sol geworden.",
-      "paragraph2": "Unsere Leidenschaft für Gastfreundschaft und tiefe Kenntnis der Gegend ermöglicht es uns, authentische und personalisierte Erfahrungen zu bieten. Jedes Apartment wurde sorgfältig ausgewählt und ausgestattet, um maximalen Komfort und Zufriedenheit unserer Gäste zu gewährleisten.",
-      "paragraph3": "Wir glauben an verantwortlichen und nachhaltigen Tourismus und arbeiten eng mit der örtlichen Gemeinschaft zusammen, um die natürliche und kulturelle Schönheit von Torrox zu bewahren und gleichzeitig unvergessliche Erfahrungen für unsere Besucher zu bieten."
+    "metaTitle": "Über uns - Holidays Beach Torrox",
+    "metaDescription": "Lernen Sie Holidays Beach Torrox kennen: mehr als 10 Jahre Erfahrung mit einzigartigen Ferienunterkünften an der Costa del Sol.",
+    "title": "Über uns",
+    "subtitle": "Wir sind eine Familie aus Málaga mit Leidenschaft für Gastfreundschaft. Seit 2014 verwalten wir unsere Unterkünfte in Torrox persönlich und bieten Nähe, Vertrauen und authentische Erlebnisse.",
+    "paragraph1": "Holidays Beach Torrox wurde 2014 mit dem Wunsch geboren, die Schönheit unserer Heimat mit Reisenden aus aller Welt zu teilen. Was mit zwei Familienapartments begann, hat sich zu einer lokalen Referenz entwickelt.",
+    "paragraph2": "Unser Ziel ist einfach: dass Sie sich wie zu Hause fühlen. Wir kümmern uns um jedes Detail, von der Reinigung bis zu lokalen Empfehlungen, damit Sie einen ruhigen und sorgenfreien Urlaub genießen können.",
+    "paragraph3": "Wir sprechen Spanisch 🇪🇸, Englisch 🇬🇧 und Deutsch 🇩🇪. Wir sind immer in der Nähe, um Ihnen zu helfen und Ihren Aufenthalt komfortabler zu machen.",
+    "reviewScore": "Bewertung 9,6",
+    "reviewSubtitle": "122 Bewertungen auf Booking"
+  },
+  "values": {
+    "title": "Unsere Werte",
+    "subtitle": "Die Prinzipien, die jede unserer Entscheidungen leiten",
+    "passion": {
+      "title": "Leidenschaft für Service",
+      "description": "Jedes Detail zählt. Wir bemühen uns, Erwartungen zu übertreffen und besondere Momente für unsere Gäste zu schaffen."
     },
-    "values": {
-      "title": "Unsere Werte",
-      "subtitle": "Die Prinzipien, die jede unserer Entscheidungen leiten",
-      "passion": {
-        "title": "Leidenschaft für Service",
-        "description": "Jedes Detail zählt. Wir bemühen uns, Erwartungen zu übertreffen und besondere Momente für unsere Gäste zu schaffen."
-      },
-      "trust": {
-        "title": "Vertrauen und Transparenz",
-        "description": "Wir bauen dauerhafte Beziehungen auf, die auf Ehrlichkeit, klarer Kommunikation und dem Einhalten unserer Versprechen basieren."
-      },
-      "excellence": {
-        "title": "Exzellenz in allem",
-        "description": "Von der Sauberkeit bis zum Kundenservice halten wir die höchsten Qualitätsstandards in jedem Aspekt unseres Geschäfts aufrecht."
-      }
+    "trust": {
+      "title": "Vertrauen und Transparenz",
+      "description": "Wir bauen dauerhafte Beziehungen auf, die auf Ehrlichkeit, klarer Kommunikation und der Einhaltung unserer Versprechen basieren."
     },
-    "stats": {
-      "apartments": "Apartments",
-      "guests": "Zufriedene Gäste",
-      "rating": "Durchschnittsbewertung",
-      "support": "Support"
+    "excellence": {
+      "title": "Exzellenz in allem",
+      "description": "Von der Reinigung bis zum Kundenservice halten wir die höchsten Qualitätsstandards in jedem Aspekt unseres Unternehmens ein."
     }
+  },
+  "stats": {
+    "apartments": "Apartments",
+    "guests": "Glückliche Gäste",
+    "rating": "Durchschnittliche Bewertung",
+    "support": "Support"
   },
   "faq": {
     "badge": "Häufig gestellte Fragen",
-    "title": "Wir beantworten alle Ihre Fragen",
+    "title": "Wir beantworten all Ihre Fragen",
     "subtitle": "Finden Sie schnelle Antworten auf die häufigsten Fragen zu unseren Apartments und Dienstleistungen.",
     "questions": {
       "booking": {
         "question": "Wie kann ich eine Reservierung vornehmen?",
-        "answer": "Sie können direkt über unsere Website buchen oder uns per WhatsApp kontaktieren. Wir senden Ihnen einen sicheren Link zur Zahlungsabwicklung und Sie erhalten sofort eine Bestätigung."
+        "answer": "Sie können direkt über unsere Website buchen oder uns per WhatsApp kontaktieren. Wir senden Ihnen einen sicheren Link zur Zahlung und Sie erhalten sofort eine Bestätigung."
       },
       "checkin": {
-        "question": "Was sind die Check-in- und Check-out-Zeiten?",
-        "answer": "Check-in ist ab 16:00 Uhr und Check-out bis 11:00 Uhr. Wenn Sie besondere Zeiten benötigen, kontaktieren Sie uns im Voraus und wir werden unser Bestes tun, um Ihnen entgegenzukommen."
+        "question": "Wann sind Check-in und Check-out?",
+        "answer": "Der Check-in ist ab 16:00 Uhr und der Check-out bis 11:00 Uhr. Wenn Sie besondere Zeiten benötigen, kontaktieren Sie uns bitte im Voraus und wir werden unser Bestes tun, um Sie unterzubringen."
       },
       "cancellation": {
         "question": "Wie lautet die Stornierungsrichtlinie?",
-        "answer": "Wir bieten kostenlose Stornierung bis 48 Stunden vor Ankunft. Bei späteren Stornierungen wird die Gebühr für die erste Nacht erhoben. In Ausnahmefällen prüfen wir jede Situation individuell."
+        "answer": "Wir bieten kostenlose Stornierung bis 48 Stunden vor Ankunft. Bei späteren Stornierungen wird die erste Nacht berechnet. In Ausnahmefällen prüfen wir jede Situation individuell."
       },
       "amenities": {
-        "question": "Welche Dienstleistungen sind in den Apartments enthalten?",
-        "answer": "Alle unsere Apartments verfügen über kostenloses WLAN, Klimaanlage, voll ausgestattete Küche, Bettwäsche und Handtücher. Viele haben auch eine Terrasse oder einen Balkon mit Meerblick."
+        "question": "Welche Leistungen sind in den Apartments enthalten?",
+        "answer": "Alle unsere Apartments verfügen über kostenloses WLAN, Klimaanlage, eine voll ausgestattete Küche, Bettwäsche und Handtücher. Viele haben auch eine Terrasse oder einen Balkon mit Meerblick."
       },
       "pets": {
         "question": "Sind Haustiere erlaubt?",
-        "answer": "Einige unserer Apartments erlauben Haustiere gegen einen Aufpreis von 15€/Nacht. Es ist notwendig, uns zum Zeitpunkt der Buchung zu informieren und unsere Hausregeln zu befolgen."
+        "answer": "Einige unserer Apartments erlauben Haustiere gegen einen Aufpreis von 15 €/Nacht. Es ist notwendig, uns bei der Buchung zu informieren und unsere Hausordnung einzuhalten."
       },
       "payment": {
         "question": "Welche Zahlungsmethoden akzeptieren Sie?",
-        "answer": "Wir akzeptieren Kredit-/Debitkarten, Banküberweisung und PayPal. Die Zahlung erfolgt sicher über unsere in AvaiBook integrierte Plattform."
+        "answer": "Wir akzeptieren Kredit-/Debitkarten, Banküberweisung und PayPal. Die Zahlung erfolgt sicher über unsere mit AvaiBook integrierte Plattform."
       }
     },
     "contact": {
-      "title": "Finden Sie nicht, was Sie suchen?",
-      "subtitle": "Unser Team ist hier, um Ihnen bei spezifischen Fragen zu helfen.",
+      "title": "Sie finden nicht, was Sie suchen?",
+      "subtitle": "Unser Team ist hier, um Ihnen bei jeder speziellen Frage zu helfen.",
       "chat": "Live-Chat",
       "call": "Jetzt anrufen",
       "email": "E-Mail senden"
@@ -120,13 +158,13 @@
   "contact": {
     "badge": "Kontakt",
     "title": "Wir sind hier, um Ihnen zu helfen",
-    "subtitle": "Haben Sie Fragen oder benötigen Unterstützung? Kontaktieren Sie uns und wir melden uns so schnell wie möglich bei Ihnen.",
+    "subtitle": "Haben Sie Fragen oder benötigen Unterstützung? Kontaktieren Sie uns und wir antworten so schnell wie möglich.",
     "form": {
-      "title": "Senden Sie uns eine Nachricht",
+      "title": "Schreiben Sie uns eine Nachricht",
       "name": "Vollständiger Name",
       "namePlaceholder": "Ihr Name",
-      "email": "E-Mail-Adresse",
-      "emailPlaceholder": "ihre@email.com",
+      "email": "E-Mail",
+      "emailPlaceholder": "ihr@email.com",
       "subject": "Betreff",
       "subjectPlaceholder": "Wie können wir Ihnen helfen?",
       "message": "Nachricht",
@@ -148,13 +186,13 @@
         "address": "info@holidaysbeachtorrox.com"
       },
       "hours": {
-        "title": "Geschäftszeiten",
+        "title": "Öffnungszeiten",
         "weekdays": "Montag bis Freitag: 9:00 - 20:00",
         "weekends": "Samstag und Sonntag: 10:00 - 18:00"
       }
     },
     "whatsapp": {
-      "title": "Bevorzugen Sie WhatsApp?",
+      "title": "Lieber WhatsApp?",
       "subtitle": "Chatten Sie direkt mit uns für eine schnellere und persönlichere Antwort.",
       "button": "WhatsApp öffnen"
     }
@@ -171,15 +209,88 @@
     "phone": "Telefon",
     "email": "E-Mail",
     "address": "Adresse",
-    "followUs": "Folgen Sie uns"
+    "followUs": "Folgen Sie uns",
+    "powered": "Powered by"
   },
   "common": {
-    "loading": "Laden...",
+    "loading": "Lädt...",
     "error": "Fehler",
     "tryAgain": "Erneut versuchen",
     "close": "Schließen",
     "back": "Zurück",
     "next": "Weiter",
-    "previous": "Vorherige"
+    "previous": "Zurück"
+  },
+  "visit": {
+    "metaTitle": "Zu besichtigen in Torrox und Costa del Sol | Lokaler Reiseführer",
+    "metaDescription": "Empfohlene Restaurants, Strände, Kultur und Aktivitäten in Torrox und Umgebung. Entdecken Sie, was Sie während Ihres Aufenthalts tun können.",
+    "badge": "Zu besichtigen",
+    "title": "Entdecken Sie das Beste von Torrox und der Costa del Sol",
+    "subtitle": "Wir möchten, dass Sie besondere Erlebnisse genießen: lokale Gastronomie, Strände, Kultur und Aktivitäten, die Ihren Urlaub unvergesslich machen.",
+    "view": "ansehen",
+    "categories": {
+      "restaurants": {
+        "title": "Restaurants",
+        "items": [
+          { "name": "Restaurante La Farola" },
+          { "name": "Bar El Mencey" },
+          { "name": "Chiringuito Paco" },
+          { "name": "El Rincón de Federico" },
+          { "name": "Chiringuito Cacola" },
+          { "name": "Restaurante Velero del Sur" },
+          { "name": "Restaurante Huerto Málaga" },
+          { "name": "Burger Güi" },
+          { "name": "Restaurante Magon" },
+          { "name": "Cafetería de Javier" },
+          { "name": "Cafetería la Playa" },
+          { "name": "Chiringuito Rincón de Pepe" },
+          { "name": "Media Caña Merendero" },
+          { "name": "Merendero Costa del Sol" },
+          { "name": "Restaurante el Picadero" },
+          { "name": "Restaurante Chino Hong Kong" },
+          { "name": "Chiringuito Mambo" },
+          { "name": "Entre Vientos" }
+        ]
+      },
+      "beaches": {
+        "title": "Strände",
+        "items": [
+          { "name": "Playa de El Morche" },
+          { "name": "Playa Las Dunas" },
+          { "name": "Playa de Torrox" },
+          { "name": "Playa de Maro" },
+          { "name": "Playa Cantarriján (FKK)" }
+        ]
+      },
+      "culture": {
+        "title": "Kultur und Besichtigungen",
+        "items": [
+          { "name": "Torrox Pueblo", "url": "https://www.torroxpueblo.es/" },
+          { "name": "Nerja und seine Höhlen", "url": "https://cuevadenerja.es/" },
+          { "name": "Caminito del Rey", "url": "https://www.caminitodelrey.info/" },
+          { "name": "Die Alhambra (Granada)", "url": "https://www.alhambra-patronato.es/" }
+        ]
+      },
+      "useful": {
+        "title": "Notrufnummern",
+        "items": [
+          { "name": "Notfälle", "phone": "112" },
+          { "name": "Policía Local Torrox", "phone": "092" },
+          { "name": "Gesundheitszentrum Torrox", "phone": "+34 952 53 00 24" },
+          { "name": "Guardia Civil", "phone": "+34 952 53 80 08" },
+          { "name": "Schlüsseldienst 24h", "phone": "+34 683 11 77 11" },
+          { "name": "Cristalería y Aluminio Torrox Costa", "phone": "+34 683 11 77 11" },
+          { "name": "Apotheke Mediterráneo", "phone": "+34 952 53 00 55" }
+        ]
+      }
+    },
+    "activities": {
+      "title": "Empfohlene Aktivitäten in Torrox",
+      "subtitle": "Ausflüge, Abenteuer und Pläne für alle"
+    },
+    "civitatis": {
+      "title": "Weitere Erlebnisse mit unseren Partnern",
+      "subtitle": "Buchen Sie Ausflüge und Aktivitäten in Málaga und an der Costa del Sol mit Civitatis."
+    }
   }
 }
