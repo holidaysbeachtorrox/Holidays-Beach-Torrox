@@ -404,37 +404,53 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
                   ))}
                 </div>
 
-                {/* Desktop: tabs */}
+                {/* Desktop: tabs reales */}
                 <div className="hidden md:block">
-                  <div className="flex gap-6 border-b border-border mb-6">
-                    {Object.keys(apartment.amenities).map((category) => (
-                      <button
-                        key={category}
-                        className="relative pb-2 font-semibold text-muted-foreground hover:text-primary data-[active=true]:text-primary"
-                        data-active={category === Object.keys(apartment.amenities)[0]}
-                        // Aquí podrías añadir estado para manejar la tab activa
-                      >
-                        {category}
-                      </button>
-                    ))}
-                  </div>
-                  {/* Por simplicidad renderizamos todas las categorías debajo (puedes añadir estado para tabs reales) */}
-                  {Object.entries(apartment.amenities).map(([category, list]) => (
-                    <div key={category} className="mb-8">
-                      <h4 className="font-semibold text-lg mb-3 capitalize">{category}</h4>
-                      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
-                        {(list as string[]).map((amenity, index) => (
-                          <div
-                            key={index}
-                            className="flex items-center gap-3 p-3 bg-muted/30 rounded-lg"
-                          >
-                            <div className="w-2 h-2 bg-primary rounded-full"></div>
-                            <span className="font-medium">{amenity}</span>
+                  {/* Estado para tab activa */}
+                  {(() => {
+                    const [activeTab, setActiveTab] = useState(
+                      Object.keys(apartment.amenities)[0]
+                    )
+
+                    return (
+                      <div>
+                        {/* Encabezado de tabs */}
+                        <div className="flex gap-6 border-b border-border mb-6">
+                          {Object.keys(apartment.amenities).map((category) => (
+                            <button
+                              key={category}
+                              onClick={() => setActiveTab(category)}
+                              className={`relative pb-2 font-semibold transition-colors ${
+                                activeTab === category
+                                  ? "text-primary border-b-2 border-primary"
+                                  : "text-muted-foreground hover:text-primary"
+                              }`}
+                            >
+                              {category}
+                            </button>
+                          ))}
+                        </div>
+
+                        {/* Contenido de la tab activa */}
+                        <div>
+                          <h4 className="font-semibold text-lg mb-3 capitalize">{activeTab}</h4>
+                          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+                            {(apartment.amenities[activeTab] as string[]).map(
+                              (amenity, index) => (
+                                <div
+                                  key={index}
+                                  className="flex items-center gap-3 p-3 bg-muted/30 rounded-lg"
+                                >
+                                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                                  <span className="font-medium">{amenity}</span>
+                                </div>
+                              )
+                            )}
                           </div>
-                        ))}
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    )
+                  })()}
                 </div>
               </div>
             </div>
