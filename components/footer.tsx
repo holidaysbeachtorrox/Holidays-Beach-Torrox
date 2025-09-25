@@ -18,7 +18,7 @@ export function Footer({ dict, locale }: FooterProps) {
             <div className="flex items-center mb-6">
               <Link href={createLocalizedPath("/", locale)} className="inline-block">
                 <Image
-                  src="/logo-negro.png"
+                  src="/Logo-negro.png"
                   alt={dict.footer.company}
                   width={150}
                   height={150}

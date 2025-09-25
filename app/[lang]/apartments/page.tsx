@@ -3,7 +3,7 @@ import { getDictionary, type Locale } from "@/lib/dictionaries"
 import { Navigation } from "@/components/navigation"
 import { ApartmentsList } from "@/components/apartments-list"
 import type { Metadata } from "next"
-import { apartments } from "@/lib/data/apartments"
+import { getApartments } from "@/lib/data/apartments"
 
 const SITE_URL = "https://holidaysbeachtorrox.com"
 
@@ -38,14 +38,13 @@ export async function generateMetadata({
   }
 }
 
-export default async function ApartmentsPage({
-  params,
-}: {
-  params: { lang: Locale }
-}) {
+export default async function ApartmentsPage({ params }: { params: { lang: Locale } }) {
   const dict = await getDictionary(params.lang)
 
-  // JSON-LD dinámico desde lib/data/apartments
+  // Obtener apartamentos según el idioma
+  const apartments = getApartments(params.lang)
+
+  // JSON-LD dinámico
   const itemListElement = apartments.map((apt, idx) => ({
     "@type": "ListItem",
     position: idx + 1,

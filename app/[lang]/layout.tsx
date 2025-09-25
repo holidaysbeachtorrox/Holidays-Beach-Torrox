@@ -8,7 +8,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { DM_Sans, Space_Grotesk, JetBrains_Mono } from "next/font/google"
 import "./../globals.css"
 import type { Metadata } from "next"
-import { apartments } from "@/lib/data/apartments"
+import { getApartments } from "@/lib/data/apartments"
 
 // Fuentes
 const dmSans = DM_Sans({
@@ -36,6 +36,9 @@ interface LocaleLayoutProps {
 
 // Metadata dinámico basado en el idioma
 export async function generateMetadata({ params }: { params: { lang: Locale } }): Promise<Metadata> {
+  const apartments = getApartments(params.lang)
+
+  // Metadata específico por idioma
   const titles = {
     es: "Holidays Beach Torrox - Apartamentos Vacacionales en Costa del Sol | Reserva Directa",
     en: "Holidays Beach Torrox - Vacation Apartments on Costa del Sol | Direct Booking",
@@ -114,6 +117,7 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
 
 export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
   const dict = await getDictionary(params.lang)
+  const apartments = getApartments(params.lang)
 
   // Calcular rating/reviews agregados
   const totalReviews = apartments.reduce((acc, a) => acc + a.reviews, 0)

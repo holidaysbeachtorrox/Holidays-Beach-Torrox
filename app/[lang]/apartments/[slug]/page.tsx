@@ -4,13 +4,14 @@ import { Navigation } from "@/components/navigation"
 import { ApartmentDetail } from "@/components/apartment-detail"
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
-import { apartments } from "@/lib/data/apartments"
+import { getApartments } from "@/lib/data/apartments"
 
 export async function generateMetadata({
   params,
 }: {
   params: { lang: Locale; slug: string }
 }): Promise<Metadata> {
+  const apartments = getApartments(params.lang)
   const apartment = apartments.find((apt) => apt.slug === params.slug)
 
   if (!apartment) {
@@ -64,6 +65,7 @@ export default async function ApartmentDetailPage({
 }) {
   const dict = await getDictionary(params.lang)
 
+  const apartments = getApartments(params.lang)
   const apartment = apartments.find((apt) => apt.slug === params.slug)
 
   if (!apartment) {
@@ -137,8 +139,9 @@ export default async function ApartmentDetailPage({
 
 export async function generateStaticParams() {
   const locales: Locale[] = ["es", "en", "de"]
-  return apartments.flatMap((apartment) =>
-    locales.map((lang) => ({
+
+  return locales.flatMap((lang) =>
+    getApartments(lang).map((apartment) => ({
       slug: apartment.slug,
       lang,
     }))

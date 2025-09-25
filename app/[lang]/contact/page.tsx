@@ -156,7 +156,7 @@ export default async function ContactPage({ params }: ContactPageProps) {
                 </Button>
 
                 <div className="mt-8 text-sm text-muted-foreground">
-                  Respuesta inmediata • Disponible 24/7 • Atención personalizada
+                  {dict.contact.whatsapp.note}
                 </div>
               </CardContent>
             </Card>

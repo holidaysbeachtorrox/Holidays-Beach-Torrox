@@ -6,17 +6,22 @@ import { Users, Bed, Bath, ArrowRight, MapPin, Star } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { createLocalizedPath, type Locale } from "@/lib/utils"
-import { apartments } from "@/lib/data/apartments"
+import { getApartments } from "@/lib/data/apartments"
 
 interface ApartmentsListProps {
   dict: any
   locale: Locale
 }
 
-// Ordenamos por rating (descendente)
-const allApartments = apartments.sort((a, b) => b.rating - a.rating)
+
 
 export function ApartmentsList({ dict, locale }: ApartmentsListProps) {
+  // Obtenemos Apartamentos segun el idioma
+  const apartments = getApartments(locale)
+  
+  // Ordenamos por rating (descendente)
+  const allApartments = apartments.sort((a, b) => b.rating - a.rating)
+
   return (
     <div className="space-y-6">
       {/* Results Header */}

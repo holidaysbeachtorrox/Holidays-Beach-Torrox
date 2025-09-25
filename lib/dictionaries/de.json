@@ -10,7 +10,8 @@
     "title": "Perfekte Ferien an der Costa del Sol",
     "subtitle": "Entdecken Sie unsere exklusiven Apartments in Torrox-Costa, Málaga. Buchen Sie direkt und sparen Sie Vermittlungsgebühren.",
     "cta": "Jetzt buchen",
-    "viewApartments": "Apartments ansehen"
+    "viewApartments": "Apartments ansehen",
+    "bookingSystem": "Buchungssystem"
   },
   "heroBenefits": {
     "flexibility": {
@@ -75,6 +76,31 @@
     "capacity": "Personen",
     "bedrooms": "Schlafzimmer",
     "bathrooms": "Badezimmer"
+  },
+  "apartmentDetail": {
+    "verified": "Verifiziert",
+    "reviews": "{count} echte Bewertungen",
+    "mainFeatures": "Hauptmerkmale",
+    "about": "Über diese Unterkunft",
+    "includedServices": "Inklusive Leistungen",
+    "noCalendar": "Kalender für diese Wohnung nicht verfügbar.",
+    "labels": {
+      "guests": "Gäste",
+      "bedrooms": "Schlafzimmer",
+      "bathrooms": "Badezimmer",
+      "sqm": "Quadratmeter"
+    },
+    "contact": {
+      "title": "Direkter Kontakt",
+      "phoneAvailable": "Rund um die Uhr erreichbar",
+      "emailResponse": "Antwort innerhalb von 2 Stunden",
+      "sendInquiry": "Anfrage senden"
+    },
+    "guarantees": {
+      "secureBooking": "100 % sichere Buchung",
+      "flexibleCancellation": "Flexible Stornierung",
+      "bestPrice": "Bestpreisgarantie"
+    }
   },
   "amenities": {
     "wifi": "WLAN",
@@ -174,16 +200,16 @@
     "info": {
       "address": {
         "title": "Adresse",
-        "line1": "Calle Ejemplo 123",
-        "line2": "29770 Torrox, Málaga, Spanien"
+        "line1": "Avenida de Andalucía, 24 Bajo",
+        "line2": "Cristaleria y aluminios Torrox Costa"
       },
       "phone": {
         "title": "Telefon",
-        "number": "+34 952 123 456"
+        "number": "+34 683 11 77 11"
       },
       "email": {
         "title": "E-Mail",
-        "address": "info@holidaysbeachtorrox.com"
+        "address": "holidaysbeachtorrox@gmail.com"
       },
       "hours": {
         "title": "Öffnungszeiten",
@@ -194,7 +220,8 @@
     "whatsapp": {
       "title": "Lieber WhatsApp?",
       "subtitle": "Chatten Sie direkt mit uns für eine schnellere und persönlichere Antwort.",
-      "button": "WhatsApp öffnen"
+      "button": "WhatsApp öffnen",
+      "note": "Antwort in 2 Stunden • 24/7 verfügbar • Persönliche Betreuung"
     }
   },
   "footer": {

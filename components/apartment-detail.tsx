@@ -27,6 +27,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { createLocalizedPath, type Locale } from "@/lib/utils"
 import { Dialog, DialogContent } from "@/components/ui/dialog"
+import { AvaibookIframe } from "./AvaibookWidget"
 
 interface Apartment {
   name: string
@@ -42,6 +43,7 @@ interface Apartment {
   area: number
   description: string
   amenities: Record<string, string[]>
+  avaibookId?: string
 }
 
 interface Dict {
@@ -51,6 +53,32 @@ interface Dict {
   }
   hero: {
     cta: string
+    bookingSystem: string
+  }
+  apartmentDetail: {
+    verified: string
+    reviews: string
+    mainFeatures?: string // Optional, add if used elsewhere
+    about: string
+    includedServices: string
+    noCalendar: string
+    labels: {
+      guests: string
+      bedrooms: string
+      bathrooms: string
+      sqm: string
+    }
+    contact: {
+      title: string
+      phoneAvailable: string
+      emailResponse: string
+      sendInquiry: string
+    }
+    guarantees: {
+      secureBooking: string
+      flexibleCancellation: string
+      bestPrice: string
+    }
   }
 }
 
@@ -259,13 +287,13 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
               <div>
                 <div className="flex items-center gap-3 mb-3">
                   <Badge className="bg-secondary/10 text-secondary hover:bg-secondary/20">
-                    Verificado
+                    {dict.apartmentDetail.verified}
                   </Badge>
                   <div className="flex items-center gap-1 text-sm">
                     <Star className="w-4 h-4 fill-secondary text-secondary" />
                     <span className="font-semibold">{apartment.rating}</span>
                     <span className="text-muted-foreground">
-                      ({apartment.reviews} reseñas reales)
+                      {dict.apartmentDetail.reviews.replace("{count}", String(apartment.reviews))}
                     </span>
                   </div>
                 </div>
@@ -290,28 +318,34 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
               {/* Características rápidas */}
               <div>
                 <h3 className="font-heading font-semibold text-xl mb-4">
-                  Características principales
+                  {dict.apartmentDetail.mainFeatures}
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   <div className="flex items-center gap-2 bg-muted/30 p-4 rounded-lg">
                     <Users className="w-5 h-5 text-primary" />
                     <div>
                       <div className="font-semibold">{apartment.capacity}</div>
-                      <div className="text-xs text-muted-foreground">Huéspedes</div>
+                      <div className="text-xs text-muted-foreground">
+                        {dict.apartmentDetail.labels.guests}
+                      </div>
                     </div>
                   </div>
                   <div className="flex items-center gap-2 bg-muted/30 p-4 rounded-lg">
                     <Bed className="w-5 h-5 text-primary" />
                     <div>
                       <div className="font-semibold">{apartment.bedrooms}</div>
-                      <div className="text-xs text-muted-foreground">Dormitorios</div>
+                      <div className="text-xs text-muted-foreground">
+                        {dict.apartmentDetail.labels.bedrooms}
+                      </div>
                     </div>
                   </div>
                   <div className="flex items-center gap-2 bg-muted/30 p-4 rounded-lg">
                     <Bath className="w-5 h-5 text-primary" />
                     <div>
                       <div className="font-semibold">{apartment.bathrooms}</div>
-                      <div className="text-xs text-muted-foreground">Baños</div>
+                      <div className="text-xs text-muted-foreground">
+                        {dict.apartmentDetail.labels.bathrooms}
+                      </div>
                     </div>
                   </div>
                   <div className="flex items-center gap-2 bg-muted/30 p-4 rounded-lg">
@@ -320,7 +354,9 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
                     </div>
                     <div>
                       <div className="font-semibold">{apartment.area}</div>
-                      <div className="text-xs text-muted-foreground">Metros²</div>
+                      <div className="text-xs text-muted-foreground">
+                        {dict.apartmentDetail.labels.sqm}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -329,7 +365,7 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
               {/* Descripción */}
               <div>
                 <h3 className="font-heading font-semibold text-xl mb-4">
-                  Sobre este alojamiento
+                  {dict.apartmentDetail.about}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed text-lg">
                   {apartment.description}
@@ -340,7 +376,7 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
               <div>
                 <h3 className="font-heading font-bold text-2xl mb-6 flex items-center gap-2">
                   <Award className="w-6 h-6 text-primary" />
-                  Servicios incluidos
+                  {dict.apartmentDetail.includedServices}
                 </h3>
                 {Object.entries(apartment.amenities).map(([category, list]) => (
                   <div key={category} className="mb-6">
@@ -370,38 +406,47 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
                 <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-8 text-center mb-8 border border-border">
                   <Calendar className="w-16 h-16 text-primary mx-auto mb-4" />
                   <h4 className="font-heading font-semibold text-lg mb-2">
-                    Sistema de Reservas
+                    {dict.hero.bookingSystem}
                   </h4>
-                  <p className="text-muted-foreground mb-6 text-sm">
-                    Aquí se integrará el widget de AvaiBook para gestionar
-                    disponibilidad y reservas en tiempo real.
-                  </p>
-                  <Button
-                    className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold py-3 rounded-xl shadow-lg"
-                    size="lg"
-                  >
-                    {dict.hero.cta}
-                  </Button>
+
+                  {/* Render explícito de los 3 widgets */}
+                  {locale === "es" && apartment.avaibookId && (
+                    <AvaibookIframe id={String(apartment.avaibookId)} lang="ES" />
+                  )}
+                  {locale === "en" && apartment.avaibookId && (
+                    <AvaibookIframe id={String(apartment.avaibookId)} lang="EN" />
+                  )}
+                  {locale === "de" && apartment.avaibookId && (
+                    <AvaibookIframe id={String(apartment.avaibookId)} lang="DE" />
+                  )}
+
+                  {!apartment.avaibookId && (
+                    <p className="text-sm text-muted-foreground">
+                      {dict.apartmentDetail.noCalendar}
+                    </p>
+                  )}
                 </div>
 
                 {/* Contacto directo */}
                 <div className="space-y-6">
                   <h4 className="font-heading font-semibold text-lg flex items-center gap-2">
                     <Phone className="w-5 h-5 text-primary" />
-                    Contacto directo
+                    {dict.apartmentDetail.contact.title}
                   </h4>
 
                   <div className="space-y-4">
                     <a
-                      href="tel:+34952123456"
+                      href="tel:+34683117711"
                       className="flex items-center gap-4 p-4 bg-muted/30 rounded-xl hover:bg-muted/50 transition-colors group"
                     >
                       <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                         <Phone className="w-6 h-6 text-primary" />
                       </div>
                       <div>
-                        <div className="font-semibold">+34 952 123 456</div>
-                        <div className="text-sm text-muted-foreground">Disponible 24/7</div>
+                        <div className="font-semibold">+34 673 11 77 11</div>
+                        <div className="text-sm text-muted-foreground">
+                          {dict.apartmentDetail.contact.phoneAvailable}
+                        </div>
                       </div>
                     </a>
 
@@ -414,9 +459,12 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
                       </div>
                       <div>
                         <div className="font-semibold text-sm">
-                          info@holidaysbeachtorrox.com
+                          holidaysbeachtorrox@gmail.com
                         </div>
-                        <div className="text-sm text-muted-foreground">Respuesta en 2h</div>
+                        <div className="text-sm text-muted-foreground">
+                          {dict.apartmentDetail.contact.emailResponse}
+                        </div>
+
                       </div>
                     </a>
                   </div>
@@ -425,7 +473,7 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
                     variant="outline"
                     className="w-full bg-transparent border-2 hover:bg-muted font-semibold py-3 rounded-xl"
                   >
-                    Enviar consulta
+                    {dict.apartmentDetail.contact.sendInquiry}
                   </Button>
                 </div>
 
@@ -433,20 +481,22 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
                 <div className="mt-8 pt-6 border-t border-border space-y-4">
                   <div className="flex items-center justify-center gap-2 text-center">
                     <Shield className="w-5 h-5 text-primary" />
-                    <span className="font-semibold">Reserva 100% segura</span>
+                    <span className="font-semibold">
+                      {dict.apartmentDetail.guarantees.secureBooking}
+                    </span>
                   </div>
 
                   <div className="grid grid-cols-2 gap-4 text-center">
                     <div className="flex flex-col items-center gap-1">
                       <Clock className="w-4 h-4 text-secondary" />
                       <span className="text-xs text-muted-foreground">
-                        Cancelación flexible
+                        {dict.apartmentDetail.guarantees.flexibleCancellation}
                       </span>
                     </div>
                     <div className="flex flex-col items-center gap-1">
                       <Award className="w-4 h-4 text-primary" />
                       <span className="text-xs text-muted-foreground">
-                        Mejor precio garantizado
+                        {dict.apartmentDetail.guarantees.bestPrice}
                       </span>
                     </div>
                   </div>

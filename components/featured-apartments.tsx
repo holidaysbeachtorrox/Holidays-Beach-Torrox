@@ -6,19 +6,21 @@ import { Users, Bed, Bath, ArrowRight, Star } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { createLocalizedPath, type Locale } from "@/lib/utils"
-import { apartments } from "@/lib/data/apartments"
+import { getApartments } from "@/lib/data/apartments"
 
 interface FeaturedApartmentsProps {
   dict: any
   locale: Locale
 }
 
-// Filtrar solo destacados y ordenarlos por rating descendente
-const featuredApartments = apartments
-  .filter((a) => a.featured)
-  .sort((a, b) => b.rating - a.rating)
-
 export function FeaturedApartments({ dict, locale }: FeaturedApartmentsProps) {
+
+  const apartments = getApartments(locale)
+
+  const featuredApartments = apartments
+    .filter((a) => a.featured)
+    .sort((a, b) => b.rating - a.rating)
+    
   return (
     <section className="py-20 lg:py-32 bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">

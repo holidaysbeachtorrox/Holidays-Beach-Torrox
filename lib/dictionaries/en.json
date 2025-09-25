@@ -10,7 +10,8 @@
     "title": "Perfect holidays on the Costa del Sol",
     "subtitle": "Discover our exclusive apartments in Torrox-Costa, Málaga. Book directly and save on commissions.",
     "cta": "Book now",
-    "viewApartments": "View apartments"
+    "viewApartments": "View apartments",
+    "bookingSystem": "Booking system"
   },
   "heroBenefits": {
     "flexibility": {
@@ -75,6 +76,31 @@
     "capacity": "people",
     "bedrooms": "bedrooms",
     "bathrooms": "bathrooms"
+  },
+  "apartmentDetail": {
+    "verified": "Verified",
+    "reviews": "{count} verified reviews",
+    "mainFeatures": "Main features",
+    "about": "About this accommodation",
+    "includedServices": "Included services",
+    "noCalendar": "Calendar not available for this apartment.",
+    "labels": {
+      "guests": "Guests",
+      "bedrooms": "Bedrooms",
+      "bathrooms": "Bathrooms",
+      "sqm": "Square meters"
+    },
+    "contact": {
+      "title": "Direct contact",
+      "phoneAvailable": "Available 24/7",
+      "emailResponse": "Response within 2h",
+      "sendInquiry": "Send inquiry"
+    },
+    "guarantees": {
+      "secureBooking": "100% secure booking",
+      "flexibleCancellation": "Flexible cancellation",
+      "bestPrice": "Best price guaranteed"
+    }
   },
   "amenities": {
     "wifi": "Wifi",
@@ -194,7 +220,8 @@
     "whatsapp": {
       "title": "Prefer WhatsApp?",
       "subtitle": "Chat with us directly for a faster and more personalized response.",
-      "button": "Open WhatsApp"
+      "button": "Open WhatsApp",
+      "note": "Response in 2 hours • Available 24/7 • Personalized attention"
     }
   },
   "footer": {
