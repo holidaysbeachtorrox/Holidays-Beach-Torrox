@@ -378,22 +378,64 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
                   <Award className="w-6 h-6 text-primary" />
                   {dict.apartmentDetail.includedServices}
                 </h3>
-                {Object.entries(apartment.amenities).map(([category, list]) => (
-                  <div key={category} className="mb-6">
-                    <h4 className="font-semibold text-lg mb-3 capitalize">{category}</h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {(list as string[]).map((amenity, index) => (
-                        <div
-                          key={index}
-                          className="flex items-center gap-3 p-3 bg-muted/30 rounded-lg"
-                        >
-                          <div className="w-2 h-2 bg-primary rounded-full"></div>
-                          <span className="font-medium">{amenity}</span>
-                        </div>
-                      ))}
-                    </div>
+
+                {/* Mobile: acordeón */}
+                <div className="block md:hidden space-y-4">
+                  {Object.entries(apartment.amenities).map(([category, list]) => (
+                    <details
+                      key={category}
+                      className="bg-muted/20 rounded-xl p-4"
+                    >
+                      <summary className="cursor-pointer font-semibold capitalize text-lg">
+                        {category}
+                      </summary>
+                      <div className="mt-3 grid grid-cols-1 gap-2">
+                        {(list as string[]).map((amenity, index) => (
+                          <div
+                            key={index}
+                            className="flex items-center gap-3 p-2 bg-muted/40 rounded-lg"
+                          >
+                            <div className="w-2 h-2 bg-primary rounded-full"></div>
+                            <span className="text-sm font-medium">{amenity}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </details>
+                  ))}
+                </div>
+
+                {/* Desktop: tabs */}
+                <div className="hidden md:block">
+                  <div className="flex gap-6 border-b border-border mb-6">
+                    {Object.keys(apartment.amenities).map((category) => (
+                      <button
+                        key={category}
+                        className="relative pb-2 font-semibold text-muted-foreground hover:text-primary data-[active=true]:text-primary"
+                        data-active={category === Object.keys(apartment.amenities)[0]}
+                        // Aquí podrías añadir estado para manejar la tab activa
+                      >
+                        {category}
+                      </button>
+                    ))}
                   </div>
-                ))}
+                  {/* Por simplicidad renderizamos todas las categorías debajo (puedes añadir estado para tabs reales) */}
+                  {Object.entries(apartment.amenities).map(([category, list]) => (
+                    <div key={category} className="mb-8">
+                      <h4 className="font-semibold text-lg mb-3 capitalize">{category}</h4>
+                      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+                        {(list as string[]).map((amenity, index) => (
+                          <div
+                            key={index}
+                            className="flex items-center gap-3 p-3 bg-muted/30 rounded-lg"
+                          >
+                            <div className="w-2 h-2 bg-primary rounded-full"></div>
+                            <span className="font-medium">{amenity}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
