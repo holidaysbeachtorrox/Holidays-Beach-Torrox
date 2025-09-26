@@ -22,12 +22,29 @@ import {
   Award,
   Maximize,
   X,
+  Home,
+  Utensils,
+  Bath as BathIcon,
+  BedDouble,
+  Tv,
+  Trees,
+  ShieldCheck,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { createLocalizedPath, type Locale } from "@/lib/utils"
 import { Dialog, DialogContent } from "@/components/ui/dialog"
 import { AvaibookIframe } from "./AvaibookWidget"
+
+const categoryIcons: Record<string, JSX.Element> = {
+  general: <Home className="w-4 h-4" />,
+  cocina: <Utensils className="w-4 h-4" />,
+  baño: <BathIcon className="w-4 h-4" />,
+  dormitorio: <BedDouble className="w-4 h-4" />,
+  entretenimiento: <Tv className="w-4 h-4" />,
+  exterior: <Trees className="w-4 h-4" />,
+  seguridad: <ShieldCheck className="w-4 h-4" />,
+}  
 
 interface Apartment {
   name: string
@@ -80,6 +97,7 @@ interface Dict {
       bestPrice: string
     }
   }
+  amenityCategories?: Record<string, string>
 }
 
 interface ApartmentDetailProps {
@@ -91,6 +109,9 @@ interface ApartmentDetailProps {
 export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isOpen, setIsOpen] = useState(false)
+  const [activeTab, setActiveTab] = useState(Object.keys(apartment.amenities)[0])
+
+  // Funciones para navegar imágenes
 
   const nextImage = useCallback(
     () => setCurrentImageIndex((prev) => (prev + 1) % apartment.images.length),
@@ -406,51 +427,43 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
 
                 {/* Desktop: tabs reales */}
                 <div className="hidden md:block">
-                  {/* Estado para tab activa */}
-                  {(() => {
-                    const [activeTab, setActiveTab] = useState(
-                      Object.keys(apartment.amenities)[0]
-                    )
+                  {/* Encabezado de tabs */}
+                  <div className="flex flex-wrap gap-4 border-b border-border mb-6">
+                    {Object.keys(apartment.amenities).map((category) => (
+                      <button
+                        key={category}
+                        onClick={() => setActiveTab(category)}
+                        className={`relative pb-2 flex items-center gap-2 font-semibold transition-colors ${
+                          activeTab === category
+                            ? "text-primary border-b-2 border-primary"
+                            : "text-muted-foreground hover:text-primary"
+                        }`}
+                      >
+                        {categoryIcons[category] ?? <Home className="w-4 h-4" />}
+                        <span className="capitalize">
+                          {dict.amenityCategories?.[category] || category}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
 
-                    return (
-                      <div>
-                        {/* Encabezado de tabs */}
-                        <div className="flex gap-6 border-b border-border mb-6">
-                          {Object.keys(apartment.amenities).map((category) => (
-                            <button
-                              key={category}
-                              onClick={() => setActiveTab(category)}
-                              className={`relative pb-2 font-semibold transition-colors ${
-                                activeTab === category
-                                  ? "text-primary border-b-2 border-primary"
-                                  : "text-muted-foreground hover:text-primary"
-                              }`}
-                            >
-                              {category}
-                            </button>
-                          ))}
+                  {/* Contenido de la tab activa */}
+                  <div>
+                    <h4 className="font-semibold text-lg mb-3 capitalize">
+                      {dict.amenityCategories?.[activeTab] || activeTab}
+                    </h4>
+                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+                      {(apartment.amenities[activeTab] as string[]).map((amenity, index) => (
+                        <div
+                          key={index}
+                          className="flex items-center gap-3 p-3 bg-muted/30 rounded-lg"
+                        >
+                          <div className="w-2 h-2 bg-primary rounded-full"></div>
+                          <span className="font-medium">{amenity}</span>
                         </div>
-
-                        {/* Contenido de la tab activa */}
-                        <div>
-                          <h4 className="font-semibold text-lg mb-3 capitalize">{activeTab}</h4>
-                          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
-                            {(apartment.amenities[activeTab] as string[]).map(
-                              (amenity, index) => (
-                                <div
-                                  key={index}
-                                  className="flex items-center gap-3 p-3 bg-muted/30 rounded-lg"
-                                >
-                                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                                  <span className="font-medium">{amenity}</span>
-                                </div>
-                              )
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    )
-                  })()}
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

@@ -110,6 +110,16 @@
     "kitchen": "Kitchen",
     "terrace": "Terrace"
   },
+  "amenityCategories": {
+    "general": "General",
+    "cocina": "Kitchen",
+    "baño": "Bathroom",
+    "dormitorio": "Bedroom",
+    "entretenimiento": "Entertainment",
+    "exterior": "Outdoor",
+    "seguridad": "Safety",
+    "idiomas": "Languages"
+  },
   "about": {
     "metaTitle": "About Us - Holidays Beach Torrox",
     "metaDescription": "Meet Holidays Beach Torrox: more than 10 years of experience offering unique holiday rentals on the Costa del Sol.",

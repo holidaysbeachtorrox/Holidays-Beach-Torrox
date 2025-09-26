@@ -110,6 +110,16 @@
     "kitchen": "Cocina",
     "terrace": "Terraza"
   },
+  "amenityCategories": {
+    "general": "General",
+    "cocina": "Cocina",
+    "baño": "Baño",
+    "dormitorio": "Dormitorio",
+    "entretenimiento": "Entretenimiento",
+    "exterior": "Exterior",
+    "seguridad": "Seguridad",
+    "idiomas": "Idiomas"
+  },
   "about": {
     "metaTitle": "Quiénes Somos - Holidays Beach Torrox",
     "metaDescription": "Conoce a Holidays Beach Torrox: más de 10 años de experiencia ofreciendo alojamientos vacacionales únicos en la Costa del Sol.",
