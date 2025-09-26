@@ -1,3 +1,4 @@
+// Privacy Policy Page
 import { getDictionary } from "@/lib/dictionaries"
 import type { Locale } from "@/lib/utils"
 import { Card, CardContent } from "@/components/ui/card"

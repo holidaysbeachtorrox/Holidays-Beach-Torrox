@@ -153,6 +153,16 @@ export function Footer({ dict, locale }: FooterProps) {
             <ul className="space-y-3">
               <li>
                 <Link
+                  href={createLocalizedPath("/legal/legal", locale)}
+                  className="text-muted-foreground hover:text-primary transition-colors font-medium group flex items-center"
+                >
+                  <span className="group-hover:translate-x-1 transition-transform">
+                    {dict.footer.legalInfo}
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link
                   href={createLocalizedPath("/legal/privacy", locale)}
                   className="text-muted-foreground hover:text-primary transition-colors font-medium group flex items-center"
                 >
