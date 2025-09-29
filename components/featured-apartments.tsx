@@ -13,9 +13,9 @@ interface FeaturedApartmentsProps {
   locale: Locale
 }
 
-export function FeaturedApartments({ dict, locale }: FeaturedApartmentsProps) {
+export async function FeaturedApartments({ dict, locale }: FeaturedApartmentsProps) {
 
-  const apartments = getApartments(locale)
+  const apartments = await getApartments(locale)
 
   const featuredApartments = apartments
     .filter((a) => a.featured)

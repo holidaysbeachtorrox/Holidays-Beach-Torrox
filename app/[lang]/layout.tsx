@@ -36,7 +36,7 @@ interface LocaleLayoutProps {
 
 // Metadata dinámico basado en el idioma
 export async function generateMetadata({ params }: { params: { lang: Locale } }): Promise<Metadata> {
-  const apartments = getApartments(params.lang)
+  const apartments = await getApartments(params.lang)
 
   // Metadata específico por idioma
   const titles = {
@@ -117,7 +117,7 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
 
 export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
   const dict = await getDictionary(params.lang)
-  const apartments = getApartments(params.lang)
+  const apartments = await getApartments(params.lang)
 
   // Calcular rating/reviews agregados
   const totalReviews = apartments.reduce((acc, a) => acc + a.reviews, 0)
@@ -169,7 +169,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
                 "@type": "LocationFeatureSpecification",
                 name: amenity,
               })),
-              checkinTime: "15:00",
+              checkinTime: "16:00",
               checkoutTime: "11:00",
               petsAllowed: false,
               smokingAllowed: false,

@@ -11,7 +11,7 @@ export async function generateMetadata({
 }: {
   params: { lang: Locale; slug: string }
 }): Promise<Metadata> {
-  const apartments = getApartments(params.lang)
+  const apartments = await getApartments(params.lang)
   const apartment = apartments.find((apt) => apt.slug === params.slug)
 
   if (!apartment) {
@@ -65,7 +65,7 @@ export default async function ApartmentDetailPage({
 }) {
   const dict = await getDictionary(params.lang)
 
-  const apartments = getApartments(params.lang)
+  const apartments = await getApartments(params.lang)
   const apartment = apartments.find((apt) => apt.slug === params.slug)
 
   if (!apartment) {
@@ -140,10 +140,15 @@ export default async function ApartmentDetailPage({
 export async function generateStaticParams() {
   const locales: Locale[] = ["es", "en", "de"]
 
-  return locales.flatMap((lang) =>
-    getApartments(lang).map((apartment) => ({
-      slug: apartment.slug,
-      lang,
-    }))
+  const allApartments = await Promise.all(
+    locales.map(async (lang) => {
+      const apartments = await getApartments(lang)
+      return apartments.map((apartment) => ({
+        slug: apartment.slug,
+        lang,
+      }))
+    })
   )
+
+  return allApartments.flat()
 }

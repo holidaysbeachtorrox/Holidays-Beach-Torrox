@@ -330,5 +330,79 @@
       "title": "Weitere Erlebnisse mit unseren Partnern",
       "subtitle": "Buchen Sie Ausflüge und Aktivitäten in Málaga und an der Costa del Sol mit Civitatis."
     }
+  },
+  "apartmentsData": {
+    "apartment-1": {
+      "name": "Fischerhaus",
+      "description": "Genießen Sie einen unvergesslichen Urlaub in El Morche in dieser wunderschönen Ferienwohnung am Strand. Mit spektakulärem Blick auf das Mittelmeer und direktem Zugang zum goldenen Sand. Voll ausgestattet mit allen Annehmlichkeiten für einen entspannten Aufenthalt. Ideal für Familien oder Paare, die Sonne, Meer und Ruhe an der Costa del Sol suchen.",
+      "location": {
+        "short": "El Morche, Torrox Costa",
+        "address": "Calle Santiago 6, El Morche, Torrox Costa"
+      },
+      "amenities": {
+        "general": ["Kostenloses WLAN","Kostenloser Parkplatz","Klimaanlage","Nichtraucherzimmer","Heizung","Schlafsofa","Waschmaschine","Privater Eingang"],
+        "cocina": ["Voll ausgestattete Küche","Esstisch","Kaffeemaschine","Toaster","Backofen","Kochplatten","Mikrowelle","Kühlschrank","Küchenutensilien","Kochgeschirr","Offene Küche","Wäschetrockner"],
+        "baño": ["Eigenes Badezimmer","Handtücher","Haartrockner","Dusche","Bidet","Toilettenpapier"],
+        "dormitorio": ["Bettwäsche","Kleiderschrank oder Garderobe","Kleiderständer","Bügeleisen","Wäscheständer"],
+        "entretenimiento": ["Flachbild-TV","Kabelkanäle"],
+        "exterior": ["Direkt am Strand","Balkon","Gartenmöbel","Essbereich im Freien"],
+        "seguridad": ["Feuerlöscher","Rauchmelder","Safe","Sicherheitskameras"],
+        "idiomas": ["Spanisch","Englisch","Deutsch"]
+      }
+    },
+    "apartment-2": {
+      "name": "Seepferdchenhaus",
+      "description": "Gemütliches Studio im Zentrum von Torrox Costa, nur 50 Meter vom Strand entfernt. Perfekt für Paare.",
+      "location": {
+        "short": "Torrox Costa",
+        "address": "Av. Europa, 82 Torrox Costa"
+      },
+      "amenities": {
+        "general": ["Kostenloses WLAN","Kostenloser Parkplatz","Klimaanlage","Nichtraucherzimmer","Heizung","Waschmaschine","Aufzug","Außenpool"],
+        "cocina": ["Voll ausgestattete Küche","Esstisch","Kaffeemaschine","Toaster","Kochplatten","Mikrowelle","Kühlschrank","Küchenutensilien","Wasserkocher"],
+        "baño": ["Eigenes Badezimmer","Handtücher","Haartrockner","Dusche","Toilettenpapier"],
+        "dormitorio": ["Bettwäsche","Kleiderschrank oder Garderobe","Kleiderständer","Bügeleisen"],
+        "entretenimiento": ["Flachbild-TV","Kabelkanäle","Strand"],
+        "exterior": ["Direkt am Strand","Balkon","Gartenmöbel","Essbereich im Freien","Grill","Terrasse / Solarium"],
+        "seguridad": ["Feuerlöscher","Rauchmelder","Safe","Sicherheitskameras"],
+        "idiomas": ["Spanisch","Englisch","Deutsch"]
+      }
+    },
+    "apartment-3": {
+      "name": "Mittelmeerbrise",
+      "description": "Entdecken Sie die Ruhe in dieser exquisiten Ferienwohnung in der Nähe der blauen Küsten von El Morche. Genießen Sie die beeindruckende Meeresatmosphäre, wo goldene Sonnenuntergänge den Himmel malen. Elegant eingerichtete Innenräume bieten Komfort und Entspannung. Mit einfachem Zugang zum Strand und charmanten lokalen Annehmlichkeiten ist dies der perfekte Rückzugsort am Meer.",
+      "location": {
+        "short": "El Morche, Torrox Costa",
+        "address": "Calle Nuestra Señora del Carmen nº9, 29793 El Morche, Torrox Costa"
+      },
+      "amenities": {
+        "general": ["Kostenloses WLAN","Kostenloser Parkplatz","Nichtraucherzimmer","Aufzug","Heizung"],
+        "cocina": ["Voll ausgestattete Küche","Esstisch","Kaffeemaschine","Toaster","Backofen","Kochfeld","Mikrowelle","Kühlschrank","Küchenutensilien"],
+        "baño": ["Eigenes Badezimmer","Handtücher","Haartrockner","Badewanne und Dusche","Bidet","Toilettenpapier"],
+        "dormitorio": ["Bettwäsche","Kleiderschrank und Garderobe","Kleiderständer","Bügeleisen","Wäscheständer"],
+        "entretenimiento": ["Flachbild-TV","Radio"],
+        "exterior": ["Terrasse / Solarium","Balkon","Gartenmöbel","Essbereich im Freien","Grill","Innenhof","Garten"],
+        "seguridad": ["Feuerlöscher","Rauchmelder","Safe","Überwachungskameras"],
+        "idiomas": ["Spanisch","Englisch","Deutsch"]
+      }
+    },
+    "apartment-4": {
+      "name": "Sonne, Sand und Meer",
+      "description": "Charmante Wohnung in Torrox Costa, perfekt für Paare oder Alleinreisende. Kompakt und funktional, mit allen wichtigen Annehmlichkeiten. Sehr strandnah gelegen und mit Meerblick. Ideal zum Entspannen und um die friedliche und malerische Atmosphäre der schönen Costa del Sol zu genießen.",
+      "location": {
+        "short": "El Morche, Torrox Costa",
+        "address": "C. Santiago, 4, 29793 El Morche, Torrox Costa"
+      },
+      "amenities": {
+        "general": ["Kostenloses WLAN","Kostenloser Parkplatz","Klimaanlage","Nichtraucherzimmer","Heizung","Waschmaschine","Wäschetrockner","Privater Eingang"],
+        "cocina": ["Voll ausgestattete Küche","Esstisch","Kaffeemaschine","Toaster","Kochplatten","Mikrowelle","Kühlschrank","Küchenutensilien"],
+        "baño": ["Eigenes Badezimmer","Handtücher","Haartrockner","Dusche","Bidet","Toilettenpapier"],
+        "dormitorio": ["Bettwäsche","Kleiderschrank oder Garderobe","Kleiderständer","Bügeleisen","Wäscheständer"],
+        "entretenimiento": ["Flachbild-TV","Kabelkanäle"],
+        "exterior": ["Direkt am Strand","Balkon","Gartenmöbel","Essbereich im Freien","Grill"],
+        "seguridad": ["Feuerlöscher","Rauchmelder","Safe","Sicherheitskameras"],
+        "idiomas": ["Spanisch","Englisch","Deutsch"]
+      }
+    }
   }
 }

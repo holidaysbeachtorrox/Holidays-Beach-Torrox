@@ -514,7 +514,7 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
                         <Phone className="w-6 h-6 text-primary" />
                       </div>
                       <div>
-                        <div className="font-semibold">+34 673 11 77 11</div>
+                        <div className="font-semibold">+34 683 11 77 11</div>
                         <div className="text-sm text-muted-foreground">
                           {dict.apartmentDetail.contact.phoneAvailable}
                         </div>

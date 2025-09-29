@@ -42,7 +42,7 @@ export default async function ApartmentsPage({ params }: { params: { lang: Local
   const dict = await getDictionary(params.lang)
 
   // Obtener apartamentos según el idioma
-  const apartments = getApartments(params.lang)
+  const apartments = await getApartments(params.lang)
 
   // JSON-LD dinámico
   const itemListElement = apartments.map((apt, idx) => ({

@@ -15,9 +15,9 @@ interface ApartmentsListProps {
 
 
 
-export function ApartmentsList({ dict, locale }: ApartmentsListProps) {
+export async function ApartmentsList({ dict, locale }: ApartmentsListProps) {
   // Obtenemos Apartamentos segun el idioma
-  const apartments = getApartments(locale)
+  const apartments = await getApartments(locale)
   
   // Ordenamos por rating (descendente)
   const allApartments = apartments.sort((a, b) => b.rating - a.rating)

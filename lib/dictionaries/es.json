@@ -334,6 +334,80 @@
       "title": "Más experiencias con nuestros colaboradores",
       "subtitle": "Reserva excursiones y actividades en Málaga y la Costa del Sol con Civitatis."
     }
+  },
+  "apartmentsData": {
+    "apartment-1": {
+      "name": "Casa del Pescador",
+      "description": "Disfruta de unas vacaciones inolvidables en El Morche alquilando este hermoso apartamento de playa. Con vistas espectaculares al mar Mediterráneo y acceso directo a la arena dorada. Equipado con todas las comodidades para una estancia relajante. Ideal para familias o parejas que buscan sol, mar y tranquilidad en la Costa del Sol.",
+      "location": {
+        "short": "El Morche, Torrox Costa",
+        "address": "Calle Santiago 6, El Morche, Torrox Costa"
+      },
+      "amenities": {
+        "general": ["WiFi gratis","Parking gratis","Aire acondicionado","Habitaciones sin humo","Calefacción","Sofá cama","Lavadora","Entrada privada"],
+        "cocina": ["Cocina completa","Mesa de comedor","Cafetera","Tostadora","Horno","Fogones","Microondas","Nevera","Utensilios de cocina","Batería de cocina","Cocina americana","Secadora de ropa"],
+        "baño": ["Baño privado","Toallas","Secador de pelo","Ducha","Bidet","Papel higiénico"],
+        "dormitorio": ["Ropa de cama","Armario o ropero","Perchero","Plancha para ropa","Tendedero"],
+        "entretenimiento": ["TV de pantalla plana","Canales por cable"],
+        "exterior": ["Situado frente a la playa","Balcón","Mobiliario exterior","Zona de comedor exterior"],
+        "seguridad": ["Extintores","Detector de humo","Caja fuerte","Cámaras de seguridad"],
+        "idiomas": ["Español","Inglés","Alemán"]
+      }
+    },
+    "apartment-2": {
+      "name": "Casa del Caballito de Mar",
+      "description": "Acogedor estudio en el centro de Torrox Costa, a solo 50 metros de la playa. Perfecto para parejas.",
+      "location": {
+        "short": "Torrox Costa",
+        "address": "Av. Europa, 82 Torrox Costa"
+      },
+      "amenities": {
+        "general": ["WiFi gratis","Parking gratis","Aire acondicionado","Habitaciones sin humo","Calefacción","Lavadora","Ascensor","Piscina al aire libre"],
+        "cocina": ["Cocina completa","Mesa de comedor","Cafetera","Tostadora","Fogones","Microondas","Nevera","Utensilios de cocina","Hervidor eléctrico"],
+        "baño": ["Baño privado","Toallas","Secador de pelo","Ducha","Papel higiénico"],
+        "dormitorio": ["Ropa de cama","Armario o ropero","Perchero","Plancha para ropa"],
+        "entretenimiento": ["TV de pantalla plana","Canales por cable","Playa"],
+        "exterior": ["Situado frente a la playa","Balcón","Mobiliario exterior","Zona de comedor exterior","Barbacoa","Terraza / Solárium"],
+        "seguridad": ["Extintores","Detector de humo","Caja fuerte","Cámaras de seguridad"],
+        "idiomas": ["Español","Inglés","Alemán"]
+      }
+    },
+    "apartment-3": {
+      "name": "Brisa Mediterránea",
+      "description": "Descubre la serenidad en este exquisito apartamento vacacional cerca de las azules costas de El Morche. Disfruta de la impresionantes cercanías del mar y de la playa, donde los atardeceres dorados pintan el cielo. Interiores elegantemente amueblados ofrecen confort y relajación. Con fácil acceso a la playa y encantadoras comodidades locales, disfruta de la escapada perfecta junto al mar.",
+      "location": {
+        "short": "El Morche, Torrox Costa",
+        "address": "Calle Nuestra Señora del Carmen nº9, 29793 El Morche, Torrox Costa"
+      },
+      "amenities": {
+        "general": ["WiFi gratis","Parking gratis","Habitaciones sin humo","Ascensor","Calefacción"],
+        "cocina": ["Cocina completa","Mesa de comedor","Cafetera","Tostadora","Horno","Fogones","Microondas","Nevera","Utensilios de cocina"],
+        "baño": ["Baño privado","Toallas","Secador de pelo","Bañera y ducha","Bidet","Papel higiénico"],
+        "dormitorio": ["Ropa de cama","Armario y ropero","Perchero","Plancha para ropa","Tendedero"],
+        "entretenimiento": ["TV de pantalla plana","Radio"],
+        "exterior": ["Terraza / Solárium","Balcón","Mobiliario exterior","Zona de comedor exterior","Barbacoa","Patio","Jardín"],
+        "seguridad": ["Extintores","Detector de humo","Caja fuerte","Cámaras de seguridad"],
+        "idiomas": ["Español","Inglés","Alemán"]
+      }
+    },
+    "apartment-4": {
+      "name": "Sol, Arena y Mar",
+      "description": "Encantador apartamento en Torrox Costa, perfecto para parejas o viajeros solos. Compacto y funcional, con todas las comodidades esenciales. Ubicado muy cerca de la playa y con vistas al mar. Ideal para relajarse y disfrutar del ambiente apacible y pintoresco de la hermosa Costa del Sol.",
+      "location": {
+        "short": "El Morche, Torrox Costa",
+        "address": "C. Santiago, 4, 29793 El Morche, Torrox Costa"
+      },
+      "amenities": {
+        "general": ["WiFi gratis","Parking gratis","Aire acondicionado","Habitaciones sin humo","Calefacción","Lavadora","Secadora de ropa","Entrada privada"],
+        "cocina": ["Cocina completa","Mesa de comedor","Cafetera","Tostadora","Fogones","Microondas","Nevera","Utensilios de cocina"],
+        "baño": ["Baño privado","Toallas","Secador de pelo","Ducha","Bidet","Papel higiénico"],
+        "dormitorio": ["Ropa de cama","Armario o ropero","Perchero","Plancha para ropa","Tendedero"],
+        "entretenimiento": ["TV de pantalla plana","Canales por cable"],
+        "exterior": ["Situado frente a la playa","Balcón","Mobiliario exterior","Zona de comedor exterior","Barbacoa"],
+        "seguridad": ["Extintores","Detector de humo","Caja fuerte","Cámaras de seguridad"],
+        "idiomas": ["Español","Inglés","Alemán"]
+      }
+    }
   }
 }
 
