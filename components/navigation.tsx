@@ -98,7 +98,7 @@ export function Navigation({ dict, locale }: NavigationProps) {
               {/* CTA Reserva */}
               <Button
                 asChild
-                className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold px-6 shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-[#d97706] hover:bg-[#b45309] text-white font-semibold px-6 shadow-md hover:shadow-lg transition-all duration-300"
               >
                 <Link href={createLocalizedPath("/apartments", locale)}>
                   {dict.hero.cta}
@@ -108,7 +108,12 @@ export function Navigation({ dict, locale }: NavigationProps) {
 
             {/* Mobile Menu Toggle */}
             <div className="lg:hidden flex items-center gap-2">
-              <Button variant="ghost" size="sm" onClick={() => setIsOpen(!isOpen)}>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsOpen(!isOpen)}
+                aria-label={isOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
+              >
                 {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </Button>
             </div>
@@ -184,7 +189,7 @@ export function Navigation({ dict, locale }: NavigationProps) {
         </Link>
         {/* Switcher móvil minimalista */}
         <div className="flex flex-col items-center text-xs">
-          <LanguageSwitcherWrapper locale={locale} minimal />
+          <LanguageSwitcherWrapper locale={locale}  />
           <span className="sr-only">Change language</span>
         </div>
       </div>
