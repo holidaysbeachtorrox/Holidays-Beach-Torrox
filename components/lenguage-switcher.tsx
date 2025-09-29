@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button"
 type Props = {
   locale: Locale
   minimal?: boolean
+  placement?: "top" | "bottom"
 }
 
 const LANGS: Array<{ code: Locale; name: string; flag: string }> = [
@@ -18,7 +19,7 @@ const LANGS: Array<{ code: Locale; name: string; flag: string }> = [
   { code: "de", name: "Deutsch", flag: "🇩🇪" },
 ]
 
-export function LanguageSwitcher({ locale, minimal = false }: Props) {
+export function LanguageSwitcher({ locale, minimal = false, placement = "top" }: Props) {
   const [open, setOpen] = useState(false)
   const router = useRouter()
   const pathname = usePathname()
@@ -90,7 +91,7 @@ export function LanguageSwitcher({ locale, minimal = false }: Props) {
           className="gap-2 bg-white text-foreground border border-border hover:bg-secondary/10 hover:text-foreground transition-colors"
           aria-haspopup="menu"
           aria-expanded={open}
-          aria-label={'Cambiar idioma (actual: ${current.name})'}
+          aria-label={`Cambiar idioma (actual: ${current.name})`}
         >
           <Globe className="w-4 h-4" />
           <span className="hidden md:inline">{current.flag} {current.name}</span>
@@ -102,7 +103,8 @@ export function LanguageSwitcher({ locale, minimal = false }: Props) {
         <div
           role="menu"
           aria-label="Select language"
-          className="absolute bottom-full mb-2 right-0 w-40 rounded-md border bg-card shadow-md z-[9999] overflow-hidden"
+          className={`absolute right-0 w-40 rounded-md border bg-card shadow-md z-[9999] overflow-hidden
+            ${placement === "top" ? "top-full mt-2" : "bottom-full mb-2"}`}
         >
           {LANGS.map(lang => {
             const active = lang.code === locale

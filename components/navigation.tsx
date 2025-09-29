@@ -93,7 +93,7 @@ export function Navigation({ dict, locale }: NavigationProps) {
               </a>
 
               {/* Language Switcher */}
-              <LanguageSwitcherWrapper locale={locale} />
+              <LanguageSwitcherWrapper locale={locale} placement="top" />
 
               {/* CTA Reserva */}
               <Button
@@ -189,7 +189,7 @@ export function Navigation({ dict, locale }: NavigationProps) {
         </Link>
         {/* Switcher móvil minimalista */}
         <div className="flex flex-col items-center text-xs">
-          <LanguageSwitcherWrapper locale={locale}  />
+          <LanguageSwitcherWrapper locale={locale} placement="bottom" />
           <span className="sr-only">Change language</span>
         </div>
       </div>
