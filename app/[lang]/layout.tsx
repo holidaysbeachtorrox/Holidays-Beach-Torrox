@@ -93,7 +93,7 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
       description: descriptions[params.lang],
       images: [
         {
-          url: apartments[0]?.images[0] || "https://holidaysbeachtorrox.com/placeholder.jpg",
+          url: apartments[0]?.images[0] || "https://holidaysbeachtorrox.com/logo-negro.png",
           width: 1200,
           height: 630,
           alt: apartments[0]?.name || "Apartamento en Torrox Costa del Sol",
@@ -106,7 +106,7 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
       creator: "@HolidaysBeachTorrox",
       title: titles[params.lang],
       description: descriptions[params.lang],
-      images: [apartments[0]?.images[0] || "https://holidaysbeachtorrox.com/placeholder.jpg"],
+      images: [apartments[0]?.images[0] || "https://holidaysbeachtorrox.com/logo-negro.png"],
     },
     verification: {
       google: "google-site-verification-code-here",
@@ -147,7 +147,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
               image: apartments.flatMap((a) => a.images).slice(0, 5),
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "Paseo Marítimo",
+                streetAddress: "Avenida andalucía 24 Cristaleria y Aluminios",
                 addressLocality: "Torrox",
                 addressRegion: "Málaga",
                 postalCode: "29770",
@@ -158,8 +158,8 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
                 latitude: 36.7213,
                 longitude: -3.9576,
               },
-              telephone: "+34 952 123 456",
-              email: "info@holidaysbeachtorrox.com",
+              telephone: "+34 683 11 77 11",
+              email: "holidaysbeachtorrox@gmail.com",
               aggregateRating: {
                 "@type": "AggregateRating",
                 ratingValue: avgRating,

@@ -1,3 +1,4 @@
+// middleware.ts
 import { type NextRequest, NextResponse } from "next/server"
 
 const locales = ["es", "en", "de"]

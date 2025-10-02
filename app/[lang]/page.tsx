@@ -19,9 +19,9 @@ export async function generateMetadata({
   }
 
   const descriptions = {
-    es: "Descubre nuestros apartamentos exclusivos en Torrox, Costa del Sol. Alojamiento de lujo a metros de la playa con todas las comodidades. Reserva directa sin comisiones desde €65/noche.",
-    en: "Discover our exclusive apartments in Torrox, Costa del Sol. Luxury accommodation meters from the beach with all amenities. Direct booking without commissions from €65/night.",
-    de: "Entdecken Sie unsere exklusiven Apartments in Torrox, Costa del Sol. Luxusunterkunft nur wenige Meter vom Strand mit allen Annehmlichkeiten. Direktbuchung ohne Provisionen ab €65/Nacht.",
+    es: "Descubre nuestros apartamentos exclusivos en Torrox, Costa del Sol. Alojamiento de lujo a metros de la playa con todas las comodidades.",
+    en: "Discover our exclusive apartments in Torrox, Costa del Sol. Luxury accommodation meters from the beach with all amenities.",
+    de: "Entdecken Sie unsere exklusiven Apartments in Torrox, Costa del Sol. Luxusunterkunft nur wenige Meter vom Strand mit allen Annehmlichkeiten.",
   }
 
   return {
@@ -29,6 +29,11 @@ export async function generateMetadata({
     description: descriptions[params.lang],
     alternates: {
       canonical: `https://holidaysbeachtorrox.com/${params.lang}`,
+      languages: { 
+        es: "https://holidaysbeachtorrox.com/es", 
+        en: "https://holidaysbeachtorrox.com/en", 
+        de: "https://holidaysbeachtorrox.com/de" 
+      },
     },
     openGraph: {
       title: titles[params.lang],
