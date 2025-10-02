@@ -404,5 +404,91 @@
         "idiomas": ["Spanisch","Englisch","Deutsch"]
       }
     }
+  },
+  "legal": {
+    "privacy": {
+      "title": "Datenschutzerklärung",
+      "updated": "Letzte Aktualisierung: Januar 2025",
+      "intro": "Bei Holidays Beach Torrox respektieren wir Ihre Privatsphäre. Diese Website dient ausschließlich zu Informationszwecken und erhebt keine personenbezogenen Daten direkt. Reservierungen und Datenverarbeitung erfolgen ausschließlich über die Plattform AvaiBook.",
+      "sections": [
+        {
+          "title": "1. Reservierungen und personenbezogene Daten",
+          "content": "Reservierungen und die damit verbundenen Daten (Name, E-Mail, Telefonnummer, Adresse, Zahlungsdetails usw.) werden ausschließlich über AvaiBook verarbeitet. Holidays Beach Torrox speichert oder verwaltet diese Daten nicht auf dieser Website. Bitte lesen Sie die Datenschutzrichtlinie von AvaiBook unter https://www.avaibook.com."
+        },
+        {
+          "title": "2. Direkter Kontakt",
+          "content": "Wenn Sie uns per Telefon oder E-Mail kontaktieren, verwenden wir Ihre Daten ausschließlich zur Beantwortung Ihrer Anfrage. Diese Daten werden nicht für kommerzielle Zwecke gespeichert oder an Dritte weitergegeben."
+        },
+        {
+          "title": "3. Rechte der Nutzer",
+          "content": "Sie haben das Recht auf Zugang, Berichtigung und Löschung Ihrer Daten sowie auf Einschränkung oder Widerspruch gegen deren Verarbeitung. Für Reservierungen und Zahlungen wenden Sie sich bitte direkt an AvaiBook. Für direkte Anfragen können Sie uns unter holidaysbeachtorrox@gmail.com kontaktieren."
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Cookie-Richtlinie",
+      "updated": "Letzte Aktualisierung: Januar 2025",
+      "intro": "Unsere Website verwendet keine Tracking- oder Werbe-Cookies. Es werden nur notwendige Cookies eingesetzt, um die ordnungsgemäße Funktion und die Integration mit AvaiBook zu gewährleisten.",
+      "sections": [
+        {
+          "title": "1. Technisch notwendige Cookies",
+          "content": "Diese Cookies ermöglichen die grundlegende Navigation und gewährleisten den korrekten Betrieb der Website sowie der AvaiBook-Dienste. Sie erfordern keine ausdrückliche Zustimmung."
+        },
+        {
+          "title": "2. Cookies von Drittanbietern (AvaiBook)",
+          "content": "Während des Buchungsvorgangs kann AvaiBook eigene Cookies verwenden, um sichere Transaktionen und die ordnungsgemäße Verwaltung der Buchungen zu gewährleisten. Bitte lesen Sie deren Richtlinie direkt auf https://www.avaibook.com."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Allgemeine Geschäftsbedingungen",
+      "updated": "Letzte Aktualisierung: Januar 2025",
+      "intro": "Durch den Zugriff auf und die Nutzung dieser Website akzeptieren Sie die folgenden Bedingungen. Diese Website dient ausschließlich zu Informationszwecken und leitet den Buchungsprozess an die Plattform AvaiBook weiter.",
+      "sections": [
+        {
+          "title": "1. Zweck",
+          "content": "Diese Website stellt Informationen über die von Holidays Beach Torrox verwalteten Apartments bereit. Reservierungen und Zahlungen erfolgen ausschließlich über AvaiBook."
+        },
+        {
+          "title": "2. Reservierungen und Zahlungen",
+          "content": "Die Bedingungen für Buchung, Preise, Verfügbarkeit, Zahlung und Stornierung unterliegen den Richtlinien von AvaiBook und werden nicht direkt über diese Website verwaltet."
+        },
+        {
+          "title": "3. Ordnungsgemäße Nutzung",
+          "content": "Die Nutzer verpflichten sich, die Website rechtmäßig zu nutzen und keine Handlungen vorzunehmen, die unrechtmäßig, missbräuchlich oder gegen Treu und Glauben verstoßen."
+        },
+        {
+          "title": "4. Haftungsbeschränkung",
+          "content": "Holidays Beach Torrox übernimmt keine Verantwortung für technische Fehler, Unterbrechungen oder Probleme, die durch AvaiBook oder andere Drittplattformen verursacht werden."
+        }
+      ]
+    },
+    "legalNotice": {
+      "title": "Impressum",
+      "updated": "Letzte Aktualisierung: Januar 2025",
+      "intro": "Dieses Impressum regelt die Nutzung der Website von Holidays Beach Torrox (https://holidaysbeachtorrox.com). Der Zugriff auf diese Seite setzt die Zustimmung zu diesen Bedingungen voraus.",
+      "sections": [
+        {
+          "title": "1. Identifikation",
+          "content": "Inhaber: Holidays Beach Torrox.\nE-Mail: holidaysbeachtorrox@gmail.com.\nStandort: El Morche, Torrox Costa, Málaga (Spanien)."
+        },
+        {
+          "title": "2. Nutzung der Website",
+          "content": "Der Zugriff auf die Website ist kostenlos und dient ausschließlich Informationszwecken. Die Nutzer verpflichten sich, die Seite verantwortungsbewusst zu nutzen."
+        },
+        {
+          "title": "3. Geistiges Eigentum",
+          "content": "Alle Texte, Bilder und Designs sind Eigentum von Holidays Beach Torrox oder werden mit Genehmigung verwendet. Eine Vervielfältigung ohne Genehmigung ist nicht gestattet."
+        },
+        {
+          "title": "4. Externe Reservierungen",
+          "content": "Reservierungen werden extern über AvaiBook verwaltet. Holidays Beach Torrox übernimmt keine Verantwortung für technische Probleme dieser Plattform."
+        },
+        {
+          "title": "5. Anwendbares Recht und Gerichtsstand",
+          "content": "Dieses Impressum unterliegt dem spanischen Recht. Streitigkeiten werden den Gerichten von Málaga vorgelegt, sofern nicht gesetzlich anders vorgeschrieben."
+        }
+      ]
+    }
   }
 }

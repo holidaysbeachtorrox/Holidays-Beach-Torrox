@@ -210,7 +210,7 @@
     "info": {
       "address": {
         "title": "Dirección",
-        "line1": "Avenida de Amdalucía, 24 Bajo",
+        "line1": "Avenida de Andalucía, 24 Bajo",
         "line2": "Cristaleria y aluminios Torrox Costa"
       },
       "phone": {
@@ -425,6 +425,92 @@
         "seguridad": ["Extintores","Detector de humo","Caja fuerte","Cámaras de seguridad"],
         "idiomas": ["Español","Inglés","Alemán"]
       }
+    }
+  },
+  "legal": {
+    "privacy": {
+      "title": "Política de Privacidad",
+      "updated": "Última actualización: Octubre 2025",
+      "intro": "En Holidays Beach Torrox respetamos tu privacidad. Queremos dejar claro que esta página web tiene un carácter puramente informativo y no recoge directamente datos personales. La gestión de reservas y cualquier tratamiento de datos se realiza a través de la plataforma AvaiBook.",
+      "sections": [
+        {
+          "title": "1. Gestión de reservas y datos personales",
+          "content": "La reserva de apartamentos y el tratamiento de datos asociados (nombre, correo electrónico, teléfono, dirección, método de pago, etc.) se realizan exclusivamente en la plataforma AvaiBook. Holidays Beach Torrox no almacena, procesa ni gestiona dichos datos en esta web. Consulta la política de privacidad de AvaiBook en https://www.avaibook.com."
+        },
+        {
+          "title": "2. Contacto directo",
+          "content": "Si contactas con nosotros por teléfono o correo electrónico, únicamente utilizaremos tus datos para responder a tu consulta. Estos no se conservarán en bases de datos con fines comerciales ni se cederán a terceros."
+        },
+        {
+          "title": "3. Derechos de los usuarios",
+          "content": "Tienes derecho a acceder, rectificar y suprimir tus datos, así como a limitar u oponerte a su tratamiento. Para todo lo relacionado con reservas y pagos, debes dirigirte a AvaiBook. Para consultas directas (correo o teléfono), puedes escribirnos a holidaysbeachtorrox@gmail.com."
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Política de Cookies",
+      "updated": "Última actualización: Octubre 2025",
+      "intro": "Nuestra web no utiliza cookies de seguimiento, analítica ni publicidad. Únicamente se emplean cookies esenciales para el correcto funcionamiento del sitio y la integración con AvaiBook.",
+      "sections": [
+        {
+          "title": "1. Cookies técnicas necesarias",
+          "content": "Son aquellas que permiten la navegación básica y garantizan el correcto funcionamiento del sitio web y de los servicios vinculados a AvaiBook. Estas cookies no requieren consentimiento expreso."
+        },
+        {
+          "title": "2. Cookies de terceros (AvaiBook)",
+          "content": "Durante el proceso de reserva, la plataforma AvaiBook puede utilizar sus propias cookies para garantizar la seguridad de las transacciones y la correcta gestión del proceso de reserva. Puedes consultar su política directamente en https://www.avaibook.com."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Términos y Condiciones",
+      "updated": "Última actualización: Octubre 2025",
+      "intro": "El acceso y uso de esta web implica aceptar las condiciones que se detallan a continuación. Este sitio tiene fines exclusivamente informativos y remite el proceso de reserva a la plataforma AvaiBook.",
+      "sections": [
+        {
+          "title": "1. Objeto",
+          "content": "La presente página proporciona información sobre los apartamentos gestionados por Holidays Beach Torrox. Las reservas y pagos no se realizan directamente aquí, sino a través de AvaiBook."
+        },
+        {
+          "title": "2. Reservas y pagos",
+          "content": "Los términos de contratación, precios, disponibilidad, métodos de pago y cancelación se rigen por la normativa y condiciones establecidas por AvaiBook, no siendo responsabilidad directa de esta web."
+        },
+        {
+          "title": "3. Uso correcto de la web",
+          "content": "El usuario se compromete a utilizar la página de forma adecuada, respetando la legalidad vigente y evitando cualquier actuación ilícita, abusiva o contraria a la buena fe."
+        },
+        {
+          "title": "4. Responsabilidad limitada",
+          "content": "Holidays Beach Torrox no se responsabiliza de posibles errores técnicos, interrupciones o incidencias derivadas del uso de la plataforma de reservas AvaiBook o de terceros."
+        }
+      ]
+    },
+    "legalNotice": {
+      "title": "Aviso Legal",
+      "updated": "Última actualización: Octubre 2025",
+      "intro": "Este aviso regula el uso de la web de Holidays Beach Torrox (https://holidaysbeachtorrox.com). Al acceder al sitio aceptas las condiciones de uso aquí establecidas.",
+      "sections": [
+        {
+          "title": "1. Identificación del titular",
+          "content": "Titular: Holidays Beach Torrox.\nCorreo electrónico: holidaysbeachtorrox@gmail.com.\nUbicación: El Morche, Torrox Costa, Málaga (España)."
+        },
+        {
+          "title": "2. Condiciones de uso",
+          "content": "El acceso a la web es gratuito y tiene un carácter exclusivamente informativo. El usuario se compromete a no realizar actividades ilícitas o contrarias al orden público y a la buena fe."
+        },
+        {
+          "title": "3. Propiedad intelectual e industrial",
+          "content": "Todos los textos, imágenes, logotipos y elementos gráficos presentes en la web son propiedad de Holidays Beach Torrox o cuentan con autorización de sus titulares. Queda prohibida su reproducción sin autorización expresa."
+        },
+        {
+          "title": "4. Reservas externas",
+          "content": "Las reservas se gestionan de forma externa a través de AvaiBook. Holidays Beach Torrox no se responsabiliza de incidencias derivadas del uso de dicha plataforma."
+        },
+        {
+          "title": "5. Legislación aplicable y jurisdicción",
+          "content": "El presente aviso legal se rige por la legislación española. Cualquier disputa derivada del uso de esta web será sometida a los juzgados y tribunales de Málaga, salvo disposición legal en contrario."
+        }
+      ]
     }
   }
 }

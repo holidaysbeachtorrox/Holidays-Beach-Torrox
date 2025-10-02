@@ -180,7 +180,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
             }),
           }}
         />
-        <div className="min-h-screen flex flex-col">
+        <div className="min-h-screen flex flex-col justify-between">
           <Navigation dict={dict} locale={params.lang} />
           <main className="flex-1">{children}</main>
           <Footer dict={dict} locale={params.lang} />
