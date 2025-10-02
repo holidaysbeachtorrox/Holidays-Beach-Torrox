@@ -338,7 +338,16 @@
   "apartmentsData": {
     "apartment-1": {
       "name": "Casa del Pescador",
-      "description": "Disfruta de unas vacaciones inolvidables en El Morche alquilando este hermoso apartamento de playa. Con vistas espectaculares al mar Mediterráneo y acceso directo a la arena dorada. Equipado con todas las comodidades para una estancia relajante. Ideal para familias o parejas que buscan sol, mar y tranquilidad en la Costa del Sol.",
+      "description": "Encantador apartamento en Torrox Costa, perfecto para parejas o viajeros solos. Compacto y funcional, con todas las comodidades esenciales. Ubicado a tan solo 90 metros de la playa. Ideal para relajarse y disfrutar del ambiente apacible y pintoresco de la hermosa Costa del Sol.",
+      "capacityInfo": {
+        "max": 4,
+        "details": [
+          "1 dormitorio oficial con cama de matrimonio, aire acondicionado y televisión.",
+          "Opciones adicionales de descanso (2 plazas):",
+          "• Sofá cama doble en el salón (con aire acondicionado y televisión), o",
+          "• Espacio anexo contiguo al salón, con puerta de separación, aire acondicionado, armario empotrado, dos camas individuales pequeñas y televisión. ⚠️ Este espacio anexo no se considera un dormitorio independiente, ya que no dispone de ventana exterior, pero puede usarse para dormir si los huéspedes lo desean."
+        ]
+      },
       "location": {
         "short": "El Morche, Torrox Costa",
         "address": "Calle Santiago 6, El Morche, Torrox Costa"
@@ -392,7 +401,16 @@
     },
     "apartment-4": {
       "name": "Sol, Arena y Mar",
-      "description": "Encantador apartamento en Torrox Costa, perfecto para parejas o viajeros solos. Compacto y funcional, con todas las comodidades esenciales. Ubicado muy cerca de la playa y con vistas al mar. Ideal para relajarse y disfrutar del ambiente apacible y pintoresco de la hermosa Costa del Sol.",
+      "description": "Encantador apartamento en Torrox Costa, perfecto para parejas o viajeros solos. Compacto y funcional, con todas las comodidades esenciales. Ubicado a tan solo 90 metros de la playa. Ideal para relajarse y disfrutar del ambiente apacible y pintoresco de la hermosa Costa del Sol.",
+      "capacityInfo": {
+        "max": 4,
+        "details": [
+          "1 dormitorio oficial con cama de matrimonio, aire acondicionado y televisión.",
+          "Opciones adicionales de descanso (2 plazas):",
+          "• Sofá cama doble en el salón (con aire acondicionado y televisión), o",
+          "• Espacio anexo contiguo al salón, con puerta de separación, aire acondicionado, armario empotrado, dos camas individuales pequeñas y televisión. ⚠️ Este espacio anexo no se considera un dormitorio independiente, ya que no dispone de ventana exterior, pero puede usarse para dormir si los huéspedes lo desean."
+        ]
+      },
       "location": {
         "short": "El Morche, Torrox Costa",
         "address": "C. Santiago, 4, 29793 El Morche, Torrox Costa"

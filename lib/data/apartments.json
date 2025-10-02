@@ -16,7 +16,7 @@
       "/apartments/Apartamento 6/Cocina 2.jpg"
     ],
     "capacity": 4,
-    "bedrooms": 2,
+    "bedrooms": 1,
     "bathrooms": 1,
     "area": 64,
     "featured": false,
@@ -139,8 +139,8 @@
       "/apartments/Apartamento 4/Cocina 1.jpg",
       "/apartments/Apartamento 4/Cocina 2.jpg"
     ],
-    "capacity": 5,
-    "bedrooms": 2,
+    "capacity": 4,
+    "bedrooms": 1,
     "bathrooms": 1,
     "area": 71,
     "featured": true,

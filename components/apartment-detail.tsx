@@ -61,6 +61,10 @@ interface Apartment {
   description: string
   amenities: Record<string, string[]>
   avaibookId?: string
+  capacityInfo?: {
+    max: number
+    details: string[]
+  }
 }
 
 interface Dict {
@@ -391,6 +395,20 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
                 <p className="text-muted-foreground leading-relaxed text-lg">
                   {apartment.description}
                 </p>
+
+                {/* Info de capacidad opcional */}
+                {apartment.capacityInfo && (
+                  <div className="mt-6 p-4 bg-muted/30 rounded-lg space-y-3">
+                    <h4 className="font-heading font-semibold text-lg text-foreground">
+                      Capacidad máxima: {apartment.capacityInfo.max} personas
+                    </h4>
+                    <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+                      {apartment.capacityInfo.details.map((line, i) => (
+                        <li key={i} className="leading-relaxed">{line}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
 
               {/* Servicios incluidos */}

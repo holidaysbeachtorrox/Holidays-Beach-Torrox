@@ -11,13 +11,25 @@ export async function generateMetadata({
 }: {
   params: { lang: Locale; slug: string }
 }): Promise<Metadata> {
+  const dict = await getDictionary(params.lang)
   const apartments = await getApartments(params.lang)
-  const apartment = apartments.find((apt) => apt.slug === params.slug)
+  const apartmentBase = apartments.find((apt) => apt.slug === params.slug)
 
-  if (!apartment) {
+  if (!apartmentBase) {
     return {
       title: "Apartamento no encontrado",
     }
+  }
+
+  // Merge con extras del diccionario
+  const apartmentDict = (dict.apartmentsData as { [key: string]: typeof dict.apartmentsData[keyof typeof dict.apartmentsData] })?.[apartmentBase.id] || {}
+  const apartment = {
+    ...apartmentBase,
+    ...apartmentDict,
+    location: {
+      ...apartmentBase.location,
+      ...apartmentDict.location,
+    },
   }
 
   const titles = {
@@ -66,13 +78,24 @@ export default async function ApartmentDetailPage({
   const dict = await getDictionary(params.lang)
 
   const apartments = await getApartments(params.lang)
-  const apartment = apartments.find((apt) => apt.slug === params.slug)
+  const apartmentBase = apartments.find((apt) => apt.slug === params.slug)
 
-  if (!apartment) {
+  if (!apartmentBase) {
     notFound()
   }
 
-  // Flatten amenities into one array for JSON-LD
+  // Merge con extras del diccionario
+  const apartmentDict = (dict.apartmentsData as Record<string, typeof dict.apartmentsData[keyof typeof dict.apartmentsData]>)[apartmentBase!.id] || {}
+  const apartment = {
+    ...apartmentBase!,
+    ...apartmentDict,
+    location: {
+      ...apartmentBase!.location,
+      ...apartmentDict.location,
+    },
+  }
+
+  // Flatten amenities para JSON-LD
   const flatAmenities = Object.values(apartment.amenities || {})
     .flat()
     .map((amenity) => ({
@@ -127,11 +150,7 @@ export default async function ApartmentDetailPage({
 
       <main className="min-h-screen">
         <Navigation dict={dict} locale={params.lang} />
-        <ApartmentDetail
-          apartment={apartment}
-          dict={dict}
-          locale={params.lang}
-        />
+        <ApartmentDetail apartment={apartment} dict={dict} locale={params.lang} />
       </main>
     </>
   )
