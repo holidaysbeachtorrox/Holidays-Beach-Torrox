@@ -37,11 +37,11 @@ export async function FeaturedApartments({ dict, locale }: FeaturedApartmentsPro
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mb-16">
+        <div className="grid gap-8 lg:gap-10 mb-16 justify-center [grid-template-columns:repeat(auto-fit,minmax(320px,1fr))]">
           {featuredApartments.map((apartment) => (
             <Card
               key={apartment.id}
-              className="group overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-500 bg-card hover:scale-[1.02]"
+              className="group overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-500 bg-card hover:scale-[1.02] w-full"
             >
               <div className="relative overflow-hidden">
                 <Image

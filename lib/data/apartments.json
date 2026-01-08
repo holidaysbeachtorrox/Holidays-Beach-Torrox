@@ -107,7 +107,7 @@
     "bedrooms": 3,
     "bathrooms": 2,
     "area": 187,
-    "featured": true,
+    "featured": false,
     "rating": 9.2,
     "reviews": 23,
     "location": {
