@@ -29,7 +29,13 @@ export type ReviewSource = "google" | "booking"
 export type Review = {
   source: ReviewSource
   author: string
-  rating: number
+  /** Google va sobre 5 y Booking sobre 10. Se omite si no consta la nota. */
+  rating?: number
+  /** País del autor, tal y como lo publica Booking. */
+  country?: string
+  /** Titular del comentario, cuando dice algo más que "Excepcional". */
+  title?: string
+  /** AAAA-MM. Google solo muestra fechas relativas, así que ahí se omite. */
   date?: string
   text: string
 }

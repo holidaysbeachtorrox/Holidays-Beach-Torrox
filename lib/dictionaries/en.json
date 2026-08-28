@@ -797,6 +797,8 @@
     "guest": "guest",
     "bedroom": "bedroom",
     "bathroom": "bathroom",
-    "whatsappMessage": "Hello, I'm interested in the {name} apartment. Could you send me more information?"
+    "whatsappMessage": "Hello, I'm interested in the {name} apartment. Could you send me more information?",
+    "showMoreReviews": "See all {count} reviews",
+    "showLessReviews": "Show fewer reviews"
   }
 }

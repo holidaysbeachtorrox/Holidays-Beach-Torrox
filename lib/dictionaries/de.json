@@ -797,6 +797,8 @@
     "guest": "Gast",
     "bedroom": "Schlafzimmer",
     "bathroom": "Badezimmer",
-    "whatsappMessage": "Hallo, ich interessiere mich für die Wohnung {name}. Könnten Sie mir mehr Informationen schicken?"
+    "whatsappMessage": "Hallo, ich interessiere mich für die Wohnung {name}. Könnten Sie mir mehr Informationen schicken?",
+    "showMoreReviews": "Alle {count} Bewertungen ansehen",
+    "showLessReviews": "Weniger Bewertungen anzeigen"
   }
 }
