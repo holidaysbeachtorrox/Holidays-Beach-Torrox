@@ -98,11 +98,15 @@ export async function ShowcasePage({ slug, lang }: { slug: string; lang: Locale 
       review: reviews.map((r) => ({
         "@type": "Review",
         author: { "@type": "Person", name: r.author },
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: r.rating,
-          bestRating: r.source === "google" ? 5 : 10,
-        },
+        // Las de Google no traen la nota publicada, así que se omite en vez
+        // de darle un valor que nadie ha puesto.
+        ...(r.rating !== undefined && {
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: r.rating,
+            bestRating: r.source === "google" ? 5 : 10,
+          },
+        }),
         reviewBody: r.text,
         ...(r.date && { datePublished: r.date }),
       })),

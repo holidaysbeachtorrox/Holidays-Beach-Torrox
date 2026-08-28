@@ -56,12 +56,27 @@ const SOURCE_SCALE: Record<Review["source"], number> = {
   booking: 10,
 }
 
+/** Cuántas reseñas se ven antes de pulsar "ver todas". */
+const INITIAL_REVIEWS = 4
+
+/** "2024-09" -> "septiembre de 2024" / "September 2024" / "September 2024". */
+function formatMonth(date: string, locale: Locale) {
+  const [year, month] = date.split("-").map(Number)
+  if (!year || !month) return date
+  return new Intl.DateTimeFormat(locale, { month: "long", year: "numeric" }).format(
+    new Date(year, month - 1, 1)
+  )
+}
+
 export function ApartmentShowcase({ showcase, dict, locale }: ApartmentShowcaseProps) {
   const { apartment, photos, reviews, links } = showcase
   const t = dict.showcase
 
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
   const isOpen = lightboxIndex !== null
+
+  const [allReviews, setAllReviews] = useState(false)
+  const visibleReviews = allReviews ? reviews : reviews.slice(0, INITIAL_REVIEWS)
 
   const showPrev = useCallback(() => {
     setLightboxIndex((i) => (i === null ? i : (i - 1 + photos.length) % photos.length))
@@ -193,33 +208,68 @@ export function ApartmentShowcase({ showcase, dict, locale }: ApartmentShowcaseP
             </div>
 
             {reviews.length > 0 && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-                {reviews.map((review, index) => (
-                  <Card key={index} className="border-0 shadow-lg bg-card h-full">
-                    <CardContent className="p-6 flex flex-col h-full">
-                      <div className="flex items-center justify-between gap-4 mb-4">
-                        <span className="font-semibold text-foreground">{review.author}</span>
-                        <span className="flex items-center gap-1 text-sm font-medium text-foreground whitespace-nowrap">
-                          <Star className="w-4 h-4 fill-secondary text-secondary" />
-                          {review.rating.toLocaleString(locale)}
-                          <span className="text-muted-foreground font-normal">
-                            /{SOURCE_SCALE[review.source]}
+              <>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start mb-8">
+                  {visibleReviews.map((review, index) => (
+                    <Card key={index} className="border-0 shadow-lg bg-card">
+                      <CardContent className="p-6">
+                        <div className="flex items-start justify-between gap-4 mb-4">
+                          <span>
+                            <span className="block font-semibold text-foreground">
+                              {review.author}
+                            </span>
+                            {review.country && (
+                              <span className="block text-xs text-muted-foreground">
+                                {review.country}
+                              </span>
+                            )}
                           </span>
-                        </span>
-                      </div>
+                          {review.rating !== undefined && (
+                            <span className="flex items-center gap-1 text-sm font-medium text-foreground whitespace-nowrap">
+                              <Star className="w-4 h-4 fill-secondary text-secondary" />
+                              {review.rating.toLocaleString(locale)}
+                              <span className="text-muted-foreground font-normal">
+                                /{SOURCE_SCALE[review.source]}
+                              </span>
+                            </span>
+                          )}
+                        </div>
 
-                      <blockquote className="text-muted-foreground leading-relaxed flex-1">
-                        {review.text}
-                      </blockquote>
+                        {review.title && (
+                          <p className="font-heading font-semibold text-foreground mb-2">
+                            {review.title}
+                          </p>
+                        )}
 
-                      <p className="mt-4 pt-4 border-t border-border text-xs text-muted-foreground">
-                        {fill(t.verifiedOn, { source: SOURCE_LABEL[review.source] })}
-                        {review.date && ` · ${review.date}`}
-                      </p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
+                        {/* Se respetan los saltos de línea con que se publicaron. */}
+                        <blockquote className="text-muted-foreground leading-relaxed whitespace-pre-line">
+                          {review.text}
+                        </blockquote>
+
+                        <p className="mt-4 pt-4 border-t border-border text-xs text-muted-foreground">
+                          {fill(t.verifiedOn, { source: SOURCE_LABEL[review.source] })}
+                          {review.date && ` · ${formatMonth(review.date, locale)}`}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+
+                {reviews.length > INITIAL_REVIEWS && (
+                  <div className="text-center mb-10">
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      onClick={() => setAllReviews((v) => !v)}
+                      className="font-medium text-primary hover:text-primary"
+                    >
+                      {allReviews
+                        ? t.showLessReviews
+                        : fill(t.showMoreReviews, { count: reviews.length })}
+                    </Button>
+                  </div>
+                )}
+              </>
             )}
 
             {(links.google || links.booking) && (

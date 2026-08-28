@@ -28,7 +28,129 @@
       "google": "https://www.google.com/maps/place/Sol+Arena+y+Mar-VUT%2FMA266960/@36.7378482,-3.9903038,19.5z/data=!4m6!3m5!1s0xd72391a67fa4df3:0x5f90a2fa54cb6568!8m2!3d36.7380981!4d-3.9905866!16s%2Fg%2F11p3c3c4d4",
       "booking": "https://www.booking.com/hotel/es/apartament-to-discover-andalucia-smart-tv-wifi-aa-one-step-beach.es.html"
     },
-    "reviews": []
+    "reviews": [
+      {
+        "source": "booking",
+        "author": "Nerea",
+        "country": "España",
+        "rating": 10,
+        "date": "2024-09",
+        "title": "Volveremos a repetir sin dudarlo",
+        "text": "Una casita muy acogedora, tiene todo lo necesario para pasar unos días. La zona es muy bonita y tranquila. La cercanía a la playa. El propietario un encanto y súper atento."
+      },
+      {
+        "source": "google",
+        "author": "Angela Mihaela Grigoruscuta",
+        "text": "Maravillosa estancia ❤️\nTodo fue perfecto y muy cómodo\nLa ubicación es perfecta, muy cerca de la playa unos 30m, solo le separa un edificio que hay por delante, pero andando unos metros pasando la esquina del bloque que se encuentra delante de la casa y cruzar la calle ya estás en la playa, es Perfecto.\nEstá en la segunda fila de la playa\nAdemás la casa está pensada para todo tipo de personas y familias con niños.\nHay aparcamiento en las calles cercanas y la zona del Morche es muy bonita, a nosotros nos gusta muchísimo para pasar las vacaciones de verano allí.\nJuan Antonio es una gran persona.\nLa casa dispone de absolutamente todo, no se echa en falta nada, es perfecto.\nRecomiendo 100% ⭐️⭐️⭐️⭐️⭐️\nLo que más nos gustó es que no es un edificio de apartamentos, es más como una casa porque la entrada es privada solo hay que subir 3 escalones y estás adentro, aunque por encima hay apartamentos, pero tienen otra escalera aparte independiente de la casa 🏠"
+      },
+      {
+        "source": "booking",
+        "author": "Serrato",
+        "country": "España",
+        "rating": 10,
+        "date": "2026-07",
+        "text": "Muy cerca de la playa. En dos minutos andando llegabas. El apartamento es cómodo y tiene cerca restaurantes y cafeterías. La localidad me ha sorprendido para bien si quieres huir de playas saturadas. Lo hemos pasado genial."
+      },
+      {
+        "source": "google",
+        "author": "Raquel GR",
+        "text": "Muy bien en relación calidad-precio. Al lado de la playa, y aunque no tiene vistas al mar es una calle muy tranquila. La playa más cercana está a 50 metros, playa de El Morche, playa con bandera azul y agua muy limpia.\nEl apartamento ofrece servicios de mucha calidad como es aire acondicionado en todas las estancias, TV en todas las estancias, lavadora, secadora, tabla de paddle surf..."
+      },
+      {
+        "source": "booking",
+        "author": "Abel",
+        "country": "España",
+        "rating": 10,
+        "date": "2024-08",
+        "title": "Muy buen apartamento en Torrox",
+        "text": "La ubicación y la comodidad del apartamento. El anfitrión del apto, excepcional."
+      },
+      {
+        "source": "google",
+        "author": "Nerea Beltran",
+        "text": "Casa muy acogedora.\nCuidada con todo detalle.\nEstá completa para pasar unos días.\nLa zona es muy tranquila.\nComercios en los alrededores.\nEl propietario es un encanto y muy atento.\nHan sido unos días espectaculares, volveremos a repetir sin dudarlo."
+      },
+      {
+        "source": "booking",
+        "author": "Vlad",
+        "country": "Ucrania",
+        "rating": 10,
+        "date": "2025-10",
+        "title": "The cozy apartment near the beach",
+        "text": "Eight days in this cozy ground-floor apartment near the beach were a wonderful experience. We had no shortage of anything. The apartment was clean and odor-free. We had no trouble parking on the street along the beach. A nice bonus was the availability of two beach umbrellas and chairs. This is a useful service for those arriving by plane. Juan Antonio is pleasant and quick to communicate. We would be happy to return."
+      },
+      {
+        "source": "google",
+        "author": "Abru",
+        "text": "Apartamento genial, limpio y decorado y con todo lo necesario. Ubicación del 10. Muy buena con playa cerca y chiringuitos y bares.\nRecomendable 💯"
+      },
+      {
+        "source": "booking",
+        "author": "Vitaliy",
+        "country": "Ucrania",
+        "rating": 10,
+        "date": "2026-06",
+        "title": "Really nice quiet apartment with great (in this area) location!",
+        "text": "The size of the property, its condition and location."
+      },
+      {
+        "source": "google",
+        "author": "Dóra Gál",
+        "text": "Apartamento con una ubicación increíble, anfitrión amable, habitaciones totalmente equipadas. Muchas gracias por estos 11 días. ☺️"
+      },
+      {
+        "source": "booking",
+        "author": "Dóra",
+        "country": "Hungría",
+        "rating": 10,
+        "date": "2025-08",
+        "text": "Perfect location, kind host, fully equipped, nice apartment. We had a great time, it is perfect for a family. :)"
+      },
+      {
+        "source": "google",
+        "author": "Gloria Serrato",
+        "text": "Muy buena ubicación. Al lado de la playa. El apartamento con aire acondicionado en todas las estancias. Volveremos."
+      },
+      {
+        "source": "booking",
+        "author": "Manuela",
+        "country": "Italia",
+        "rating": 9,
+        "date": "2026-01",
+        "title": "Vacanze di Natale in Costa del Sol!",
+        "text": "Posizionato a 50 m dalla spiaggia, bell'appartamento munito di tre televisori e tre condizionatori perfettamente funzionanti, lavatrice, boiler e cucina attrezzata con fuochi a induzione, bollitore elettrico, frigo due porte e forno a microonde, ben arredato e ristrutturato recentemente. Dotato di tutti i servizi essenziali e ben posizionato per chi vuole visitare l'Andalusia. Ottimo per una famiglia di 4 persone."
+      },
+      {
+        "source": "google",
+        "author": "Manuel Valentin",
+        "text": "Lugar tranquilo, muy cerca de la playa, cerca de restaurantes, bares y servicios. Por lo tanto buena ubicación. Buen trato."
+      },
+      {
+        "source": "booking",
+        "author": "Mathieu",
+        "country": "Francia",
+        "rating": 9,
+        "date": "2025-06",
+        "title": "Très bien",
+        "text": "Spacieux, à côté de la plage, sécurisé. Gentillesse du propriétaire. Supermarché à quelques minutes. Stationnement facile. Mise à disposition d'un parasol et chaises de plage."
+      },
+      {
+        "source": "booking",
+        "author": "Krzysztof",
+        "country": "Polonia",
+        "rating": 10,
+        "date": "2026-07",
+        "text": "Świetne miejsce. Wszędzie blisko. Zastaliśmy mieszkanie czyste, w pełni wyposażone, idealne na dłuższy pobyt."
+      },
+      {
+        "source": "booking",
+        "author": "Zdeňka",
+        "country": "República Checa",
+        "rating": 10,
+        "date": "2026-05",
+        "text": "Moc jsme si pobyt užili. Ubytování bylo krásně čisté, pohodlné a skvěle vybavené. Oceňujeme příjemnou atmosféru, klidné okolí i výbornou lokalitu. Komunikace s hostitelem byla rychlá a velmi dobrá, doporučujeme dál. 😊"
+      }
+    ]
   },
   "la-casita-del-pescador": {
     "apartmentId": "apartment-1",
@@ -60,9 +182,131 @@
       "/apartments/Apartamento 6/Exterior 4.jpg"
     ],
     "links": {
-      "google": "https://www.google.com/maps/place/La+Casita+del+Pescador/@36.737965,-3.9907697,19z/data=!3m1!4b1!4m6!3m5!1s0xd72390031a40f63:0x3cbf0c0d576dac9b!8m2!3d36.737965!4d-3.9901246!16s%2Fg%2F11yql01gmw",
+      "google": "https://www.google.com/maps/place/Sol+Arena+y+Mar-VUT%2FMA266960/@36.7378482,-3.9903038,19.5z/data=!4m6!3m5!1s0xd72391a67fa4df3:0x5f90a2fa54cb6568!8m2!3d36.7380981!4d-3.9905866!16s%2Fg%2F11p3c3c4d4",
       "booking": "https://www.booking.com/hotel/es/apartament-to-discover-andalucia-smart-tv-wifi-aa-one-step-beach.es.html"
     },
-    "reviews": []
+    "reviews": [
+      {
+        "source": "booking",
+        "author": "Nerea",
+        "country": "España",
+        "rating": 10,
+        "date": "2024-09",
+        "title": "Volveremos a repetir sin dudarlo",
+        "text": "Una casita muy acogedora, tiene todo lo necesario para pasar unos días. La zona es muy bonita y tranquila. La cercanía a la playa. El propietario un encanto y súper atento."
+      },
+      {
+        "source": "google",
+        "author": "Angela Mihaela Grigoruscuta",
+        "text": "Maravillosa estancia ❤️\nTodo fue perfecto y muy cómodo\nLa ubicación es perfecta, muy cerca de la playa unos 30m, solo le separa un edificio que hay por delante, pero andando unos metros pasando la esquina del bloque que se encuentra delante de la casa y cruzar la calle ya estás en la playa, es Perfecto.\nEstá en la segunda fila de la playa\nAdemás la casa está pensada para todo tipo de personas y familias con niños.\nHay aparcamiento en las calles cercanas y la zona del Morche es muy bonita, a nosotros nos gusta muchísimo para pasar las vacaciones de verano allí.\nJuan Antonio es una gran persona.\nLa casa dispone de absolutamente todo, no se echa en falta nada, es perfecto.\nRecomiendo 100% ⭐️⭐️⭐️⭐️⭐️\nLo que más nos gustó es que no es un edificio de apartamentos, es más como una casa porque la entrada es privada solo hay que subir 3 escalones y estás adentro, aunque por encima hay apartamentos, pero tienen otra escalera aparte independiente de la casa 🏠"
+      },
+      {
+        "source": "booking",
+        "author": "Serrato",
+        "country": "España",
+        "rating": 10,
+        "date": "2026-07",
+        "text": "Muy cerca de la playa. En dos minutos andando llegabas. El apartamento es cómodo y tiene cerca restaurantes y cafeterías. La localidad me ha sorprendido para bien si quieres huir de playas saturadas. Lo hemos pasado genial."
+      },
+      {
+        "source": "google",
+        "author": "Raquel GR",
+        "text": "Muy bien en relación calidad-precio. Al lado de la playa, y aunque no tiene vistas al mar es una calle muy tranquila. La playa más cercana está a 50 metros, playa de El Morche, playa con bandera azul y agua muy limpia.\nEl apartamento ofrece servicios de mucha calidad como es aire acondicionado en todas las estancias, TV en todas las estancias, lavadora, secadora, tabla de paddle surf..."
+      },
+      {
+        "source": "booking",
+        "author": "Abel",
+        "country": "España",
+        "rating": 10,
+        "date": "2024-08",
+        "title": "Muy buen apartamento en Torrox",
+        "text": "La ubicación y la comodidad del apartamento. El anfitrión del apto, excepcional."
+      },
+      {
+        "source": "google",
+        "author": "Nerea Beltran",
+        "text": "Casa muy acogedora.\nCuidada con todo detalle.\nEstá completa para pasar unos días.\nLa zona es muy tranquila.\nComercios en los alrededores.\nEl propietario es un encanto y muy atento.\nHan sido unos días espectaculares, volveremos a repetir sin dudarlo."
+      },
+      {
+        "source": "booking",
+        "author": "Vlad",
+        "country": "Ucrania",
+        "rating": 10,
+        "date": "2025-10",
+        "title": "The cozy apartment near the beach",
+        "text": "Eight days in this cozy ground-floor apartment near the beach were a wonderful experience. We had no shortage of anything. The apartment was clean and odor-free. We had no trouble parking on the street along the beach. A nice bonus was the availability of two beach umbrellas and chairs. This is a useful service for those arriving by plane. Juan Antonio is pleasant and quick to communicate. We would be happy to return."
+      },
+      {
+        "source": "google",
+        "author": "Abru",
+        "text": "Apartamento genial, limpio y decorado y con todo lo necesario. Ubicación del 10. Muy buena con playa cerca y chiringuitos y bares.\nRecomendable 💯"
+      },
+      {
+        "source": "booking",
+        "author": "Vitaliy",
+        "country": "Ucrania",
+        "rating": 10,
+        "date": "2026-06",
+        "title": "Really nice quiet apartment with great (in this area) location!",
+        "text": "The size of the property, its condition and location."
+      },
+      {
+        "source": "google",
+        "author": "Dóra Gál",
+        "text": "Apartamento con una ubicación increíble, anfitrión amable, habitaciones totalmente equipadas. Muchas gracias por estos 11 días. ☺️"
+      },
+      {
+        "source": "booking",
+        "author": "Dóra",
+        "country": "Hungría",
+        "rating": 10,
+        "date": "2025-08",
+        "text": "Perfect location, kind host, fully equipped, nice apartment. We had a great time, it is perfect for a family. :)"
+      },
+      {
+        "source": "google",
+        "author": "Gloria Serrato",
+        "text": "Muy buena ubicación. Al lado de la playa. El apartamento con aire acondicionado en todas las estancias. Volveremos."
+      },
+      {
+        "source": "booking",
+        "author": "Manuela",
+        "country": "Italia",
+        "rating": 9,
+        "date": "2026-01",
+        "title": "Vacanze di Natale in Costa del Sol!",
+        "text": "Posizionato a 50 m dalla spiaggia, bell'appartamento munito di tre televisori e tre condizionatori perfettamente funzionanti, lavatrice, boiler e cucina attrezzata con fuochi a induzione, bollitore elettrico, frigo due porte e forno a microonde, ben arredato e ristrutturato recentemente. Dotato di tutti i servizi essenziali e ben posizionato per chi vuole visitare l'Andalusia. Ottimo per una famiglia di 4 persone."
+      },
+      {
+        "source": "google",
+        "author": "Manuel Valentin",
+        "text": "Lugar tranquilo, muy cerca de la playa, cerca de restaurantes, bares y servicios. Por lo tanto buena ubicación. Buen trato."
+      },
+      {
+        "source": "booking",
+        "author": "Mathieu",
+        "country": "Francia",
+        "rating": 9,
+        "date": "2025-06",
+        "title": "Très bien",
+        "text": "Spacieux, à côté de la plage, sécurisé. Gentillesse du propriétaire. Supermarché à quelques minutes. Stationnement facile. Mise à disposition d'un parasol et chaises de plage."
+      },
+      {
+        "source": "booking",
+        "author": "Krzysztof",
+        "country": "Polonia",
+        "rating": 10,
+        "date": "2026-07",
+        "text": "Świetne miejsce. Wszędzie blisko. Zastaliśmy mieszkanie czyste, w pełni wyposażone, idealne na dłuższy pobyt."
+      },
+      {
+        "source": "booking",
+        "author": "Zdeňka",
+        "country": "República Checa",
+        "rating": 10,
+        "date": "2026-05",
+        "text": "Moc jsme si pobyt užili. Ubytování bylo krásně čisté, pohodlné a skvěle vybavené. Oceňujeme příjemnou atmosféru, klidné okolí i výbornou lokalitu. Komunikace s hostitelem byla rychlá a velmi dobrá, doporučujeme dál. 😊"
+      }
+    ]
   }
 }
