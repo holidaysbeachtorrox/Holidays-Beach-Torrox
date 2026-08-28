@@ -21,6 +21,12 @@ import {
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from "@/components/ui/carousel"
 import { AvaibookIframe } from "./AvaibookWidget"
 import { contact } from "@/lib/data/contact"
 import type { Review, Showcase } from "@/lib/data/showcase"
@@ -56,8 +62,16 @@ const SOURCE_SCALE: Record<Review["source"], number> = {
   booking: 10,
 }
 
-/** Cuántas reseñas se ven antes de pulsar "ver todas". */
-const INITIAL_REVIEWS = 4
+/**
+ * A partir de esta longitud la reseña no cabe en la tarjeta del carrusel y se
+ * ofrece leerla entera. Se mide por caracteres para que servidor y cliente
+ * pinten lo mismo, sin depender de cómo caiga el texto en pantalla.
+ */
+const LONG_REVIEW = 320
+
+function isLong(review: Review) {
+  return review.text.length > LONG_REVIEW
+}
 
 /** "2024-09" -> "septiembre de 2024" / "September 2024" / "September 2024". */
 function formatMonth(date: string, locale: Locale) {
@@ -75,8 +89,19 @@ export function ApartmentShowcase({ showcase, dict, locale }: ApartmentShowcaseP
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
   const isOpen = lightboxIndex !== null
 
-  const [allReviews, setAllReviews] = useState(false)
-  const visibleReviews = allReviews ? reviews : reviews.slice(0, INITIAL_REVIEWS)
+  const [carouselApi, setCarouselApi] = useState<CarouselApi>()
+  const [currentReview, setCurrentReview] = useState(0)
+  const [openReview, setOpenReview] = useState<Review | null>(null)
+
+  useEffect(() => {
+    if (!carouselApi) return
+    const sync = () => setCurrentReview(carouselApi.selectedScrollSnap())
+    sync()
+    carouselApi.on("select", sync)
+    return () => {
+      carouselApi.off("select", sync)
+    }
+  }, [carouselApi])
 
   const showPrev = useCallback(() => {
     setLightboxIndex((i) => (i === null ? i : (i - 1 + photos.length) % photos.length))
@@ -209,66 +234,103 @@ export function ApartmentShowcase({ showcase, dict, locale }: ApartmentShowcaseP
 
             {reviews.length > 0 && (
               <>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start mb-8">
-                  {visibleReviews.map((review, index) => (
-                    <Card key={index} className="border-0 shadow-lg bg-card">
-                      <CardContent className="p-6">
-                        <div className="flex items-start justify-between gap-4 mb-4">
-                          <span>
-                            <span className="block font-semibold text-foreground">
-                              {review.author}
-                            </span>
-                            {review.country && (
-                              <span className="block text-xs text-muted-foreground">
-                                {review.country}
+                <Carousel
+                  setApi={setCarouselApi}
+                  opts={{ align: "start", loop: true }}
+                  className="mb-6"
+                >
+                  <CarouselContent className="items-stretch">
+                    {reviews.map((review, index) => (
+                      <CarouselItem key={index} className="md:basis-1/2">
+                        <Card className="border-0 shadow-lg bg-card h-full">
+                          <CardContent className="p-6 flex flex-col h-full">
+                            <div className="flex items-start justify-between gap-4 mb-4">
+                              <span>
+                                <span className="block font-semibold text-foreground">
+                                  {review.author}
+                                </span>
+                                {review.country && (
+                                  <span className="block text-xs text-muted-foreground">
+                                    {review.country}
+                                  </span>
+                                )}
                               </span>
+                              {review.rating !== undefined && (
+                                <span className="flex items-center gap-1 text-sm font-medium text-foreground whitespace-nowrap">
+                                  <Star className="w-4 h-4 fill-secondary text-secondary" />
+                                  {review.rating.toLocaleString(locale)}
+                                  <span className="text-muted-foreground font-normal">
+                                    /{SOURCE_SCALE[review.source]}
+                                  </span>
+                                </span>
+                              )}
+                            </div>
+
+                            {review.title && (
+                              <p className="font-heading font-semibold text-foreground mb-2">
+                                {review.title}
+                              </p>
                             )}
-                          </span>
-                          {review.rating !== undefined && (
-                            <span className="flex items-center gap-1 text-sm font-medium text-foreground whitespace-nowrap">
-                              <Star className="w-4 h-4 fill-secondary text-secondary" />
-                              {review.rating.toLocaleString(locale)}
-                              <span className="text-muted-foreground font-normal">
-                                /{SOURCE_SCALE[review.source]}
-                              </span>
-                            </span>
-                          )}
-                        </div>
 
-                        {review.title && (
-                          <p className="font-heading font-semibold text-foreground mb-2">
-                            {review.title}
-                          </p>
-                        )}
+                            {/* Se respetan los saltos de línea con que se
+                                publicaron. Las largas se recortan para que
+                                todas las tarjetas midan lo mismo. */}
+                            <blockquote className="text-muted-foreground leading-relaxed whitespace-pre-line line-clamp-6">
+                              {review.text}
+                            </blockquote>
 
-                        {/* Se respetan los saltos de línea con que se publicaron. */}
-                        <blockquote className="text-muted-foreground leading-relaxed whitespace-pre-line">
-                          {review.text}
-                        </blockquote>
+                            {isLong(review) && (
+                              <button
+                                type="button"
+                                onClick={() => setOpenReview(review)}
+                                className="self-start mt-3 text-sm font-medium text-primary hover:underline"
+                              >
+                                {t.readFull}
+                              </button>
+                            )}
 
-                        <p className="mt-4 pt-4 border-t border-border text-xs text-muted-foreground">
-                          {fill(t.verifiedOn, { source: SOURCE_LABEL[review.source] })}
-                          {review.date && ` · ${formatMonth(review.date, locale)}`}
-                        </p>
-                      </CardContent>
-                    </Card>
-                  ))}
+                            {/* mt-auto pega el pie abajo y las tarjetas cortas
+                                no dejan el hueco en mitad del texto. */}
+                            <p className="mt-auto pt-4 border-t border-border text-xs text-muted-foreground">
+                              {fill(t.verifiedOn, { source: SOURCE_LABEL[review.source] })}
+                              {review.date && ` · ${formatMonth(review.date, locale)}`}
+                            </p>
+                          </CardContent>
+                        </Card>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+
+                </Carousel>
+
+                {/* Con 17 reseñas, 17 puntos son ilegibles: mejor flechas y
+                    contador, que además funcionan igual en móvil. */}
+                <div className="flex items-center justify-center gap-4 mb-10">
+                  <button
+                    type="button"
+                    onClick={() => carouselApi?.scrollPrev()}
+                    aria-label={t.prevReview}
+                    className="w-11 h-11 rounded-full border border-border flex items-center justify-center text-foreground hover:bg-muted transition-colors"
+                  >
+                    <ChevronLeft className="w-5 h-5" />
+                  </button>
+
+                  <p aria-live="polite" className="text-sm text-muted-foreground tabular-nums">
+                    {fill(t.reviewOf, {
+                      current: currentReview + 1,
+                      total: reviews.length,
+                    })}
+                  </p>
+
+                  <button
+                    type="button"
+                    onClick={() => carouselApi?.scrollNext()}
+                    aria-label={t.nextReview}
+                    className="w-11 h-11 rounded-full border border-border flex items-center justify-center text-foreground hover:bg-muted transition-colors"
+                  >
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
                 </div>
-
-                {reviews.length > INITIAL_REVIEWS && (
-                  <div className="text-center mb-10">
-                    <Button
-                      type="button"
-                      variant="ghost"
-                      onClick={() => setAllReviews((v) => !v)}
-                      className="font-medium text-primary hover:text-primary"
-                    >
-                      {allReviews
-                        ? t.showLessReviews
-                        : fill(t.showMoreReviews, { count: reviews.length })}
-                    </Button>
-                  </div>
-                )}
               </>
             )}
 
@@ -414,6 +476,42 @@ export function ApartmentShowcase({ showcase, dict, locale }: ApartmentShowcaseP
 
               <p className="absolute bottom-3 left-1/2 -translate-x-1/2 text-white/90 text-sm bg-black/60 rounded-full px-4 py-1">
                 {fill(t.photoOf, { current: lightboxIndex + 1, total: photos.length })}
+              </p>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
+
+      {/* Reseña completa, para las que no caben en la tarjeta */}
+      <Dialog open={openReview !== null} onOpenChange={(open) => !open && setOpenReview(null)}>
+        <DialogContent className="max-w-2xl w-[95vw] max-h-[85vh] overflow-y-auto">
+          {openReview && (
+            <>
+              <DialogTitle className="font-heading text-xl">
+                {openReview.title || openReview.author}
+              </DialogTitle>
+
+              <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                <span className="font-medium text-foreground">{openReview.author}</span>
+                {openReview.country && <span>{openReview.country}</span>}
+                {openReview.rating !== undefined && (
+                  <span className="flex items-center gap-1 text-foreground">
+                    <Star className="w-4 h-4 fill-secondary text-secondary" />
+                    {openReview.rating.toLocaleString(locale)}
+                    <span className="text-muted-foreground">
+                      /{SOURCE_SCALE[openReview.source]}
+                    </span>
+                  </span>
+                )}
+              </div>
+
+              <blockquote className="text-muted-foreground leading-relaxed whitespace-pre-line">
+                {openReview.text}
+              </blockquote>
+
+              <p className="pt-4 border-t border-border text-xs text-muted-foreground">
+                {fill(t.verifiedOn, { source: SOURCE_LABEL[openReview.source] })}
+                {openReview.date && ` · ${formatMonth(openReview.date, locale)}`}
               </p>
             </>
           )}

@@ -23,7 +23,10 @@
     "rating": 8.8,
     "reviews": 30,
     "location": {
-        "coordinates": { "lat": 36.738119, "lng": -3.990626 }
+      "coordinates": {
+        "lat": 36.738119,
+        "lng": -3.990626
+      }
     },
     "avaibookId": "171612"
   },
@@ -61,7 +64,10 @@
     "rating": 9.2,
     "reviews": 49,
     "location": {
-        "coordinates": { "lat": 36.7203 , "lng": -3.9566 }
+      "coordinates": {
+        "lat": 36.7203,
+        "lng": -3.9566
+      }
     },
     "avaibookId": "171613"
   },
@@ -111,7 +117,10 @@
     "rating": 9.2,
     "reviews": 23,
     "location": {
-        "coordinates": { "lat": 36.7223, "lng": -3.9586 }
+      "coordinates": {
+        "lat": 36.7223,
+        "lng": -3.9586
+      }
     },
     "avaibookId": "171123"
   },
@@ -147,8 +156,11 @@
     "rating": 9.1,
     "reviews": 25,
     "location": {
-        "coordinates": { "lat": 36.738119, "lng": -3.990626 }
+      "coordinates": {
+        "lat": 36.738119,
+        "lng": -3.990626
+      }
     },
-    "avaibookId": "171614"
+    "avaibookId": "187868"
   }
 ]

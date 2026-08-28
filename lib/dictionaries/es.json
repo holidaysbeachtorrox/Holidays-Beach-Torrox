@@ -832,7 +832,9 @@
     "bedroom": "dormitorio",
     "bathroom": "baño",
     "whatsappMessage": "Hola, me interesa el apartamento {name}. ¿Podríais darme más información?",
-    "showMoreReviews": "Ver las {count} reseñas",
-    "showLessReviews": "Ver menos reseñas"
+    "readFull": "Leer completa",
+    "prevReview": "Reseña anterior",
+    "nextReview": "Reseña siguiente",
+    "reviewOf": "Reseña {current} de {total}"
   }
 }
