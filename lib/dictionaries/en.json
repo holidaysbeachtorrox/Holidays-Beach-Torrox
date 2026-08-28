@@ -270,55 +270,134 @@
       "restaurants": {
         "title": "Restaurants",
         "items": [
-          { "name": "Restaurante La Farola" },
-          { "name": "Bar El Mencey" },
-          { "name": "Chiringuito Paco" },
-          { "name": "El Rincón de Federico" },
-          { "name": "Chiringuito Cacola" },
-          { "name": "Restaurante Velero del Sur" },
-          { "name": "Restaurante Huerto Málaga" },
-          { "name": "Burger Güi" },
-          { "name": "Restaurante Magon" },
-          { "name": "Cafetería de Javier" },
-          { "name": "Cafetería la Playa" },
-          { "name": "Chiringuito Rincón de Pepe" },
-          { "name": "Media Caña Merendero" },
-          { "name": "Merendero Costa del Sol" },
-          { "name": "Restaurante el Picadero" },
-          { "name": "Restaurante Chino Hong Kong" },
-          { "name": "Chiringuito Mambo" },
-          { "name": "Entre Vientos" }
+          {
+            "name": "Restaurante La Farola"
+          },
+          {
+            "name": "Bar El Mencey"
+          },
+          {
+            "name": "Chiringuito Paco"
+          },
+          {
+            "name": "El Rincón de Federico"
+          },
+          {
+            "name": "Chiringuito Cacola"
+          },
+          {
+            "name": "Restaurante Velero del Sur"
+          },
+          {
+            "name": "Restaurante Huerto Málaga"
+          },
+          {
+            "name": "Burger Güi"
+          },
+          {
+            "name": "Restaurante Magon"
+          },
+          {
+            "name": "Cafetería de Javier"
+          },
+          {
+            "name": "Cafetería la Playa"
+          },
+          {
+            "name": "Chiringuito Rincón de Pepe"
+          },
+          {
+            "name": "Media Caña Merendero"
+          },
+          {
+            "name": "Merendero Costa del Sol"
+          },
+          {
+            "name": "Restaurante el Picadero"
+          },
+          {
+            "name": "Restaurante Chino Hong Kong"
+          },
+          {
+            "name": "Chiringuito Mambo"
+          },
+          {
+            "name": "Entre Vientos"
+          }
         ]
       },
       "beaches": {
         "title": "Beaches",
         "items": [
-          { "name": "Playa de El Morche" },
-          { "name": "Playa Las Dunas" },
-          { "name": "Playa de Torrox" },
-          { "name": "Playa de Maro" },
-          { "name": "Playa Cantarriján (nudist)" }
+          {
+            "name": "Playa de El Morche"
+          },
+          {
+            "name": "Playa Las Dunas"
+          },
+          {
+            "name": "Playa de Torrox"
+          },
+          {
+            "name": "Playa de Maro"
+          },
+          {
+            "name": "Playa Cantarriján (nudist)"
+          }
         ]
       },
       "culture": {
         "title": "Culture and visits",
         "items": [
-          { "name": "Torrox Pueblo", "url": "https://www.torroxpueblo.es/" },
-          { "name": "Nerja and its caves", "url": "https://cuevadenerja.es/" },
-          { "name": "Caminito del Rey", "url": "https://www.caminitodelrey.info/" },
-          { "name": "The Alhambra (Granada)", "url": "https://www.alhambra-patronato.es/" }
+          {
+            "name": "Torrox Pueblo",
+            "url": "https://www.torroxpueblo.es/"
+          },
+          {
+            "name": "Nerja and its caves",
+            "url": "https://cuevadenerja.es/"
+          },
+          {
+            "name": "Caminito del Rey",
+            "url": "https://www.caminitodelrey.info/"
+          },
+          {
+            "name": "The Alhambra (Granada)",
+            "url": "https://www.alhambra-patronato.es/"
+          }
         ]
       },
       "useful": {
         "title": "Emergency phones",
         "items": [
-          { "name": "Emergencies", "phone": "112" },
-          { "name": "Local Police Torrox", "phone": "092" },
-          { "name": "Torrox Health Center", "phone": "+34 952 53 00 24" },
-          { "name": "Guardia Civil", "phone": "+34 952 53 80 08" },
-          { "name": "Locksmith 24h", "phone": "+34 683 11 77 11" },
-          { "name": "Cristalería y Aluminio Torrox Costa", "phone": "+34 683 11 77 11" },
-          { "name": "Farmacia Mediterráneo", "phone": "+34 952 53 00 55" }
+          {
+            "name": "Emergencies",
+            "phone": "112"
+          },
+          {
+            "name": "Local Police Torrox",
+            "phone": "092"
+          },
+          {
+            "name": "Torrox Health Center",
+            "phone": "+34 952 53 00 24"
+          },
+          {
+            "name": "Guardia Civil",
+            "phone": "+34 952 53 80 08"
+          },
+          {
+            "name": "Locksmith 24h",
+            "phone": "+34 683 11 77 11"
+          },
+          {
+            "name": "Cristalería y Aluminio Torrox Costa",
+            "phone": "+34 683 11 77 11"
+          },
+          {
+            "name": "Farmacia Mediterráneo",
+            "phone": "+34 952 53 00 55"
+          }
         ]
       }
     },
@@ -340,14 +419,66 @@
         "address": "Calle Santiago 6, El Morche, Torrox Costa"
       },
       "amenities": {
-        "general": ["Free WiFi","Free parking","Air conditioning","Non-smoking rooms","Heating","Sofa bed","Washing machine","Private entrance"],
-        "cocina": ["Fully equipped kitchen","Dining table","Coffee maker","Toaster","Oven","Stovetop","Microwave","Refrigerator","Kitchenware","Cookware set","Open-plan kitchen","Clothes dryer"],
-        "baño": ["Private bathroom","Towels","Hairdryer","Shower","Bidet","Toilet paper"],
-        "dormitorio": ["Bed linen","Wardrobe or closet","Clothes rack","Iron","Drying rack"],
-        "entretenimiento": ["Flat-screen TV","Cable channels"],
-        "exterior": ["Beachfront","Balcony","Outdoor furniture","Outdoor dining area"],
-        "seguridad": ["Fire extinguishers","Smoke detector","Safe","Security cameras"],
-        "idiomas": ["Spanish","English","German"]
+        "general": [
+          "Free WiFi",
+          "Free parking",
+          "Air conditioning",
+          "Non-smoking rooms",
+          "Heating",
+          "Sofa bed",
+          "Washing machine",
+          "Private entrance"
+        ],
+        "cocina": [
+          "Fully equipped kitchen",
+          "Dining table",
+          "Coffee maker",
+          "Toaster",
+          "Oven",
+          "Stovetop",
+          "Microwave",
+          "Refrigerator",
+          "Kitchenware",
+          "Cookware set",
+          "Open-plan kitchen",
+          "Clothes dryer"
+        ],
+        "baño": [
+          "Private bathroom",
+          "Towels",
+          "Hairdryer",
+          "Shower",
+          "Bidet",
+          "Toilet paper"
+        ],
+        "dormitorio": [
+          "Bed linen",
+          "Wardrobe or closet",
+          "Clothes rack",
+          "Iron",
+          "Drying rack"
+        ],
+        "entretenimiento": [
+          "Flat-screen TV",
+          "Cable channels"
+        ],
+        "exterior": [
+          "Beachfront",
+          "Balcony",
+          "Outdoor furniture",
+          "Outdoor dining area"
+        ],
+        "seguridad": [
+          "Fire extinguishers",
+          "Smoke detector",
+          "Safe",
+          "Security cameras"
+        ],
+        "idiomas": [
+          "Spanish",
+          "English",
+          "German"
+        ]
       }
     },
     "apartment-2": {
@@ -358,14 +489,64 @@
         "address": "Av. Europa, 82 Torrox Costa"
       },
       "amenities": {
-        "general": ["Free WiFi","Free parking","Air conditioning","Non-smoking rooms","Heating","Washing machine","Elevator","Outdoor swimming pool"],
-        "cocina": ["Fully equipped kitchen","Dining table","Coffee maker","Toaster","Stovetop","Microwave","Refrigerator","Kitchenware","Electric kettle"],
-        "baño": ["Private bathroom","Towels","Hairdryer","Shower","Toilet paper"],
-        "dormitorio": ["Bed linen","Wardrobe or closet","Clothes rack","Iron"],
-        "entretenimiento": ["Flat-screen TV","Cable channels","Beach"],
-        "exterior": ["Beachfront","Balcony","Outdoor furniture","Outdoor dining area","Barbecue","Terrace / Solarium"],
-        "seguridad": ["Fire extinguishers","Smoke detector","Safe","Security cameras"],
-        "idiomas": ["Spanish","English","German"]
+        "general": [
+          "Free WiFi",
+          "Free parking",
+          "Air conditioning",
+          "Non-smoking rooms",
+          "Heating",
+          "Washing machine",
+          "Elevator",
+          "Outdoor swimming pool"
+        ],
+        "cocina": [
+          "Fully equipped kitchen",
+          "Dining table",
+          "Coffee maker",
+          "Toaster",
+          "Stovetop",
+          "Microwave",
+          "Refrigerator",
+          "Kitchenware",
+          "Electric kettle"
+        ],
+        "baño": [
+          "Private bathroom",
+          "Towels",
+          "Hairdryer",
+          "Shower",
+          "Toilet paper"
+        ],
+        "dormitorio": [
+          "Bed linen",
+          "Wardrobe or closet",
+          "Clothes rack",
+          "Iron"
+        ],
+        "entretenimiento": [
+          "Flat-screen TV",
+          "Cable channels",
+          "Beach"
+        ],
+        "exterior": [
+          "Beachfront",
+          "Balcony",
+          "Outdoor furniture",
+          "Outdoor dining area",
+          "Barbecue",
+          "Terrace / Solarium"
+        ],
+        "seguridad": [
+          "Fire extinguishers",
+          "Smoke detector",
+          "Safe",
+          "Security cameras"
+        ],
+        "idiomas": [
+          "Spanish",
+          "English",
+          "German"
+        ]
       }
     },
     "apartment-3": {
@@ -376,14 +557,63 @@
         "address": "Calle Nuestra Señora del Carmen nº9, 29793 El Morche, Torrox Costa"
       },
       "amenities": {
-        "general": ["Free WiFi","Free parking","Non-smoking rooms","Elevator","Heating"],
-        "cocina": ["Fully equipped kitchen","Dining table","Coffee machine","Toaster","Oven","Stovetop","Microwave","Refrigerator","Kitchen utensils"],
-        "baño": ["Private bathroom","Towels","Hairdryer","Bathtub and shower","Bidet","Toilet paper"],
-        "dormitorio": ["Bed linen","Wardrobe and closet","Clothes rack","Iron","Drying rack"],
-        "entretenimiento": ["Flat-screen TV","Radio"],
-        "exterior": ["Terrace / Solarium","Balcony","Outdoor furniture","Outdoor dining area","Barbecue","Patio","Garden"],
-        "seguridad": ["Fire extinguishers","Smoke detector","Safe","Security cameras"],
-        "idiomas": ["Spanish","English","German"]
+        "general": [
+          "Free WiFi",
+          "Free parking",
+          "Non-smoking rooms",
+          "Elevator",
+          "Heating"
+        ],
+        "cocina": [
+          "Fully equipped kitchen",
+          "Dining table",
+          "Coffee machine",
+          "Toaster",
+          "Oven",
+          "Stovetop",
+          "Microwave",
+          "Refrigerator",
+          "Kitchen utensils"
+        ],
+        "baño": [
+          "Private bathroom",
+          "Towels",
+          "Hairdryer",
+          "Bathtub and shower",
+          "Bidet",
+          "Toilet paper"
+        ],
+        "dormitorio": [
+          "Bed linen",
+          "Wardrobe and closet",
+          "Clothes rack",
+          "Iron",
+          "Drying rack"
+        ],
+        "entretenimiento": [
+          "Flat-screen TV",
+          "Radio"
+        ],
+        "exterior": [
+          "Terrace / Solarium",
+          "Balcony",
+          "Outdoor furniture",
+          "Outdoor dining area",
+          "Barbecue",
+          "Patio",
+          "Garden"
+        ],
+        "seguridad": [
+          "Fire extinguishers",
+          "Smoke detector",
+          "Safe",
+          "Security cameras"
+        ],
+        "idiomas": [
+          "Spanish",
+          "English",
+          "German"
+        ]
       }
     },
     "apartment-4": {
@@ -394,14 +624,63 @@
         "address": "C. Santiago, 4, 29793 El Morche, Torrox Costa"
       },
       "amenities": {
-        "general": ["Free WiFi","Free parking","Air conditioning","Non-smoking rooms","Heating","Washing machine","Clothes dryer","Private entrance"],
-        "cocina": ["Fully equipped kitchen","Dining table","Coffee maker","Toaster","Stovetop","Microwave","Refrigerator","Kitchenware"],
-        "baño": ["Private bathroom","Towels","Hairdryer","Shower","Bidet","Toilet paper"],
-        "dormitorio": ["Bed linen","Wardrobe or closet","Clothes rack","Iron","Drying rack"],
-        "entretenimiento": ["Flat-screen TV","Cable channels"],
-        "exterior": ["Beachfront","Balcony","Outdoor furniture","Outdoor dining area","Barbecue"],
-        "seguridad": ["Fire extinguishers","Smoke detector","Safe","Security cameras"],
-        "idiomas": ["Spanish","English","German"]
+        "general": [
+          "Free WiFi",
+          "Free parking",
+          "Air conditioning",
+          "Non-smoking rooms",
+          "Heating",
+          "Washing machine",
+          "Clothes dryer",
+          "Private entrance"
+        ],
+        "cocina": [
+          "Fully equipped kitchen",
+          "Dining table",
+          "Coffee maker",
+          "Toaster",
+          "Stovetop",
+          "Microwave",
+          "Refrigerator",
+          "Kitchenware"
+        ],
+        "baño": [
+          "Private bathroom",
+          "Towels",
+          "Hairdryer",
+          "Shower",
+          "Bidet",
+          "Toilet paper"
+        ],
+        "dormitorio": [
+          "Bed linen",
+          "Wardrobe or closet",
+          "Clothes rack",
+          "Iron",
+          "Drying rack"
+        ],
+        "entretenimiento": [
+          "Flat-screen TV",
+          "Cable channels"
+        ],
+        "exterior": [
+          "Beachfront",
+          "Balcony",
+          "Outdoor furniture",
+          "Outdoor dining area",
+          "Barbecue"
+        ],
+        "seguridad": [
+          "Fire extinguishers",
+          "Smoke detector",
+          "Safe",
+          "Security cameras"
+        ],
+        "idiomas": [
+          "Spanish",
+          "English",
+          "German"
+        ]
       }
     }
   },
@@ -490,5 +769,34 @@
         }
       ]
     }
+  },
+  "showcase": {
+    "photosTitle": "Apartment photos",
+    "photosCount": "{count} photos",
+    "reviewsTitle": "What our guests say",
+    "reviewsSubtitle": "Real reviews published by people who have already stayed here.",
+    "seeOnGoogle": "See all reviews on Google",
+    "seeOnBooking": "See all reviews on Booking",
+    "verifiedOn": "Published on {source}",
+    "bookTitle": "Like it? Book it",
+    "bookSubtitle": "Book directly with the owner, no fees and no middlemen.",
+    "whatsapp": "Message us on WhatsApp",
+    "call": "Call now",
+    "checkAvailability": "Check availability and prices",
+    "fullDetails": "See the full apartment page",
+    "guests": "guests",
+    "bedrooms": "bedrooms",
+    "bathrooms": "bathrooms",
+    "openPhoto": "Enlarge photo",
+    "closePhoto": "Close",
+    "prevPhoto": "Previous photo",
+    "nextPhoto": "Next photo",
+    "photoOf": "Photo {current} of {total}",
+    "metaTitle": "{name} | Photos and reviews | Holidays Beach Torrox",
+    "metaDescription": "Photos, reviews and direct booking for {name}, a holiday apartment in Torrox Costa, Málaga.",
+    "guest": "guest",
+    "bedroom": "bedroom",
+    "bathroom": "bathroom",
+    "whatsappMessage": "Hello, I'm interested in the {name} apartment. Could you send me more information?"
   }
 }
