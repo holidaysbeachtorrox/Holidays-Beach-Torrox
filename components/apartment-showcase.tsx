@@ -185,7 +185,11 @@ export function ApartmentShowcase({ showcase, dict, locale }: ApartmentShowcaseP
               <h2 className="font-heading font-bold text-2xl lg:text-3xl text-foreground mb-3">
                 {t.reviewsTitle}
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">{t.reviewsSubtitle}</p>
+              {/* Sin reseñas copiadas todavía, el subtítulo prometería algo que
+                  no está en la página; los botones se explican solos. */}
+              {reviews.length > 0 && (
+                <p className="text-muted-foreground max-w-2xl mx-auto">{t.reviewsSubtitle}</p>
+              )}
             </div>
 
             {reviews.length > 0 && (
