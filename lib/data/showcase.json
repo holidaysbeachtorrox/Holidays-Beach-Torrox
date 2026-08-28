@@ -1,0 +1,68 @@
+{
+  "sol-arena-y-mar": {
+    "apartmentId": "apartment-4",
+    "photos": [
+      "/apartments/Apartamento 4/Salon 1.jpg",
+      "/apartments/Apartamento 4/Salon 2.jpg",
+      "/apartments/Apartamento 4/Salon 3.jpg",
+      "/apartments/Apartamento 4/Salon 4.jpg",
+      "/apartments/Apartamento 4/Dormitorio A 1.jpg",
+      "/apartments/Apartamento 4/Dormitorio A 2.jpg",
+      "/apartments/Apartamento 4/Dormitorio A 3.jpg",
+      "/apartments/Apartamento 4/Dormitorio A 4.jpg",
+      "/apartments/Apartamento 4/Dormitorio A 5.jpg",
+      "/apartments/Apartamento 4/Dormitorio B  1.jpg",
+      "/apartments/Apartamento 4/Dormitorio B  2.jpg",
+      "/apartments/Apartamento 4/Dormitorio B  3.jpg",
+      "/apartments/Apartamento 4/Cocina 1.jpg",
+      "/apartments/Apartamento 4/Cocina 2.jpg",
+      "/apartments/Apartamento 4/Bano 1.jpg",
+      "/apartments/Apartamento 4/Bano 2.jpg",
+      "/apartments/Apartamento 4/Exterior 1.jpg",
+      "/apartments/Apartamento 4/Exterior 2.jpg",
+      "/apartments/Apartamento 4/Exterior 3.jpg",
+      "/apartments/Apartamento 4/Exterior 4.jpg",
+      "/apartments/Apartamento 4/Exterior 5.jpg"
+    ],
+    "links": {
+      "google": "",
+      "booking": ""
+    },
+    "reviews": []
+  },
+  "la-casita-del-pescador": {
+    "apartmentId": "apartment-1",
+    "photos": [
+      "/apartments/Apartamento 6/Salon 1.jpg",
+      "/apartments/Apartamento 6/Salon 2.jpg",
+      "/apartments/Apartamento 6/Salon 3.jpg",
+      "/apartments/Apartamento 6/Salon 4.jpg",
+      "/apartments/Apartamento 6/Dormitorio-A-2.jpg",
+      "/apartments/Apartamento 6/Dormitorio A 1.jpg",
+      "/apartments/Apartamento 6/Dormitorio A 3.jpg",
+      "/apartments/Apartamento 6/Dormitorio B  1.jpg",
+      "/apartments/Apartamento 6/Dormitorio B  2.jpg",
+      "/apartments/Apartamento 6/Dormitorio B  3.jpg",
+      "/apartments/Apartamento 6/Dormitorio B  4.jpg",
+      "/apartments/Apartamento 6/Cocina 1.jpg",
+      "/apartments/Apartamento 6/Cocina 2.jpg",
+      "/apartments/Apartamento 6/Cocina 3.jpg",
+      "/apartments/Apartamento 6/Cocina 4.jpg",
+      "/apartments/Apartamento 6/Bano 1.jpg",
+      "/apartments/Apartamento 6/Bano 2.jpg",
+      "/apartments/Apartamento 6/Bano 3.jpg",
+      "/apartments/Apartamento 6/Bano 4.jpg",
+      "/apartments/Apartamento 6/Bano 5.jpg",
+      "/apartments/Apartamento 6/Bano 6.jpg",
+      "/apartments/Apartamento 6/Exterior 1.jpg",
+      "/apartments/Apartamento 6/Exterior 2.jpg",
+      "/apartments/Apartamento 6/Exterior 3.jpg",
+      "/apartments/Apartamento 6/Exterior 4.jpg"
+    ],
+    "links": {
+      "google": "",
+      "booking": ""
+    },
+    "reviews": []
+  }
+}

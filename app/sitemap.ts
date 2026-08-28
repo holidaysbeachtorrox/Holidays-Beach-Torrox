@@ -1,6 +1,7 @@
 // app/sitemap.ts
 import type { MetadataRoute } from "next"
 import { getApartments } from "@/lib/data/apartments"
+import { SHOWCASE_SLUGS } from "@/lib/data/showcase"
 import type { Locale } from "@/lib/utils"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -57,6 +58,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       })
     })
   }
+
+  // Páginas de escaparate (las que abre el QR del cartel)
+  languages.forEach((lang) => {
+    SHOWCASE_SLUGS.forEach((slug) => {
+      sitemap.push({
+        url: `${baseUrl}/${lang}/${slug}`,
+        lastModified: new Date(),
+        changeFrequency: "weekly",
+        priority: 0.9,
+        alternates: {
+          languages: Object.fromEntries(
+            languages.map((l) => [l, `${baseUrl}/${l}/${slug}`])
+          ),
+        },
+      })
+    })
+  })
 
   return sitemap
 }
