@@ -798,7 +798,9 @@
     "bedroom": "Schlafzimmer",
     "bathroom": "Badezimmer",
     "whatsappMessage": "Hallo, ich interessiere mich für die Wohnung {name}. Könnten Sie mir mehr Informationen schicken?",
-    "showMoreReviews": "Alle {count} Bewertungen ansehen",
-    "showLessReviews": "Weniger Bewertungen anzeigen"
+    "readFull": "Vollständig lesen",
+    "prevReview": "Vorherige Bewertung",
+    "nextReview": "Nächste Bewertung",
+    "reviewOf": "Bewertung {current} von {total}"
   }
 }

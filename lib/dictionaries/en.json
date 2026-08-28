@@ -798,7 +798,9 @@
     "bedroom": "bedroom",
     "bathroom": "bathroom",
     "whatsappMessage": "Hello, I'm interested in the {name} apartment. Could you send me more information?",
-    "showMoreReviews": "See all {count} reviews",
-    "showLessReviews": "Show fewer reviews"
+    "readFull": "Read in full",
+    "prevReview": "Previous review",
+    "nextReview": "Next review",
+    "reviewOf": "Review {current} of {total}"
   }
 }
