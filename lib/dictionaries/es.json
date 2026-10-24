@@ -10,8 +10,7 @@
     "title": "Vacaciones perfectas en la Costa del Sol",
     "subtitle": "Descubre nuestros apartamentos exclusivos en Torrox-Costa, Málaga. Reserva directamente y ahorra en comisiones.",
     "cta": "Reservar ahora",
-    "viewApartments": "Ver apartamentos",
-    "bookingSystem": "Sistema de reservas"
+    "viewApartments": "Ver apartamentos"
   },
   "heroBenefits": {
     "flexibility": {
@@ -83,7 +82,13 @@
     "mainFeatures": "Características principales",
     "about": "Sobre este alojamiento",
     "includedServices": "Servicios incluidos",
-    "noCalendar": "Calendario no disponible para este apartamento.",
+    "availability": {
+      "title": "Consultar disponibilidad",
+      "text": "Escríbenos con tus fechas y número de personas y te respondemos con la disponibilidad y el precio.",
+      "whatsapp": "Consultar por WhatsApp",
+      "email": "Consultar por correo",
+      "message": "Hola, me gustaría saber si el apartamento {name} está disponible. Fechas de entrada y salida: \nNúmero de personas: "
+    },
     "labels": {
       "guests": "Huéspedes",
       "bedrooms": "Dormitorios",
@@ -93,8 +98,7 @@
     "contact": {
       "title": "Contacto directo",
       "phoneAvailable": "Disponible 24/7",
-      "emailResponse": "Respuesta en 2h",
-      "sendInquiry": "Enviar consulta"
+      "emailResponse": "Respuesta en 2h"
     },
     "guarantees": {
       "secureBooking": "Reserva 100% segura",
@@ -160,7 +164,7 @@
     "questions": {
       "booking": {
         "question": "¿Cómo puedo hacer una reserva?",
-        "answer": "Puedes reservar directamente a través de nuestra web o contactarnos por WhatsApp. Te enviaremos un enlace seguro para completar el pago y recibirás la confirmación inmediatamente."
+        "answer": "Escríbenos por WhatsApp o por correo con tus fechas y el número de personas. Te confirmamos la disponibilidad y el precio, y te explicamos cómo cerrar la reserva."
       },
       "checkin": {
         "question": "¿Cuál es el horario de check-in y check-out?",
@@ -816,7 +820,7 @@
     "bookSubtitle": "Reserva directa con el propietario, sin comisiones ni intermediarios.",
     "whatsapp": "Escríbenos por WhatsApp",
     "call": "Llamar ahora",
-    "checkAvailability": "Ver disponibilidad y precios",
+    "email": "Escríbenos por correo",
     "fullDetails": "Ver ficha completa del apartamento",
     "guests": "huéspedes",
     "bedrooms": "dormitorios",

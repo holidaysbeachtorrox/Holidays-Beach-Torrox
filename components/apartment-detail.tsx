@@ -29,12 +29,13 @@ import {
   Tv,
   Trees,
   ShieldCheck,
+  MessageCircle,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { createLocalizedPath, type Locale } from "@/lib/utils"
 import { Dialog, DialogContent } from "@/components/ui/dialog"
-import { AvaibookIframe } from "./AvaibookWidget"
+import { contact } from "@/lib/data/contact"
 
 const categoryIcons: Record<string, JSX.Element> = {
   general: <Home className="w-4 h-4" />,
@@ -60,7 +61,6 @@ interface Apartment {
   area: number
   description: string
   amenities: Record<string, string[]>
-  avaibookId?: string
   capacityInfo?: {
     max: number
     details: string[]
@@ -74,7 +74,6 @@ interface Dict {
   }
   hero: {
     cta: string
-    bookingSystem: string
   }
   apartmentDetail: {
     verified: string
@@ -82,7 +81,13 @@ interface Dict {
     mainFeatures?: string // Optional, add if used elsewhere
     about: string
     includedServices: string
-    noCalendar: string
+    availability: {
+      title: string
+      text: string
+      whatsapp: string
+      email: string
+      message: string
+    }
     labels: {
       guests: string
       bedrooms: string
@@ -93,7 +98,6 @@ interface Dict {
       title: string
       phoneAvailable: string
       emailResponse: string
-      sendInquiry: string
     }
     guarantees: {
       secureBooking: string
@@ -148,6 +152,19 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
     if (touchStartX.current - touchEndX.current > 75) nextImage()
     if (touchEndX.current - touchStartX.current > 75) prevImage()
   }
+
+  // Ya no hay calendario online: la disponibilidad se consulta por WhatsApp o
+  // por correo, con el mensaje ya escrito para que solo falten las fechas.
+  const availabilityMessage = dict.apartmentDetail.availability.message.replace(
+    "{name}",
+    apartment.name
+  )
+  const whatsappHref = `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(
+    availabilityMessage
+  )}`
+  const emailHref = `mailto:${contact.email}?subject=${encodeURIComponent(
+    `${dict.apartmentDetail.availability.title} - ${apartment.name}`
+  )}&body=${encodeURIComponent(availabilityMessage)}`
 
   return (
     <div className="pt-20">
@@ -491,29 +508,39 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
           <div className="lg:col-span-1">
             <Card className="sticky top-24 shadow-2xl border-0 bg-gradient-to-br from-card to-muted/20">
               <CardContent className="p-8">
-                {/* Placeholder AvaiBook */}
+                {/* Consultar disponibilidad */}
                 <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-8 text-center mb-8 border border-border">
                   <Calendar className="w-16 h-16 text-primary mx-auto mb-4" />
                   <h4 className="font-heading font-semibold text-lg mb-2">
-                    {dict.hero.bookingSystem}
+                    {dict.apartmentDetail.availability.title}
                   </h4>
+                  <p className="text-sm text-muted-foreground mb-6">
+                    {dict.apartmentDetail.availability.text}
+                  </p>
 
-                  {/* Render explícito de los 3 widgets */}
-                  {locale === "es" && apartment.avaibookId && (
-                    <AvaibookIframe id={String(apartment.avaibookId)} lang="ES" />
-                  )}
-                  {locale === "en" && apartment.avaibookId && (
-                    <AvaibookIframe id={String(apartment.avaibookId)} lang="EN" />
-                  )}
-                  {locale === "de" && apartment.avaibookId && (
-                    <AvaibookIframe id={String(apartment.avaibookId)} lang="DE" />
-                  )}
-
-                  {!apartment.avaibookId && (
-                    <p className="text-sm text-muted-foreground">
-                      {dict.apartmentDetail.noCalendar}
-                    </p>
-                  )}
+                  <div className="space-y-3">
+                    <Button
+                      asChild
+                      size="lg"
+                      className="w-full h-auto whitespace-normal gap-2 py-4 font-semibold rounded-xl bg-[#25D366] hover:bg-[#1da851] text-white shadow-lg"
+                    >
+                      <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
+                        <MessageCircle className="w-5 h-5" />
+                        {dict.apartmentDetail.availability.whatsapp}
+                      </a>
+                    </Button>
+                    <Button
+                      asChild
+                      size="lg"
+                      variant="outline"
+                      className="w-full h-auto whitespace-normal gap-2 py-4 font-semibold rounded-xl border-2 bg-transparent"
+                    >
+                      <a href={emailHref}>
+                        <Mail className="w-5 h-5" />
+                        {dict.apartmentDetail.availability.email}
+                      </a>
+                    </Button>
+                  </div>
                 </div>
 
                 {/* Contacto directo */}
@@ -525,14 +552,14 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
 
                   <div className="space-y-4">
                     <a
-                      href="tel:+34683117711"
+                      href={contact.phoneHref}
                       className="flex items-center gap-4 p-4 bg-muted/30 rounded-xl hover:bg-muted/50 transition-colors group"
                     >
                       <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                         <Phone className="w-6 h-6 text-primary" />
                       </div>
                       <div>
-                        <div className="font-semibold">+34 683 11 77 11</div>
+                        <div className="font-semibold">{contact.phone}</div>
                         <div className="text-sm text-muted-foreground">
                           {dict.apartmentDetail.contact.phoneAvailable}
                         </div>
@@ -540,7 +567,7 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
                     </a>
 
                     <a
-                      href="mailto:info@holidaysbeachtorrox.com"
+                      href={`mailto:${contact.email}`}
                       className="flex items-center gap-4 p-4 bg-muted/30 rounded-xl hover:bg-muted/50 transition-colors group"
                     >
                       <div className="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
@@ -548,7 +575,7 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
                       </div>
                       <div>
                         <div className="font-semibold text-sm">
-                          holidaysbeachtorrox@gmail.com
+                          {contact.email}
                         </div>
                         <div className="text-sm text-muted-foreground">
                           {dict.apartmentDetail.contact.emailResponse}
@@ -557,13 +584,6 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
                       </div>
                     </a>
                   </div>
-
-                  <Button
-                    variant="outline"
-                    className="w-full bg-transparent border-2 hover:bg-muted font-semibold py-3 rounded-xl"
-                  >
-                    {dict.apartmentDetail.contact.sendInquiry}
-                  </Button>
                 </div>
 
                 {/* Garantías */}

@@ -35,7 +35,6 @@ export type Apartment = {
     seguridad: string[];
     idiomas: string[];
   };
-  avaibookId?: string;
 };
 
 /**

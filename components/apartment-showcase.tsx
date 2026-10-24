@@ -7,10 +7,10 @@ import Link from "next/link"
 import {
   Bath,
   Bed,
-  Calendar,
   ChevronLeft,
   ChevronRight,
   ExternalLink,
+  Mail,
   MapPin,
   MessageCircle,
   Phone,
@@ -27,7 +27,6 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "@/components/ui/carousel"
-import { AvaibookIframe } from "./AvaibookWidget"
 import { contact } from "@/lib/data/contact"
 import type { Review, Showcase } from "@/lib/data/showcase"
 import { createLocalizedPath, type Locale } from "@/lib/utils"
@@ -122,9 +121,11 @@ export function ApartmentShowcase({ showcase, dict, locale }: ApartmentShowcaseP
   }, [isOpen, showPrev, showNext])
 
   // Mensaje ya escrito en el chat: quien escanea el cartel solo tiene que darle a enviar.
-  const whatsappHref = `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(
-    fill(t.whatsappMessage, { name: apartment.name })
-  )}`
+  const message = fill(t.whatsappMessage, { name: apartment.name })
+  const whatsappHref = `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(message)}`
+  const emailHref = `mailto:${contact.email}?subject=${encodeURIComponent(
+    apartment.name
+  )}&body=${encodeURIComponent(message)}`
 
   return (
     <div className="pb-24 lg:pb-12">
@@ -368,15 +369,27 @@ export function ApartmentShowcase({ showcase, dict, locale }: ApartmentShowcaseP
             <p className="text-muted-foreground">{t.bookSubtitle}</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Button
               asChild
               size="lg"
-              className="gap-3 py-7 text-base font-semibold rounded-xl bg-[#25D366] hover:bg-[#1da851] text-white shadow-lg"
+              className="sm:col-span-2 gap-3 py-7 text-base font-semibold rounded-xl bg-[#25D366] hover:bg-[#1da851] text-white shadow-lg"
             >
               <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="w-5 h-5" />
                 {t.whatsapp}
+              </a>
+            </Button>
+
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="gap-3 py-7 text-base font-semibold rounded-xl border-2"
+            >
+              <a href={emailHref}>
+                <Mail className="w-5 h-5" />
+                {t.email}
               </a>
             </Button>
 
@@ -392,21 +405,6 @@ export function ApartmentShowcase({ showcase, dict, locale }: ApartmentShowcaseP
               </a>
             </Button>
           </div>
-
-          {apartment.avaibookId && (
-            <Card className="border-0 shadow-xl bg-gradient-to-br from-card to-muted/20">
-              <CardContent className="p-6 sm:p-8">
-                <h3 className="font-heading font-semibold text-lg text-center mb-6 flex items-center justify-center gap-2">
-                  <Calendar className="w-5 h-5 text-primary" />
-                  {t.checkAvailability}
-                </h3>
-                <AvaibookIframe
-                  id={String(apartment.avaibookId)}
-                  lang={locale.toUpperCase() as "ES" | "EN" | "DE"}
-                />
-              </CardContent>
-            </Card>
-          )}
 
           <div className="text-center mt-10">
             <Link

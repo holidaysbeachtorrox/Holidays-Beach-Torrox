@@ -10,8 +10,7 @@
     "title": "Perfect holidays on the Costa del Sol",
     "subtitle": "Discover our exclusive apartments in Torrox-Costa, Málaga. Book directly and save on commissions.",
     "cta": "Book now",
-    "viewApartments": "View apartments",
-    "bookingSystem": "Booking system"
+    "viewApartments": "View apartments"
   },
   "heroBenefits": {
     "flexibility": {
@@ -83,7 +82,13 @@
     "mainFeatures": "Main features",
     "about": "About this accommodation",
     "includedServices": "Included services",
-    "noCalendar": "Calendar not available for this apartment.",
+    "availability": {
+      "title": "Check availability",
+      "text": "Send us your dates and number of guests and we will reply with availability and price.",
+      "whatsapp": "Ask on WhatsApp",
+      "email": "Ask by email",
+      "message": "Hello, I'd like to know if the {name} apartment is available. Check-in and check-out dates: \nNumber of guests: "
+    },
     "labels": {
       "guests": "Guests",
       "bedrooms": "Bedrooms",
@@ -93,8 +98,7 @@
     "contact": {
       "title": "Direct contact",
       "phoneAvailable": "Available 24/7",
-      "emailResponse": "Response within 2h",
-      "sendInquiry": "Send inquiry"
+      "emailResponse": "Response within 2h"
     },
     "guarantees": {
       "secureBooking": "100% secure booking",
@@ -160,7 +164,7 @@
     "questions": {
       "booking": {
         "question": "How can I make a reservation?",
-        "answer": "You can book directly through our website or contact us via WhatsApp. We will send you a secure link to complete the payment and you will receive confirmation immediately."
+        "answer": "Message us on WhatsApp or by email with your dates and number of guests. We will confirm availability and price, and explain how to complete the booking."
       },
       "checkin": {
         "question": "What are the check-in and check-out times?",
@@ -782,7 +786,7 @@
     "bookSubtitle": "Book directly with the owner, no fees and no middlemen.",
     "whatsapp": "Message us on WhatsApp",
     "call": "Call now",
-    "checkAvailability": "Check availability and prices",
+    "email": "Email us",
     "fullDetails": "See the full apartment page",
     "guests": "guests",
     "bedrooms": "bedrooms",
