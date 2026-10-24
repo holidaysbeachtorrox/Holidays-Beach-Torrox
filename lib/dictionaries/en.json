@@ -95,11 +95,6 @@
       "bathrooms": "Bathrooms",
       "sqm": "Square meters"
     },
-    "contact": {
-      "title": "Direct contact",
-      "phoneAvailable": "Available 24/7",
-      "emailResponse": "Response within 2h"
-    },
     "guarantees": {
       "secureBooking": "100% secure booking",
       "flexibleCancellation": "Flexible cancellation",

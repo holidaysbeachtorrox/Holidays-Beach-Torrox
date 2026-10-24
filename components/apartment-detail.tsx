@@ -15,7 +15,6 @@ import {
   ChevronLeft,
   ChevronRight,
   Calendar,
-  Phone,
   Mail,
   Shield,
   Clock,
@@ -93,11 +92,6 @@ interface Dict {
       bedrooms: string
       bathrooms: string
       sqm: string
-    }
-    contact: {
-      title: string
-      phoneAvailable: string
-      emailResponse: string
     }
     guarantees: {
       secureBooking: string
@@ -543,51 +537,8 @@ export function ApartmentDetail({ apartment, dict, locale }: ApartmentDetailProp
                   </div>
                 </div>
 
-                {/* Contacto directo */}
-                <div className="space-y-6">
-                  <h4 className="font-heading font-semibold text-lg flex items-center gap-2">
-                    <Phone className="w-5 h-5 text-primary" />
-                    {dict.apartmentDetail.contact.title}
-                  </h4>
-
-                  <div className="space-y-4">
-                    <a
-                      href={contact.phoneHref}
-                      className="flex items-center gap-4 p-4 bg-muted/30 rounded-xl hover:bg-muted/50 transition-colors group"
-                    >
-                      <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                        <Phone className="w-6 h-6 text-primary" />
-                      </div>
-                      <div>
-                        <div className="font-semibold">{contact.phone}</div>
-                        <div className="text-sm text-muted-foreground">
-                          {dict.apartmentDetail.contact.phoneAvailable}
-                        </div>
-                      </div>
-                    </a>
-
-                    <a
-                      href={`mailto:${contact.email}`}
-                      className="flex items-center gap-4 p-4 bg-muted/30 rounded-xl hover:bg-muted/50 transition-colors group"
-                    >
-                      <div className="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
-                        <Mail className="w-6 h-6 text-secondary" />
-                      </div>
-                      <div>
-                        <div className="font-semibold text-sm">
-                          {contact.email}
-                        </div>
-                        <div className="text-sm text-muted-foreground">
-                          {dict.apartmentDetail.contact.emailResponse}
-                        </div>
-
-                      </div>
-                    </a>
-                  </div>
-                </div>
-
                 {/* Garantías */}
-                <div className="mt-8 pt-6 border-t border-border space-y-4">
+                <div className="pt-6 border-t border-border space-y-4">
                   <div className="flex items-center justify-center gap-2 text-center">
                     <Shield className="w-5 h-5 text-primary" />
                     <span className="font-semibold">
